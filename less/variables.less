@@ -32,7 +32,7 @@
 
 // Scaffolding
 // -------------------------
-@bodyBackground:        @white;
+@bodyBackground:        #F7F7F9;
 @textColor:             @grayDark;
 
 
@@ -271,9 +271,9 @@
 
 // Default 940px grid
 // -------------------------
-@gridColumns:             12;
-@gridColumnWidth:         60px;
-@gridGutterWidth:         20px;
+@gridColumns:             4;
+@gridColumnWidth:         225px;
+@gridGutterWidth:         40px;
 @gridRowWidth:            (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));
 
 // 1200px min
@@ -299,3 +299,7 @@
 // 768px-979px
 @fluidGridColumnWidth768:      percentage(@gridColumnWidth768/@gridRowWidth768);
 @fluidGridGutterWidth768:      percentage(@gridGutterWidth768/@gridRowWidth768);
+
+//My
+@backTextColor:           #ddd;
+@activeTextColor:         #F04E23;
