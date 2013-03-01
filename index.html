@@ -13,16 +13,27 @@
 <script src="libs/select/select2.js"></script>
 <script>
 $(document).ready(function() {
-    function format(state) {
-    if (!state.id) return state.text; // optgroup
-    return "<img class='flag' src='assets/ss/0.jpg'/>" + state.text;
-    }
     $("#e1").select2({
-    formatResult: format,
-    formatSelection: format,
-    escapeMarkup: function(m) { return m; }
+		formatResult: format,
+		formatSelection: format,
+		escapeMarkup: function(m) { return m; }
     });
+	$("#e2").select2();
 });
+
+	function format(state) {
+    	//if (!state.id) return state.text; // optgroup
+		var str="";
+		switch(state.id){
+			case "0": str = "<i class='icon-my-zak'></i>";break;
+			case "1": str = "<i class='icon-leaf'></i>";break;
+			case "2": str = "<i class='icon-plane'></i>";break;
+			case "3": str = "<i class='icon-my-diez'></i>";break;
+			default: str = "<i class='icon-my-zak'></i>";break;
+		}
+    	return state.text+str;
+    }
+	
 </script>
   </head>
   <body>
@@ -56,37 +67,106 @@ $(document).ready(function() {
       <hr>
 
       <div class="row">
-        <div class="span1">
-          <h2>Экспресс-новости</h2>
-           <select id="e1">
-<option value="AL" data-foo="bar">Alabama</option>
-<option value="WY" data-foo="bar">Wyoming</option>
-</select>
+        <div id="express" class="span1">
+          <h3>Экспресс-новости</h3>
+          <div id="express-filter-box">
+          	  <span class="activeText narrowFont">Все</span>
+              <select id="e2" style="width:115px; float:right;">
+                    <option value="0" data-foo="bar2">Владивосток</option>
+                    <option value="1" data-foo="bar2">Москва</option>
+                    <option value="2" data-foo="bar2">Санкт-Петербург</option>
+                    <option value="3" data-foo="bar2">Нижний Новгород</option>
+                    <option value="4" data-foo="bar2">Владикавказ</option>
+                    <option value="5" data-foo="bar2">Грозный</option>
+               </select>
+               <select id="e1" style="width:100%;"> 
+                    <option value="0" data-foo="bar">Задержания</option>
+                    <option value="1" data-foo="bar">Политзаключенные</option>
+                    <option value="2" data-foo="bar">Политэммигранты</option>
+                    <option value="3" data-foo="bar">ЭкоУзник</option>
+               </select>
+          </div>
+          <h5>Сегодня</h5>
           <div class="new">
-              <h6>22:30 <span class="activeText">Москва</span><i class="icon-leaf"></i>
+              <h6>22:30 <span class="activeText">Москва</span><i class="icon-plane"></i><i class="icon-my-zak"></i>
               </h6>
               <p>У метро Войковская задержан активист раздовавший листовки<span class="activeText">...</span></p>
           </div>
           <div class="new">
-              <h6>22:30 <span class="activeText">Санкт-Петербург</span> | <span class="activeText">Политзаключенные</span>
+              <h6>11:19 <span class="activeText">Санкт-Петербург</span><i class="icon-leaf"></i>
               </h6>
               <p>Опубликован полный текст решения Конституционного суда по закону о митингах<span class="activeText">...</span></p>
           </div>
           <div class="new">
-              <h6>22:30 <span class="activeText">Владивосток</span> | <span class="activeText">Задержания</span>
+              <h6>17:23 <span class="activeText">Владивосток</span><i class="icon-my-zak"></i><i class="icon-my-diez"></i><i class="icon-leaf"></i>
               </h6>
               <p>Замглавы бурятского ФСИН подозревается в краже пожертвований пострадавшим в Крымске<span class="activeText">...</span></p>
           </div>
           <div class="new">
-              <h6>22:30 <span class="activeText">Владивосток</span> | <span class="activeText">Задержания</span>
+              <h6>14:23 <span class="activeText">Владивосток</span><i class="icon-plane"></i>
               </h6>
               <p>Ирина Карацуба и Елену Волкова отпущены из ОВД Хамовники<span class="activeText">...</span></p>
           </div>
           <div class="new">
-              <h6>22:30 <span class="activeText">Владивосток</span> | <span class="activeText">Задержания</span>
+              <h6>02:49 <span class="activeText">Владивосток</span><i class="icon-my-diez"></i><i class="icon-leaf"></i><i class="icon-plane"></i>
               </h6>
               <p>У Храма Христа спасителя задержаны ученые в балаклавах<span class="activeText">...</span></p>
           </div>
+          <hr />
+          <h5>Вчера</h5>
+          <div class="new">
+              <h6>22:30 <span class="activeText">Москва</span><i class="icon-plane"></i><i class="icon-my-zak"></i>
+              </h6>
+              <p>У метро Войковская задержан активист раздовавший листовки<span class="activeText">...</span></p>
+          </div>
+          <div class="new">
+              <h6>11:19 <span class="activeText">Санкт-Петербург</span><i class="icon-leaf"></i>
+              </h6>
+              <p>Опубликован полный текст решения Конституционного суда по закону о митингах<span class="activeText">...</span></p>
+          </div>
+          <div class="new">
+              <h6>17:23 <span class="activeText">Владивосток</span><i class="icon-my-zak"></i><i class="icon-my-diez"></i><i class="icon-leaf"></i>
+              </h6>
+              <p>Замглавы бурятского ФСИН подозревается в краже пожертвований пострадавшим в Крымске<span class="activeText">...</span></p>
+          </div>
+          <div class="new">
+              <h6>14:23 <span class="activeText">Владивосток</span><i class="icon-plane"></i>
+              </h6>
+              <p>Ирина Карацуба и Елену Волкова отпущены из ОВД Хамовники<span class="activeText">...</span></p>
+          </div>
+          <div class="new">
+              <h6>02:49 <span class="activeText">Владивосток</span><i class="icon-my-diez"></i><i class="icon-leaf"></i><i class="icon-plane"></i>
+              </h6>
+              <p>У Храма Христа спасителя задержаны ученые в балаклавах<span class="activeText">...</span></p>
+          </div>
+          <hr />
+          <h5>12.03.13</h5>
+          <div class="new">
+              <h6>22:30 <span class="activeText">Москва</span><i class="icon-plane"></i><i class="icon-my-zak"></i>
+              </h6>
+              <p>У метро Войковская задержан активист раздовавший листовки<span class="activeText">...</span></p>
+          </div>
+          <div class="new">
+              <h6>11:19 <span class="activeText">Санкт-Петербург</span><i class="icon-leaf"></i>
+              </h6>
+              <p>Опубликован полный текст решения Конституционного суда по закону о митингах<span class="activeText">...</span></p>
+          </div>
+          <div class="new">
+              <h6>17:23 <span class="activeText">Владивосток</span><i class="icon-my-zak"></i><i class="icon-my-diez"></i><i class="icon-leaf"></i>
+              </h6>
+              <p>Замглавы бурятского ФСИН подозревается в краже пожертвований пострадавшим в Крымске<span class="activeText">...</span></p>
+          </div>
+          <div class="new">
+              <h6>14:23 <span class="activeText">Владивосток</span><i class="icon-plane"></i>
+              </h6>
+              <p>Ирина Карацуба и Елену Волкова отпущены из ОВД Хамовники<span class="activeText">...</span></p>
+          </div>
+          <div class="new">
+              <h6>02:49 <span class="activeText">Владивосток</span><i class="icon-my-diez"></i><i class="icon-leaf"></i><i class="icon-plane"></i>
+              </h6>
+              <p>У Храма Христа спасителя задержаны ученые в балаклавах<span class="activeText">...</span></p>
+          </div>
+          <a href="#" rel="tooltip" data-placement="top" title="first tooltip">hover over me</a>
           <p><a class="btn" href="#">View details »</a></p>
         </div>
         <div class="span3">

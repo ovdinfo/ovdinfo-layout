@@ -27,6 +27,19 @@
   background-repeat: no-repeat;
   margin-top: 1px;
 }
+[class^="icon-my-"],
+[class*=" icon-my-"] {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  .ie7-restore-right-whitespace();
+  line-height: 14px;
+  vertical-align: text-top;
+  background-image: url("@{iconSpriteMyPath}");
+  background-position: 14px 14px;
+  background-repeat: no-repeat;
+  margin-top: 1px;
+}
 
 /* White icons with optional class, or on hover/focus/active states of certain elements */
 .icon-white,
@@ -195,3 +208,6 @@
 .icon-filter                  { background-position: -408px -144px; }
 .icon-briefcase               { background-position: -432px -144px; }
 .icon-fullscreen              { background-position: -456px -144px; }
+
+.icon-my-diez               { background-position: 0      0; }
+.icon-my-zak               { background-position: 0      -24px; }
