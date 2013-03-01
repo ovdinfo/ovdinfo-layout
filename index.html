@@ -12,7 +12,7 @@
     <script src="http://code.jquery.com/jquery.js"></script>
 <script src="libs/select/select2.js"></script>
 <script>
-$(document).ready(function() { $("#e1").select2(); });
+$(document).ready(function() {
     function format(state) {
     if (!state.id) return state.text; // optgroup
     return "<img class='flag' src='assets/ss/0.jpg'/>" + state.text;
@@ -22,6 +22,7 @@ $(document).ready(function() { $("#e1").select2(); });
     formatSelection: format,
     escapeMarkup: function(m) { return m; }
     });
+});
 </script>
   </head>
   <body>
