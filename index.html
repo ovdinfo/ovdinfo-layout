@@ -7,6 +7,22 @@
     <link rel="stylesheet/less" href="less/bootstrap.less">
     <script src="libs/less/less.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=PT+Mono|PT+Sans:400,400italic,700,700italic|PT+Sans+Caption:400,700|PT+Sans+Narrow:400,700|PT+Serif:400,400italic,700italic,700|PT+Serif+Caption:400,400italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css'>
+    <link href="libs/select/select2.css" rel="stylesheet"/>
+    
+    <script src="http://code.jquery.com/jquery.js"></script>
+<script src="libs/select/select2.js"></script>
+<script>
+$(document).ready(function() { $("#e1").select2(); });
+    function format(state) {
+    if (!state.id) return state.text; // optgroup
+    return "<img class='flag' src='assets/ss/0.jpg'/>" + state.text;
+    }
+    $("#e1").select2({
+    formatResult: format,
+    formatSelection: format,
+    escapeMarkup: function(m) { return m; }
+    });
+</script>
   </head>
   <body>
     <div class="container">
@@ -41,6 +57,10 @@
       <div class="row">
         <div class="span1">
           <h2>Экспресс-новости</h2>
+           <select id="e1">
+<option value="AL" data-foo="bar">Alabama</option>
+<option value="WY" data-foo="bar">Wyoming</option>
+</select>
           <div class="new">
               <h6>22:30 <span class="activeText">Москва</span><i class="icon-leaf"></i>
               </h6>
@@ -131,7 +151,6 @@
       </div>
 
     </div>
-    <script src="http://code.jquery.com/jquery.js"></script>
     <script src="libs/bootstrap/js/bootstrap.js"></script>
   </body>
 </html>
