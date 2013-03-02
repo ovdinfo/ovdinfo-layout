@@ -8,33 +8,7 @@
     <script src="libs/less/less.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=PT+Mono|PT+Sans:400,400italic,700,700italic|PT+Sans+Caption:400,700|PT+Sans+Narrow:400,700|PT+Serif:400,400italic,700italic,700|PT+Serif+Caption:400,400italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css'>
     <link href="libs/select/select2.css" rel="stylesheet"/>
-    
-<script>
-$(document).ready(function() {
-    $("#e1").select2({
-		formatResult: format,
-		formatSelection: format,
-		escapeMarkup: function(m) { return m; }
-    });
-	$("#e2").select2();
-	$("a[rel=tooltip]").tooltip();
-});
-
-	function format(state) {
-    	//if (!state.id) return state.text; // optgroup
-		var str="";
-		switch(state.id){
-			case "0": str = "<i class='icon-my-zak'></i>";break;
-			case "1": str = "<i class='icon-my-diez'></i>";break;
-			case "2": str = "<i class='icon-plane'></i>";break;
-			case "3": str = "<i class='icon-leaf'></i>";break;
-			default: str = "<i class='icon-my-zak'></i>";break;
-		}
-    	return state.text+str;
-    }
-	
-</script>
-  </head>
+	</head>
   <body>
     <div class="container">
 
@@ -238,5 +212,30 @@ $(document).ready(function() {
 		<script src="http://code.jquery.com/jquery.js"></script>
 		<script src="libs/select/select2.js"></script>
     <script src="libs/bootstrap/js/bootstrap.js"></script>
+		<script>
+$(document).ready(function() {
+    $("#e1").select2({
+		formatResult: format,
+		formatSelection: format,
+		escapeMarkup: function(m) { return m; }
+    });
+	$("#e2").select2();
+	$("[rel=tooltip]").tooltip();
+});
+
+	function format(state) {
+    	//if (!state.id) return state.text; // optgroup
+		var str="";
+		switch(state.id){
+			case "0": str = "<i class='icon-my-zak'></i>";break;
+			case "1": str = "<i class='icon-my-diez'></i>";break;
+			case "2": str = "<i class='icon-plane'></i>";break;
+			case "3": str = "<i class='icon-leaf'></i>";break;
+			default: str = "<i class='icon-my-zak'></i>";break;
+		}
+    	return state.text+str;
+    }
+	
+</script>
   </body>
 </html>
