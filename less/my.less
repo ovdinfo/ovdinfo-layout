@@ -81,3 +81,13 @@ hr {
 	padding: 10px;
 	margin-left: 20px
 }
+
+@ovdcolor:                #f04e23;
+
+@btnActionBackground:              @ovdcolor;
+@btnActionBackgroundHighlight:     lighten(@ovdcolor, 15%);
+
+.btn-action {
+  .buttonBackground(@btnActionBackground, @btnActionBackgroundHighlight);
+	text-transform: uppercase;
+}
