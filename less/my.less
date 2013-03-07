@@ -10,46 +10,71 @@ body {
 #mainCarousel {
 	//background-color: @backTextColor;
 	background: rgba(0, 0, 0, 0.75);
+	padding: 10px;
 }
 
 #mainCarousel img {
 	float: left;
-	padding: 15px 15px 40px 15px;
+	width:480px;
+	height: 320px;
+	border-radius:6px;
 }
 
 #mainCarousel .item .carousel-caption {
-	position: static;
-	height: 280px;
+	left: 510px;
+	height: 320px;
 	background: none;
+	width: 225px;
+	top:0px;
+	padding: 0px;
+}
+#mainCarousel .item .carousel-caption p{
+	line-height:18px;
+	font-weight:bold;
+	font-size:12px;
 }
 
 #mainCarousel .carousel-caption.general {
 	position: absolute;
-	top: 75%;
-	left: 15px;
+	top: 290px;
+	left: 10px;
 	bottom: 10%;
-	padding: 15px;
+	padding: 0px;
 	background: #333333;
 	background: rgba(0, 0, 0, 0.55);
-	width: 460px;
+	width: 480px;
+	height: 40px;
+	border-radius:6px;
+	line-height:20px;
+}
+#mainCarousel .carousel-caption.general .carousel-indicators{
+	top:6px;
+}
+
+#mainCarousel .carousel-caption.general .carousel-indicators li {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 4px;
+    height: 8px;
+    width: 8px;
 }
 
 #mainCarousel .carouselButtons {
 	position: absolute;
-	top: 88%;
-	left: 15px;
+	top: 310px;
+	left: 10px;
 }
 
 #mainCarousel .carouselButtons button {
 	font-size: 12px;
-	text-transform: uppercase;
 	letter-spacing: 0px;
-	padding: 4px 6px;
+	padding: 0px 11.5px;
 	font-weight: bold;
+	border-width:0px;
+	background: none repeat scroll 0 0 rgba(255, 255, 255, 0.85);
 }
 
 #mainCarousel .carouselButtons button.active {
-	background: #000;
+	background: none;
 	color: #fff;
 	box-shadow: none;
 }
@@ -146,6 +171,10 @@ hr {
 }
 
 // media //////////////////////////////////////////////////
+.media-item{
+	margin-bottom: 20px;
+	position: relative;
+}
 .media-item img{
 	float: left;
 	margin-right:20px;
@@ -154,7 +183,16 @@ hr {
 }
 .media-item .media-type{
 	float: right;
+	background-color:#555555;
+	position: absolute;
+	right:0px;
+	top:10px;
+	color: #ffffff;
+	padding-left:10px;
+	padding-right:10px;
+	text-decoration:underline;
 }
+
 // end media //////////////////////////////////////////////////
 a{
 	text-decoration:underline;
@@ -162,7 +200,13 @@ a{
 
 
 .carousel-caption .media-type.activeText {
- 	bottom: -10px;
+ 	bottom: 0px;
     position: absolute;
-    right: 20px;
+    right: 0px;
+	background-color:#fff;
+	color: #555;
+	padding-left:10px;
+	padding-right:10px;
+	line-height:20px;
+	text-decoration:underline;
 }
