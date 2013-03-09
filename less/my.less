@@ -7,6 +7,32 @@ body {
 	background-size: 256px 256px;
 }
 
+// header//////////////////////////////////
+.header{
+	margin-top:9px;
+	margin-bottom:9px;
+}
+.header .mainnav {
+	padding-top:1px;
+}
+.header .mainnav button{
+	margin-left:10px;
+}
+.header .select2-container{
+	margin-left:10px;
+}
+.btn-action {
+  .buttonBackground(@btnActionBackgroundHighlight, @btnActionBackground);
+	text-transform: uppercase;
+	/*top: 18px;*/
+	position: relative;
+	height:30px;
+	font-weight:bold;
+	width:225px;
+	margin-bottom:14px;
+}
+// end of header///////////////////////////
+
 #mainCarousel {
 	//background-color: @backTextColor;
 	background: rgba(0, 0, 0, 0.75);
@@ -136,8 +162,8 @@ hr {
 .select2-choice{
 	color: @activeTextColor !important;
 }
-.select2-container .select2-choice div b{
-	background-position: 0px -2px !important;
+.select2-choice div b{
+	background-position: 0px -3px !important;
 }
 
 .select2-container-active .select2-choice{
@@ -146,9 +172,9 @@ hr {
 .select2-input{
     border: 1px solid @activeTextColor !important;
 }
-.select2-container .select2-choice {
+.select2-choice {
     line-height: 20px !important;
-    height: 20px !important;
+    height: 18px !important;
 	margin-bottom: 10px;
 }
 
@@ -167,17 +193,9 @@ hr {
 	box-shadow: 0px 1px 1px rgba(0,0,0,.35);
 }
 
-@ovdcolor:                #f04e23;
 
-@btnActionBackground:              @ovdcolor;
-@btnActionBackgroundHighlight:     lighten(@ovdcolor, 15%);
 
-.btn-action {
-  .buttonBackground(@btnActionBackground, @btnActionBackgroundHighlight);
-	text-transform: uppercase;
-	top: 18px;
-	position: relative;
-}
+
 
 // media //////////////////////////////////////////////////
 .media-item{

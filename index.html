@@ -13,14 +13,32 @@
     <div class="container">
 			<div class="header">
 				<div class="row">
-      	<div class="branding span2">
-					<a href="/" class="brand"><img src="img/logo.png" alt="ovdinfo"></a>
+					<div class="branding span2">
+						<a href="/" class="brand"><img src="img/logo2.png" alt="ovdinfo"></a>
+					</div>
+					<div class="mainnav span2">
+						<div class="row">
+							<div class="span1">
+								<button href="#detentionReport" role="button" class="btn btn-action" data-toggle="modal">Сообщить о задержании</button>
+							</div>
+							<div class="span1">
+								<div style="float:right;font-weight:bold;">Вход</div>
+								<!--<button href="#detentionReport" role="button" class="btn btn-action" data-toggle="modal">Сообщить о задержании</button>-->
+							</div>
+							<div class="span2"><div style="margin-left:10px;">Задержано за последний месяц: 237 человек</div>
+								<!--<select id="e3" style="width:225px;">
+									<option value="0" data-foo="bar2">Владивосток</option>
+									<option value="1" data-foo="bar2">Москва</option>
+									<option value="2" data-foo="bar2">Санкт-Петербург</option>
+									<option value="3" data-foo="bar2">Нижний Новгород</option>
+									<option value="4" data-foo="bar2">Владикавказ</option>
+									<option value="5" data-foo="bar2">Грозный</option>
+							   </select>-->
+							</div>
+						</div>
+					</div>
 				</div>
-  			<div class="mainnav span1">
-					<button href="#detentionReport" role="button" class="btn btn-action" data-toggle="modal">Сообщить о задержании</button>
-				</div>
-				</div>
-    	</div>
+			</div>
         <div class="navbar navbar-fixed-bottom">
           <div class="navbar-inner">
             <div class="container">
@@ -39,7 +57,7 @@
           </div>
         </div><!-- /.navbar -->
 
-      <hr>
+      <!--<hr>-->
 
       <div class="row">
         <div class="span1">
@@ -47,7 +65,7 @@
           <h3>Экспресс-новости</h3>
           <div id="express-filter-box">
           	  <span class="narrowFont">Регион</span>
-              <select id="e2" style="width:150px; float:right;">
+              <select id="e2" style="width:150px;">
                     <option value="0" data-foo="bar2">Владивосток</option>
                     <option value="1" data-foo="bar2">Москва</option>
                     <option value="2" data-foo="bar2">Санкт-Петербург</option>
@@ -458,6 +476,8 @@ $(document).ready(function() {
 		escapeMarkup: function(m) { return m; }
     });
 	$("#e2").select2();
+	/*$("#e3").select2();*/
+	$("#s2id_e2 .select2-choice span").append("<i class='icon-my-zak'></i> +7(985)369-96-21");
 	$("[rel=tooltip]").tooltip();
 	$('#mainCarousel').carousel();
 });
