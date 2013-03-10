@@ -39,16 +39,47 @@
 					</div>
 				</div>
 			</div>
-        <div class="navbar navbar-fixed-bottom">
+		<div class="navbar-open navbar-fixed-bottom" id="bottom-menu-open">
+			<ul class="navbar-menu">
+				<li><a href="#">Статьи</a></li>
+				<li><a href="#">Новости</a></li>
+				<li><a href="#">Мнения</a></li>
+				<li><a href="#">Истории задержанных</a></li>
+			</ul>
+			<ul class="navbar-menu">
+				<li><a href="#">Политзаключенные</a></li>
+				<li><a href="#">Эко-узник</a></li>
+				<li><a href="#">Агора</a></li>
+			</ul>
+			<ul class="navbar-menu">
+				<li><a href="#" target="1">ОВД-files</a></li>
+				<li><a href="#" target="2">Карта ОВД</a></li>
+				<!--<li><a href="#">Трабл-шутер</a></li>
+				<li><a href="#">Кампании</a></li>-->
+			</ul>
+			<div class="service-block">
+				<img src="img/files.jpg">
+				<div class="service-description">ОВД-files - это платформа, которая благодаря Вашему участию помогает юристам и активистам искать фото- и видеодокументацию акций для последующей защиты задержанных в суде. С помощью ОВД-files Вы можете:
+1. Добавить видеоролики с Youtube
+2. Добавить фотоальбомы Flickr, Яндекс.Фотки и Picasa (Google+)
+3. Скачать  материалы в исходном качестве и использовать их в суде
+				</div>
+			</div>
+			<div class="service-block">
+				<img src="img/ovd.jpg">
+				<div class="service-description">На карте ОВД отмечены все отделы внутренних дел вашего города, теперь вы легко сможете попросить полицейского облезти вас в ближайший к вашему делу отдел.
+				</div>
+			</div>
+        </div>
+        <div class="navbar navbar-fixed-bottom" id="bottom-menu">
           <div class="navbar-inner">
             <div class="container">
               <ul class="nav">
-                <li class="active"><a href="#">Homeee</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Downloads</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <!--<li class="active"><a href="#">Homeee</a></li>-->
+                <li><a href="#">Медиа</a></li>
+                <li><a href="#">Контекст</a></li>
+                <li><a href="#">Сервисы</a></li>
+                <li><a href="#">О проекте</a></li>
               </ul>
 							<ul class="nav pull-right">
 								<button type="button" class="btn btn-danger">помочь проекту</button>
@@ -480,6 +511,33 @@ $(document).ready(function() {
 	$("#s2id_e2 .select2-choice span").append("<i class='icon-my-zak'></i> +7(985)369-96-21");
 	$("[rel=tooltip]").tooltip();
 	$('#mainCarousel').carousel();
+	$('#bottom-menu-open .service-block').css('display','none');
+	var overMenuFunc = function() {
+		$('#bottom-menu-open').css('display','block');
+	}
+	var outMenuFunc = function() {
+		$('#bottom-menu-open').css('display','none');
+	}
+	var overItemFunc = function(event) {
+		var id = $(event.target).attr('target');
+		if(id){
+			$('#bottom-menu-open .service-block:nth-of-type('+id+')').css('display','block');
+		}
+	}
+	var outItemFunc = function(event) {
+		var id = $(event.target).attr('target');
+		if(id){
+			$('#bottom-menu-open .service-block:nth-of-type('+id+')').css('display','none');
+		}
+	}
+	outMenuFunc();
+	$('#bottom-menu .container').mouseover(overMenuFunc);
+	$('#bottom-menu .container').mouseout(outMenuFunc);
+	$('#bottom-menu-open').mouseover(overMenuFunc);
+	$('#bottom-menu-open').mouseout(outMenuFunc);
+	$('#bottom-menu-open').click(outMenuFunc);
+	$('#bottom-menu-open ul li a').mouseover(overItemFunc);
+	$('#bottom-menu-open ul li a').mouseout(outItemFunc);
 });
 
 	function format(state) {
