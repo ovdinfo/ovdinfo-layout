@@ -44,17 +44,17 @@
 
 // Typography
 // -------------------------
-@sansFontFamily:        'PT Sans', sans-serif;
-@serifFontFamily:       'PT Serif', serif;
+@sansFontFamily:        'DenHaag230Pro','PT Sans', sans-serif;
+@serifFontFamily:       'DenHaagNarrow','PT Serif', serif;
 @monoFontFamily:        'PT Serif Caption', serif;
 
-@baseFontSize:          13px;
+@baseFontSize:          12px;
 @baseFontFamily:        @sansFontFamily;
 @baseLineHeight:        20px;
 @altFontFamily:         @serifFontFamily;
 
-@headingsFontFamily:    inherit; // empty to use BS default, @baseFontFamily
-@headingsFontWeight:    bold;    // instead of browser default, bold
+@headingsFontFamily:    @serifFontFamily;//inherit; // empty to use BS default, @baseFontFamily
+@headingsFontWeight:    600;//bold;    // instead of browser default, bold
 @headingsColor:         inherit; // empty to use BS default, @textColor
 
 
