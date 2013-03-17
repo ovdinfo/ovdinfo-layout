@@ -32,23 +32,62 @@ body {
 	margin-bottom:14px;
 }
 // end of header///////////////////////////
-
-#mainCarousel {
+// carousel new////////////////////////////
+#mainCarousel{
+	position:relative;
+	height:280px;
+	overflow:hidden;
+	border-radius:4px;
+	background: rgba(0, 0, 0, 0.75);
+}
+#mainCarousel .carousel-inner{
+	position:absolute;
+	left:265px;
+}
+#mainCarousel .btn-group{
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+#mainCarousel .btn-group button{
+	width:265px;
+	height:40px;
+	text-align:left;
+	border-radius: 0px;
+}
+#mainCarousel .btn-group button .carousel-indicators{
+	display:none;
+}
+#mainCarousel .btn-group button.active .carousel-indicators, #mainCarousel .btn-group button:hover .carousel-indicators{
+	display:block;
+}
+#mainCarousel .btn-group button .carousel-indicators li{
+	background: rgba(0, 0, 0, 0.75);
+}
+#mainCarousel .btn-group button .carousel-indicators i{
+	margin-top:-2px;
+}
+#mainCarousel .carousel-caption{
+	width:470px;
+	padding:10px;
+}
+// end of carousel new/////////////////////
+#mainCarouselOld {
 	//background-color: @backTextColor;
 	background: rgba(0, 0, 0, 0.75);
 	padding: 10px 0 10px 10px;
-}
-#mainCarousel .carousel-inner{
+	border-radius:4px 4px 0 0;
 }
 
-#mainCarousel img {
+
+#mainCarouselOld img {
 	float: left;
 	width:480px;
 	height: 320px;
-	border-radius:6px;
+	border-radius:4px;
 }
 
-#mainCarousel .item .carousel-caption {
+#mainCarouselOld .item .carousel-caption {
 	left: 510px;
 	height: 320px;
 	background: none;
@@ -56,12 +95,12 @@ body {
 	top:0px;
 	padding: 0px;
 }
-#mainCarousel .item .carousel-caption p{
+#mainCarouselOld .item .carousel-caption p{
 	font-weight:bold;
 	font-size:12px;
 }
 
-#mainCarousel .carousel-caption.general {
+#mainCarouselOld .carousel-caption.general {
 	position: absolute;
 	top: 290px;
 	left: 10px;
@@ -71,27 +110,27 @@ body {
 	background: rgba(0, 0, 0, 0.55);
 	width: 480px;
 	height: 40px;
-	border-radius:6px;
+	border-radius:4px;
 	line-height:20px;
 }
-#mainCarousel .carousel-caption.general .carousel-indicators{
+#mainCarouselOld .carousel-caption.general .carousel-indicators{
 	top:6px;
 }
 
-#mainCarousel .carousel-caption.general .carousel-indicators li {
+#mainCarouselOld .carousel-caption.general .carousel-indicators li {
     background-color: rgba(255, 255, 255, 0.25);
     border-radius: 4px;
     height: 8px;
     width: 8px;
 }
 
-#mainCarousel .carouselButtons {
+#mainCarouselOld .carouselButtons {
 	position: absolute;
 	top: 310px;
 	left: 10px;
 }
 
-#mainCarousel .carouselButtons button {
+#mainCarouselOld .carouselButtons button {
 	font-family: @serifFontFamily;
 	font-size: 11px;
 	letter-spacing: 0px;
@@ -101,13 +140,13 @@ body {
 	background: none repeat scroll 0 0 rgba(255, 255, 255, 0.85);
 }
 
-#mainCarousel .carouselButtons button.active {
+#mainCarouselOld .carouselButtons button.active {
 	background: none;
 	color: #fff;
 	box-shadow: none;
 }
 
-#mainCarousel .media-type.activeText {
+#mainCarouselOld .media-type.activeText {
  	bottom: 0px;
     position: absolute;
     right: -10px;
@@ -117,7 +156,7 @@ body {
 	padding-right:10px;
 	line-height:20px;
 	text-decoration:underline;
-	border-radius:6px 0 0 6px;
+	border-radius:4px 0 0 4px;
 }
 /////////////////////////
 
@@ -166,6 +205,7 @@ hr {
 }
 #express{
 	position:relative;
+	border-radius:4px 4px 0 0;
 }
 // select2
 .select2-choice, .select2-results{
@@ -199,6 +239,7 @@ hr {
 }
 
 #express {
+
 	
 }
 .simple-back{
@@ -234,10 +275,10 @@ hr {
 	padding-left:10px;
 	padding-right:10px;
 	text-decoration:underline;
-	border-radius:6px 0 0 6px;
+	border-radius:4px 0 0 4px;
 }
 .media-item .links div{
-	border-radius:6px;
+	border-radius:4px;
 	background: #F0F0F0;
 	margin:0 10px 0 10px;
 	width:230px;
