@@ -377,10 +377,17 @@
 
       if (this.$indicators.length) {
         var $prevIndicator = this.$indicators.find('.active')
+      	this.$items = $next.parent().children()
+		//alert(this.$items.index($next));
+		//alert($(that.$indicators.children()[this.$items.index($next)]).parent().attr('id'));
+		//alert($prevIndicator.parent().attr('id'));
 		$prevIndicator.removeClass('active')
-		$prevIndicator.parent().parent().removeClass('active')
-		$prevIndicator.parent().find("i").removeClass('icon-white')
+		if($prevIndicator.parent().has($(that.$indicators.children()[this.$items.index($next)])).length != 1){
+			$prevIndicator.parent().parent().removeClass('active')
+			$prevIndicator.parent().find("i").removeClass('icon-white')
+		}
         this.$element.one('slid', function () {
+		//alert(that.getActiveIndex());
           var $nextIndicator = $(that.$indicators.children()[that.getActiveIndex()])
           $nextIndicator && $nextIndicator.addClass('active')
 		  $nextIndicator.parent().parent().addClass('active')

@@ -46,6 +46,15 @@ body {
 	top:10px;
 	width:480px;//470px;
 	height:260px;
+	font-weight:bold;
+	font-size:12px;
+}
+#mainCarousel .carousel-inner:hover{
+	left:9px;//275px;
+	top:9px;
+	border: 1px solid #ff0000;
+}
+#mainCarousel .item:hover{
 }
 #mainCarousel .btn-group{
 	position:absolute;
@@ -77,6 +86,12 @@ body {
 	position:absolute;
 	//right:10px;
 	left:10px;
+	text-shadow:none;
+	text-decoration:none;
+	text-transform:uppercase;
+}
+#mainCarousel .btn-group .btn a:hover{
+	text-decoration:underline;
 }
 #mainCarousel .btn-group .btn.active a{
 	color:#ffffff;
@@ -92,9 +107,12 @@ body {
 	opacity: 1;
 }
 #mainCarousel .carousel-caption{
-	width:480px;
-	padding:5px 0 5px 0;
+	width:460px;
+	padding:5px 10px 5px 10px;
 	bottom:14px;
+}
+#mainCarousel .carousel-caption h4{
+	margin:0 0 5px 0;
 }
 // end of carousel new/////////////////////
 #mainCarouselOld {
@@ -299,8 +317,12 @@ hr {
 	color: #ffffff;
 	padding-left:10px;
 	padding-right:10px;
-	text-decoration:underline;
+	text-transform:uppercase;
+	text-decoration:none;
 	border-radius:4px 0 0 4px;
+}
+.media-item .media-type:hover{
+	text-decoration:underline;
 }
 .media-item .links div{
 	border-radius:4px;
