@@ -42,14 +42,14 @@ body {
 }
 #mainCarousel .carousel-inner{
 	position:absolute;
-	left:275px;
+	left:10px;//275px;
 	top:10px;
-	width:470px;
+	width:480px;//470px;
 	height:260px;
 }
 #mainCarousel .btn-group{
 	position:absolute;
-	left:0px;
+	left:500px;
 	top:0px;
 }
 #mainCarousel .btn-group div.btn {
@@ -70,6 +70,16 @@ body {
 #mainCarousel .btn-group .btn .carousel-indicators{
 	display:none;
 	top: 12px;
+	//left:10px;
+	right:20px;
+}
+#mainCarousel .btn-group .btn a{
+	position:absolute;
+	//right:10px;
+	left:10px;
+}
+#mainCarousel .btn-group .btn.active a{
+	color:#ffffff;
 }
 #mainCarousel .btn-group .btn.active .carousel-indicators, #mainCarousel .btn-group .btn:hover .carousel-indicators{
 	display:block;
@@ -82,8 +92,9 @@ body {
 	opacity: 1;
 }
 #mainCarousel .carousel-caption{
-	width:470px;
-	padding:10px;
+	width:480px;
+	padding:5px 0 5px 0;
+	bottom:14px;
 }
 // end of carousel new/////////////////////
 #mainCarouselOld {
