@@ -6,6 +6,10 @@ body {
 	background-image: url(../img/main-bgd.png);
 	background-size: 256px 256px;
 }
+a{
+	color:@textColor;
+	text-decoration:underline;
+}
 
 // header//////////////////////////////////
 .header{
@@ -81,7 +85,7 @@ body {
     padding: 0 0 0 0px;
     text-align: left;
     width: 243px;
-	background-image: linear-gradient(to bottom, #EEEEEE, #EEEEEE);
+	background-image: linear-gradient(to bottom, @elementsBackgroundColor, @elementsBackgroundColor);
 	cursor:default;
 }
 #mainCarousel .btn-group .btn.active{
@@ -108,7 +112,7 @@ body {
 }
 #mainCarousel .btn-group .btn .carousel-indicators{
 	display:none;
-	top: 9px;
+	top: 10px;
 	//left:10px;
 	right:5px;
 }
@@ -229,7 +233,8 @@ body {
 }
 
 .narrowFont{
-	font-family: @narrowFontFamily;
+	font-family: @serifFontFamily;
+	font-weight:200;
 }
 
 h6 {
@@ -244,22 +249,27 @@ i {
 
 h5 {
 	margin-bottom: -10px;
-	margin-top: 20px;
+	margin-top: 0px;
 }
 
 hr {
 	border-color: #eeeeee;
+	margin: 14px 0;
 }
 
+
+#express{
+	position:relative;
+	border-radius:4px 4px 0 0;
+}
 #express h3{
-	margin-top: 0px;
-	margin-bottom: 110px;
+	margin-top: 2px;
+	margin-bottom: 108px;
 	line-height:20px;
 }
-
 #express-filter-box {
-	background-color: #EEEEEE;
-	padding: 10px;
+	background-color: @elementsBackgroundColor;
+	padding: 14px 10px;
 	height: 55px;
 	line-height:20px;
     position: absolute;
@@ -267,13 +277,18 @@ hr {
     top: 40px;
 	width:215px;
 }
-#express{
-	position:relative;
-	border-radius:4px 4px 0 0;
+#express-filter-box div{
+	height: 20px;
+    margin-bottom: 14px;
+}
+#express-filter-box .caption{
+	color: @passiveTextColorForBack;
+	float:left;
 }
 // select2
 .select2-choice, .select2-results{
-	font-family: @narrowFontFamily;
+	font-family: @serifFontFamily;
+	font-weight:200;
 }
 .select2-results .select2-highlighted {
     background: @activeBackColor !important;
@@ -281,6 +296,8 @@ hr {
 }
 .select2-choice{
 	color: @activeTextColor !important;
+    line-height: 20px !important;
+    height: 20px !important;
 }
 .select2-choice div b{
 	background-position: 0px -3px !important;
@@ -291,11 +308,6 @@ hr {
 }
 .select2-input{
     border: 1px solid @activeTextColor !important;
-}
-.select2-choice {
-    line-height: 20px !important;
-    height: 18px !important;
-	margin-bottom: 10px;
 }
 
 #express .select2-container{
@@ -313,9 +325,6 @@ hr {
 	-moz-box-shadow: 0px 1px 1px rgba(0,0,0,.35);
 	box-shadow: 0px 1px 1px rgba(0,0,0,.35);
 }
-
-
-
 
 
 // media //////////////////////////////////////////////////
@@ -339,23 +348,56 @@ hr {
 	padding-left:10px;
 	padding-right:10px;
 	text-transform:uppercase;
-	text-decoration:none;
 	border-radius:4px 0 0 4px;
 }
-.media-item .media-type:hover{
-	text-decoration:underline;
+
+.media-item .links{
+	margin-top:10px;
+}
+.media-item .links.first{
+	margin-top:10px;
 }
 .media-item .links div{
 	border-radius:4px;
-	background: #F0F0F0;
-	margin:0 10px 0 10px;
-	width:230px;
+	background: @elementsBackgroundColor;
+	margin:0 0px 0 10px;
+	width:480px;
+}
+.media-item .links div.dan{
+	width:235px;
+}
+.media-item a{
+	text-decoration:none;
+}
+.media-item a:hover{
+	text-decoration:underline;
+}
+.media-item .addlinks{
+    color: @passiveTextColorForBack;
+	font-family:@serifFontFamily;
+	font-weight:200;
+}
+.media-item .addlinks:hover{
+    color: @textColor;
+}
+.media-item .addlinks i{
+	opacity:0.5;
+	margin: 1px 10px 0 10px;
+	float:none;
+}
+.media-item .addlinks i.icon-arrow-right{
+	margin-top: 2px;
+	float:right;
+	opacity:0.25;
+}
+.media-item .addlinks:hover i{
+    opacity:1;
+}
+.media-item .addlinks:hover div{
+	text-decoration:underline;
 }
 
 // end media //////////////////////////////////////////////////
-a{
-	text-decoration:underline;
-}
 
 
 .twi{

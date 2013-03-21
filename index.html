@@ -95,23 +95,26 @@
           <div id="express" class="simple-back">
           <h3>Экспресс-новости</h3>
           <div id="express-filter-box">
-          	  <span>Регион</span>
-              <select id="e2" style="width:150px;">
-                    <option value="0" data-foo="bar2">Владивосток</option>
-                    <option value="1" data-foo="bar2">Москва</option>
-                    <option value="2" data-foo="bar2">Санкт-Петербург</option>
-                    <option value="3" data-foo="bar2">Нижний Новгород</option>
-                    <option value="4" data-foo="bar2">Владикавказ</option>
-                    <option value="5" data-foo="bar2">Грозный</option>
-               </select>
-               <hr style="ffffff;margin:5px;">
-               <span>Тематика</span>
-               <select id="e1" style="width:150px;"> 
-                    <option value="0" data-foo="bar">Задержания</option>
-                    <option value="1" data-foo="bar">Политзаключенные</option>
-                    <option value="2" data-foo="bar">Политэммигранты</option>
-                    <option value="3" data-foo="bar">ЭкоУзник</option>
-               </select>
+          	  <div>
+                  <span class="caption">Регион</span>
+                  <select id="e2" style="width:150px;">
+                        <option value="0" data-foo="bar2">Владивосток</option>
+                        <option value="1" data-foo="bar2">Москва</option>
+                        <option value="2" data-foo="bar2">Санкт-Петербург</option>
+                        <option value="3" data-foo="bar2">Нижний Новгород</option>
+                        <option value="4" data-foo="bar2">Владикавказ</option>
+                        <option value="5" data-foo="bar2">Грозный</option>
+                   </select>
+               </div>
+               <div>
+                   <span class="caption">Тематика</span>
+                   <select id="e1" style="width:150px;"> 
+                        <option value="0" data-foo="bar">Задержания</option>
+                        <option value="1" data-foo="bar">Политзаключенные</option>
+                        <option value="2" data-foo="bar">Политэммигранты</option>
+                        <option value="3" data-foo="bar">ЭкоУзник</option>
+                   </select>
+               </div>
           </div>
           <h5>Сегодня</h5>
           <div class="new">
@@ -408,68 +411,90 @@
                                 <img alt="" src="assets/ss/0.jpg">
                                 <span>20.02 - 20:13 | <a href="">Даиси Синделар (Daisy Sindelar)</a></span>
                                 <a class="media-type" href="/">Статьи</a>
-                                <h4>Что такое политический заключенный?</h4>
-                                <div>Единого стандарта для определения термина "политический заключенный" не существует и международные организации и государства не всегда приходят к согласию. Корреспондент RFE/RL Даиси Синделар (Daisy Sindelar) рассказывает о попытках выработать единое определение<span class="activeText">...</span></div>
-																<div class="row links" style="
-    margin-top: 15px;
-">
-																	<div class="span1"><a class="addlinks" href="#" style="
-    text-decoration: none;
-    color: #707070;
-    font-size: 13px;
-"><i class="icon-plus icon-white" style="float:none;"></i> версия Amnesty International</a></div>
-																	<div class="span1" style="margin-right:0px;"><a class="addlinks" href="#" style="
-    text-decoration: none;
-    color: #707070;
-    font-size: 13px;
-"><i class="icon-plus icon-white" style="float:none;"></i> версия Human Rights Watch</a></div>
-																</div>
-																<div class="row links" style="
-    margin-top: 10px;
-">
-																	<div class="span1"><a class="addlinks" href="#" style="
-    text-decoration: none;
-    color: #707070;
-    font-size: 13px;
-"><i class="icon-list-alt icon-white" style="float:none;"></i> досье полтизаключенных</a></div>
-																	<div class="span1" style="margin-right:0px;"><a class="addlinks" href="#" style="
-    text-decoration: none;
-    color: #707070;
-    font-size: 13px;
-"><i class="icon-gift icon-white" style="float:none;"></i> чем им можно помочь</a></div>
-															</div>
+                                <a href="/">
+                                    <h4>Что такое политический заключенный?</h4>
+                                    <div>Единого стандарта для определения термина "политический заключенный" не существует и международные организации и государства не всегда приходят к согласию. Корреспондент RFE/RL Даиси Синделар (Daisy Sindelar) рассказывает о попытках выработать единое определение<span class="activeText">...</span></div>
+                                </a>
+								<div class="row links first">
+									<a class="addlinks" href="#">
+                                    	<div class="span1 dan">                                    	
+                                    		<i class="icon-plus"></i> версия Amnesty International
+                                        </div>
+                                    </a>
+                                    <a class="addlinks" href="#">
+										<div class="span1 dan" style="margin-right:0px;">
+                                        	<i class="icon-plus"></i> версия Human Rights Watch
+                                        </div>
+                                    </a>
+								</div>
+								<div class="row links">
+                                   	<a class="addlinks" href="#">
+                                		<div class="span1 dan">
+                                        	<i class="icon-list-alt"></i> досье полтизаключенных
+                                        </div>
+                                    </a>
+                                   	<a class="addlinks" href="#">
+										<div class="span1 dan" style="margin-right:0px;">
+                                        	<i class="icon-gift"></i> чем им можно помочь
+                                        </div>
+                                    </a>
+								</div>
                           </div>
                           <!--<hr />-->
                           <div class="media-item simple-back">
                                 <img alt="" src="assets/ss/1.jpg">
                                 <span>17.04 - 16:28</span>
                                 <a class="media-type" href="/">Мнения</a>
-                                <h4>Потемкинская деревня на проверку</h4>
-                                <div>26 января активисты правозащитных организаций провели День проверки отделений и посетили отделения полиции в 14 городах России. Участники остались довольны и акцией, и полицией, но у московских активистов сложилось впечатление, что полиция была готова к их визиту: в ОВД не обнаружилось ни значимых нарушений, ни задержанных<span class="activeText">...</span></div>
+                                <a href="/">
+                                	<h4>Потемкинская деревня на проверку</h4>
+                                	<div>26 января активисты правозащитных организаций провели День проверки отделений и посетили отделения полиции в 14 городах России. Участники остались довольны и акцией, и полицией, но у московских активистов сложилось впечатление, что полиция была готова к их визиту: в ОВД не обнаружилось ни значимых нарушений, ни задержанных<span class="activeText">...</span></div>
+                                </a>
+                                <div class="row links first">
+                                   	<a class="addlinks" href="#">
+                                		<div class="span2">
+                                        	<i class="icon-list-alt"></i> досье полтизаключенных
+                                        	<i class="icon-arrow-right"></i>
+                                        </div>
+                                    </a>
+								</div>
+                                <div class="row links first">
+                                   	<a class="addlinks" href="#">
+										<div class="span2" style="margin-right:0px;">
+                                        	<i class="icon-gift"></i> чем им можно помочь
+                                        	<i class="icon-arrow-right"></i>
+                                        </div>
+                                    </a>
+								</div>
                           </div>
                           <!--<hr />-->
                           <div class="media-item simple-back">
                                 <img alt="" src="assets/ss/2.jpg">
                                 <span>21.05 - 20:13 | <a href="">Юлия Башинова</a></a>
                                 <a class="media-type" href="/">Истории задержанных</a>
-                                <h4>Список задержанных 15 декабря</h4>
-                                <div>ОВД-Инфо запускает новый сервис ОВД-files, который позволит юристам и активистам быстро находить фото- и видеоматериалы для доказательства собственной невиновности в судах. Новый сервис позволит существенно укрепить и облегчить правовую защиту задержанных<span class="activeText">...</span></div>
+                                <a href="/">
+                                	<h4>Список задержанных 15 декабря</h4>
+                                	<div>ОВД-Инфо запускает новый сервис ОВД-files, который позволит юристам и активистам быстро находить фото- и видеоматериалы для доказательства собственной невиновности в судах. Новый сервис позволит существенно укрепить и облегчить правовую защиту задержанных<span class="activeText">...</span></div>
+                                </a>
                           </div>
                           <!--<hr />-->
                           <div class="media-item simple-back">
                                 <img alt="" src="assets/ss/3.jpg">
                                 <span>19.11 - 20:13 | <a href="">Даиси Синделар (Daisy Sindelar)</a></span>
                                 <a class="media-type" href="/">Статьи</a>
-                                <h4>ОВД-files: доказательства невиновности</h4>
-                                <div>На Триумфальной площади 31 августа в ходе традиционной акции "Стратегия-31" начались задержания. На данный момент задержано 36 человек<span class="activeText">...</span></div>
+                                <a href="/">
+                                	<h4>ОВД-files: доказательства невиновности</h4>
+                                	<div>На Триумфальной площади 31 августа в ходе традиционной акции "Стратегия-31" начались задержания. На данный момент задержано 36 человек<span class="activeText">...</span></div>
+                                </a>
                           </div>
                           <!--<hr />-->
                           <div class="media-item simple-back">
                                 <img alt="" src="assets/ss/0.jpg">
                                 <span>23.42 - 20:13 | <a href="">Даиси Синделар (Daisy Sindelar)</a></span>
                                 <a class="media-type" href="/">Мнения</a>
-                                <h4>Триумфальная площадь, 31 июля: список задержанных</h4>
-                                <div>В Москве задержано 69 человек в ходе несогласованной с мэрией города акции "Марш свободы". Мы публикуем список задержанных людей<span class="activeText">...</span></div>
+                                <a href="/">
+                                	<h4>Триумфальная площадь, 31 июля: список задержанных</h4>
+                                	<div>В Москве задержано 69 человек в ходе несогласованной с мэрией города акции "Марш свободы". Мы публикуем список задержанных людей<span class="activeText">...</span></div>
+                                </a>
                                 <div><a href="">26 января активисты правозащитных орг</a></div>
                                 <div><a href="">ОВД-Инфо запускает новый сервис ОВД-file</a></div>
                           </div>
@@ -478,64 +503,80 @@
                                 <img alt="" src="assets/ss/1.jpg">
                                 <span>17.04 - 16:28</span>
                                 <a class="media-type" href="/">Мнения</a>
-                                <h4>Потемкинская деревня на проверку</h4>
-                                <div>26 января активисты правозащитных организаций провели День проверки отделений и посетили отделения полиции в 14 городах России. Участники остались довольны и акцией, и полицией, но у московских активистов сложилось впечатление, что полиция была готова к их визиту: в ОВД не обнаружилось ни значимых нарушений, ни задержанных<span class="activeText">...</span></div>
+                                <a href="/">
+                                	<h4>Потемкинская деревня на проверку</h4>
+                                	<div>26 января активисты правозащитных организаций провели День проверки отделений и посетили отделения полиции в 14 городах России. Участники остались довольны и акцией, и полицией, но у московских активистов сложилось впечатление, что полиция была готова к их визиту: в ОВД не обнаружилось ни значимых нарушений, ни задержанных<span class="activeText">...</span></div>
+                                </a>
                           </div>
                           <!--<hr />-->
                           <div class="media-item simple-back">
                                 <img alt="" src="assets/ss/2.jpg">
                                 <span>21.05 - 20:13 | <a href="">Юлия Башинова</a></span>
                                 <a class="media-type" href="/">Истории задержанных</a>
-                                <h4>Список задержанных 15 декабря</h4>
-                                <div>ОВД-Инфо запускает новый сервис ОВД-files, который позволит юристам и активистам быстро находить фото- и видеоматериалы для доказательства собственной невиновности в судах. Новый сервис позволит существенно укрепить и облегчить правовую защиту задержанных<span class="activeText">...</span></div>
+                                <a href="/">
+                                	<h4>Список задержанных 15 декабря</h4>
+                                	<div>ОВД-Инфо запускает новый сервис ОВД-files, который позволит юристам и активистам быстро находить фото- и видеоматериалы для доказательства собственной невиновности в судах. Новый сервис позволит существенно укрепить и облегчить правовую защиту задержанных<span class="activeText">...</span></div>
+                                </a>
                           </div>
                           <!--<hr />-->
                           <div class="media-item simple-back">
                                 <img alt="" src="assets/ss/3.jpg">
                                 <span>19.11 - 20:13 | <a href="">Даиси Синделар (Daisy Sindelar)</a></span>
                                 <a class="media-type" href="/">Статьи</a>
-                                <h4>ОВД-files: доказательства невиновности</h4>
-                                <div>На Триумфальной площади 31 августа в ходе традиционной акции "Стратегия-31" начались задержания. На данный момент задержано 36 человек<span class="activeText">...</span></div>
+                                <a href="/">
+                                	<h4>ОВД-files: доказательства невиновности</h4>
+                                	<div>На Триумфальной площади 31 августа в ходе традиционной акции "Стратегия-31" начались задержания. На данный момент задержано 36 человек<span class="activeText">...</span></div>
+                                </a>
                           </div>
                           <!--<hr />-->
                           <div class="media-item simple-back">
                                 <img alt="" src="assets/ss/0.jpg">
                                 <span>23.42 - 20:13 | <a href="">Даиси Синделар (Daisy Sindelar)</a></span>
                                 <a class="media-type" href="/">Мнения</a>
-                                <h4>Триумфальная площадь, 31 июля: список задержанных</h4>
-                                <div>В Москве задержано 69 человек в ходе несогласованной с мэрией города акции "Марш свободы". Мы публикуем список задержанных людей<span class="activeText">...</span></div>
+                                <a href="/">
+                                	<h4>Триумфальная площадь, 31 июля: список задержанных</h4>
+                                	<div>В Москве задержано 69 человек в ходе несогласованной с мэрией города акции "Марш свободы". Мы публикуем список задержанных людей<span class="activeText">...</span></div>
+                                </a>
                           </div>
                           <!--<hr />-->
                           <div class="media-item simple-back">
                                 <img alt="" src="assets/ss/1.jpg">
                                 <span>17.04 - 16:28</span>
                                 <a class="media-type" href="/">Мнения</a>
-                                <h4>Потемкинская деревня на проверку</h4>
-                                <div>26 января активисты правозащитных организаций провели День проверки отделений и посетили отделения полиции в 14 городах России. Участники остались довольны и акцией, и полицией, но у московских активистов сложилось впечатление, что полиция была готова к их визиту: в ОВД не обнаружилось ни значимых нарушений, ни задержанных<span class="activeText">...</span></div>
+                                <a href="/">
+                                	<h4>Потемкинская деревня на проверку</h4>
+                                	<div>26 января активисты правозащитных организаций провели День проверки отделений и посетили отделения полиции в 14 городах России. Участники остались довольны и акцией, и полицией, но у московских активистов сложилось впечатление, что полиция была готова к их визиту: в ОВД не обнаружилось ни значимых нарушений, ни задержанных<span class="activeText">...</span></div>
+                                </a>
                           </div>
                           <!--<hr />-->
                           <div class="media-item simple-back">
                                 <img alt="" src="assets/ss/2.jpg">
                                 <span>21.05 - 20:13 | <a href="">Юлия Башинова</a></span>
                                 <a class="media-type" href="/">Истории задержанных</a>
-                                <h4>Список задержанных 15 декабря</h4>
-                                <div>ОВД-Инфо запускает новый сервис ОВД-files, который позволит юристам и активистам быстро находить фото- и видеоматериалы для доказательства собственной невиновности в судах. Новый сервис позволит существенно укрепить и облегчить правовую защиту задержанных<span class="activeText">...</span></div>
+                                <a href="/">
+                                    <h4>Список задержанных 15 декабря</h4>
+                                    <div>ОВД-Инфо запускает новый сервис ОВД-files, который позволит юристам и активистам быстро находить фото- и видеоматериалы для доказательства собственной невиновности в судах. Новый сервис позволит существенно укрепить и облегчить правовую защиту задержанных<span class="activeText">...</span></div>
+                                </a>
                           </div>
                           <!--<hr />-->
                           <div class="media-item simple-back">
                                 <img alt="" src="assets/ss/3.jpg">
                                 <span>19.11 - 20:13 | <a href="">Даиси Синделар (Daisy Sindelar)</a></span>
                                 <a class="media-type" href="/">Статьи</a>
-                                <h4>ОВД-files: доказательства невиновности</h4>
-                                <div>На Триумфальной площади 31 августа в ходе традиционной акции "Стратегия-31" начались задержания. На данный момент задержано 36 человек<span class="activeText">...</span></div>
+                                <a href="/">
+                                	<h4>ОВД-files: доказательства невиновности</h4>
+                                	<div>На Триумфальной площади 31 августа в ходе традиционной акции "Стратегия-31" начались задержания. На данный момент задержано 36 человек<span class="activeText">...</span></div>
+                                </a>
                           </div>
                           <!--<hr />-->
                           <div class="media-item simple-back">
                                 <img alt="" src="assets/ss/0.jpg">
                                 <span>23.42 - 20:13 | <a href="">Даиси Синделар (Daisy Sindelar)</a></span>
                                 <a class="media-type" href="/">Мнения</a>
-                                <h4>Триумфальная площадь, 31 июля: список задержанных</h4>
-                                <div>В Москве задержано 69 человек в ходе несогласованной с мэрией города акции "Марш свободы". Мы публикуем список задержанных людей<span class="activeText">...</span></div>
+                                <a href="/">
+                               		<h4>Триумфальная площадь, 31 июля: список задержанных</h4>
+                                	<div>В Москве задержано 69 человек в ходе несогласованной с мэрией города акции "Марш свободы". Мы публикуем список задержанных людей<span class="activeText">...</span></div>
+                                </a>
                           </div>
                        <!--</div>-->
                     </div>
