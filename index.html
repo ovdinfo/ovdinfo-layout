@@ -408,9 +408,9 @@
                       <!--<div class="simple-back">-->
                           <div class="media-item simple-back">
                                 <img alt="" src="assets/ss/0.jpg">
-                                <span>20.02 - 20:13 | <a href="">Даиси Синделар (Daisy Sindelar)</a></span>
+                                <span class="authored">20.02 - 20:13 | <a href="">Даиси Синделар (Daisy Sindelar)</a></span>
                                 <a class="media-type" href="/">Статьи</a>
-                                <a href="/">
+                                <a class="article" href="/">
                                     <h4>Что такое политический заключенный?</h4>
                                     <div>Единого стандарта для определения термина "политический заключенный" не существует и международные организации и государства не всегда приходят к согласию. Корреспондент RFE/RL Даиси Синделар (Daisy Sindelar) рассказывает о попытках выработать единое определение<span class="activeText">...</span></div>
                                 </a>
@@ -673,6 +673,7 @@
 		</div>
 
 		<script src="http://code.jquery.com/jquery.js"></script>
+		<script src="libs/jquery.color.min.js"></script>
 		<script src="libs/select/select2.js"></script>
     <script src="libs/bootstrap/js/bootstrap.js"></script>
 		<script>
@@ -727,6 +728,14 @@ $(document).ready(function() {
 		}
     	return state.text+str;
     }
+$('div.media-item').hover(function() {
+		$(this).animate({ backgroundColor: "#000" }, 400);
+		$(this).children('a.article').animate({ color: "#fff" }, 400);
+},function(){
+		$(this).animate({ backgroundColor: "#fff" }, 400);
+		$(this).children('a.article').animate({ color: "#000" }, 400);		
+});
+
 	
 </script>
   </body>
