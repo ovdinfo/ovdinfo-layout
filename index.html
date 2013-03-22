@@ -401,7 +401,7 @@
   								</ul>
 								</div>
             </div>-->
-			<div id="tablo">Задержано за последний месяц: 237 человек
+			<div id="tablo" class="activeText">Задержано за последний месяц: 237 человек
             </div>
             <div class="row">
                     <div class="span2">
@@ -676,8 +676,8 @@
 		<script src="libs/jquery.color.min.js"></script>
 		<script src="libs/jquery.hoverIntent.minified.js"></script>
 		<script src="libs/select/select2.js"></script>
-    <script src="libs/bootstrap/js/bootstrap.js"></script>
     <script src="libs/TweenMax.min.js"></script>
+    <script src="libs/bootstrap/js/bootstrap.js"></script>
 		<script>
 $(document).ready(function() {
     $("#e1").select2({
@@ -687,6 +687,9 @@ $(document).ready(function() {
     });
 	$("#e2").select2();
 	$("#e3").select2();
+	$('#e3').change(function() {
+		alert($("#s2id_e3 span").append("+7(985)369-96-21"));
+	});
 	$("[rel=tooltip]").tooltip();
 	$('#mainCarousel').carousel();
 	$('#bottom-menu-open .service-block').css('display','none');
