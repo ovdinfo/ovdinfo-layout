@@ -677,6 +677,7 @@
 		<script src="libs/jquery.hoverIntent.minified.js"></script>
 		<script src="libs/select/select2.js"></script>
     <script src="libs/bootstrap/js/bootstrap.js"></script>
+    <script src="libs/TweenMax.min.js"></script>
 		<script>
 $(document).ready(function() {
     $("#e1").select2({
@@ -730,12 +731,19 @@ $(document).ready(function() {
     	return state.text+str;
     }
 $('div.media-item').hoverIntent(function() {
-		$(this).animate({ backgroundColor: "#000" }, 400);
+		TweenMax.to($(this), 0.4, {backgroundColor:"rgba(0, 0, 0, 0.75)"});
+		TweenMax.to($(this).children('a.article'), 0.4, {color:"#fff"});
+},function(){
+		TweenMax.to($(this), 0.4, {backgroundColor:"#fff"});
+		TweenMax.to($(this).children('a.article'), 0.4, {color:0});		
+});
+	//$(this).animate({ backgroundColor: "#000" }, 400)
+		/*$(this).animate({ backgroundColor: "#000" }, 400);
 		$(this).children('a.article').animate({ color: "#fff" }, 400);
 },function(){
 		$(this).animate({ backgroundColor: "#fff" }, 400);
-		$(this).children('a.article').animate({ color: "#000" }, 400);		
-});
+		$(this).children('a.article').animate({ color: "#000" }, 400);
+});*/
 
 	
 </script>
