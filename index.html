@@ -401,7 +401,7 @@
   								</ul>
 								</div>
             </div>-->
-			<div class="tablo">Задержано за последний месяц: 237 человек
+			<div id="tablo">Задержано за последний месяц: 237 человек
             </div>
             <div class="row">
                     <div class="span2">
@@ -730,12 +730,14 @@ $(document).ready(function() {
 		}
     	return state.text+str;
     }
-$('div.media-item').hoverIntent(function() {
-		TweenMax.to($(this), 0.4, {backgroundColor:"rgba(0, 0, 0, 0.75)"});
-		TweenMax.to($(this).children('a.article'), 0.4, {color:"#fff"});
+	var ssBack = $('#tablo').css("backgroundColor");
+	var bodyColor = $('body').css("color");
+$('div.media-item').hover(function() {
+		TweenMax.to($(this), 0.25, {backgroundColor:ssBack,ease:"Power1.easeOut"});
+		TweenMax.to($(this).children('a.article'), 0.25, {color:"#fff",ease:"Power1.easeOut"});
 },function(){
-		TweenMax.to($(this), 0.4, {backgroundColor:"#fff"});
-		TweenMax.to($(this).children('a.article'), 0.4, {color:0});		
+		TweenMax.to($(this), 0.1, {backgroundColor:"#fff",ease:"Power1.easeIn"});
+		TweenMax.to($(this).children('a.article'), 0.1, {color:bodyColor,ease:"Power1.easeIn"});		
 });
 	//$(this).animate({ backgroundColor: "#000" }, 400)
 		/*$(this).animate({ backgroundColor: "#000" }, 400);
