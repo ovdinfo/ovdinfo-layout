@@ -493,3 +493,36 @@ hr {
 .navbar-fixed-bottom .navbar-inner{
 	border-width: 0;
 }
+
+input[type=search] {
+	width: 15px;
+	padding-left: 15px;
+	color: transparent;
+	cursor: pointer;
+	margin: 4px;
+	background: #ededed url(../img/search-icon.png) no-repeat 9px center;
+}
+input[type=search]:hover {
+	background-color: #fff;
+}
+input[type=search]:focus {
+	width: 180px;
+	color: #000;
+	background-color: #fff;
+	cursor: auto;
+	border-color: #6dcff6;
+	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5);
+		border: solid 1px #ccc;
+	padding: 5px 0px 5px 32px;	
+	-webkit-transition: all .7s;
+	-moz-transition: all .7s;
+	transition: all .7s;
+}
+input:-moz-placeholder {
+	color: transparent;
+}
+input::-webkit-input-placeholder {
+	color: transparent;
+}
