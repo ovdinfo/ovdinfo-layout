@@ -21,12 +21,12 @@
 							<div class="span1">
 								<button href="#detentionReport" role="button" class="btn btn-action" data-toggle="modal">Сообщить о задержании</button>
 								<select id="e3" style="width:225px;">
-									<option value="0" data-foo="bar2">Владивосток</option>
-									<option value="1" data-foo="bar2">Москва</option>
-									<option value="2" data-foo="bar2">Санкт-Петербург</option>
-									<option value="3" data-foo="bar2">Нижний Новгород</option>
-									<option value="4" data-foo="bar2">Владикавказ</option>
-									<option value="5" data-foo="bar2">Грозный</option>
+									<option value="0" data-phone="+7(985)369-96-21">Владивосток</option>
+									<option value="1" data-phone="+7(985)369-96-21">Москва</option>
+									<option value="2" data-phone="+7(985)369-96-21">Санкт-Петербург</option>
+									<option value="3" data-phone="+7(985)369-96-21">Нижний Новгород</option>
+									<option value="4" data-phone="+7(985)369-96-21">Владикавказ</option>
+									<option value="5" data-phone="+7(985)369-96-21">Грозный</option>
 							  </select>
 							</div>
 							<!--<div class="span1"><div style="margin-left:10px;"><address><strong>+7(985)369-96-21</strong><br><strong>+7(925)997-22-16</strong></address><div style="margin-bottom: -11px;">Задержано за последний месяц: <br>237 человек</div></div>
@@ -686,9 +686,17 @@ $(document).ready(function() {
 		escapeMarkup: function(m) { return m; }
     });
 	$("#e2").select2();
-	$("#e3").select2();
+	$("#e3").select2({
+		formatResult: phones,
+		formatSelection: phones,
+		escapeMarkup: function(m) { return m; }
+    });
 	$('#e3').change(function() {
+<<<<<<< HEAD
 		$("#s2id_e3 span").append("<span style='float:right'>+7(985)3699621</span>");
+=======
+		//alert($("#s2id_e3 span").append("+7(985)369-96-21"));
+>>>>>>> phones
 	});
 	$("[rel=tooltip]").tooltip();
 	$('#mainCarousel').carousel();
@@ -733,6 +741,9 @@ $(document).ready(function() {
 		}
     	return state.text+str;
     }
+    function phones(state) {
+    	return state.text + '<i class="phone">' + state.element[0].dataset.phone + '</i>';
+	};
 	var ssBack = $('#tablo').css("backgroundColor");
 	var bodyColor = $('body').css("color");
 	var elementsBackgroundColor = $('.media-item .links div').css("backgroundColor");
