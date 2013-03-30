@@ -3,8 +3,14 @@
 // --------------------------------------------------
 
 body {
-	background-image: url(../img/main-bgd.png);
-	background-size: 256px 256px;
+	/*background-image: url(../img/main-bgd.png);
+	background-size: 256px 256px;*/
+	background-attachment: fixed;
+    background-image: url(../img/back02.jpg);
+    background-repeat: no-repeat;
+}
+.container>.row{
+	margin-bottom:50px;
 }
 a{
 	color:@textColor;
@@ -13,7 +19,12 @@ a{
 
 // header//////////////////////////////////
 .header.top{
-	margin: 20px 0px;
+	margin: 0px 0px 10px 0;
+	padding: 5px 0px;
+	background-color:@darkBackgroundColor;
+}
+.header img{
+	margin-left: 10px;
 }
 .header .mainnav {
 	padding-top:1px;
@@ -29,14 +40,27 @@ a{
 	color: @activeTextColor;
 }
 .btn-action {
-  .buttonBackground(@btnActionBackgroundHighlight, @btnActionBackground);
+	//.buttonBackground(@btnActionBackgroundHighlight, @btnActionBackground);
+	.buttonBackground(@btnActionBackground, @btnActionBackground);
 	text-transform: uppercase;
 	/*top: 18px;*/
 	position: relative;
 	height:30px;
 	font-weight:bold;
-	width:225px;
-	margin-bottom:14px;
+	width:480px;
+	margin-bottom:8px;
+	padding-left:0px;
+	padding-right:0px;
+}
+.header .btn-action div{
+	width: 248px
+	float:left;
+	text-alighn:center;
+}
+.header .btn-action div.btn1{
+	width: 229px;
+	float:left;
+	border-right:solid 1px #fff;
 }
 // end of header///////////////////////////
 // carousel new////////////////////////////
@@ -44,8 +68,8 @@ a{
 	position:relative;
 	height:300px;
 	overflow:hidden;
-	border-radius:4px;
-	background: rgba(0, 0, 0, 0.75);
+	border-radius:@baseBorderRadius;
+	background: @darkBackgroundColor;
 	margin-bottom:10px;
 }
 #mainCarousel .carousel-inner{
@@ -146,9 +170,9 @@ a{
 // end of carousel new/////////////////////
 #mainCarouselOld {
 	//background-color: @backTextColor;
-	background: rgba(0, 0, 0, 0.75);
+	background: @darkBackgroundColor;
 	padding: 10px 0 10px 10px;
-	border-radius:4px 4px 0 0;
+	border-radius:@baseBorderRadius @baseBorderRadius 0 0;
 }
 
 
@@ -156,7 +180,7 @@ a{
 	float: left;
 	width:480px;
 	height: 320px;
-	border-radius:4px;
+	border-radius:@baseBorderRadius;
 }
 
 #mainCarouselOld .item .carousel-caption {
@@ -182,7 +206,7 @@ a{
 	background: rgba(0, 0, 0, 0.55);
 	width: 480px;
 	height: 40px;
-	border-radius:4px;
+	border-radius:@baseBorderRadius;
 	line-height:20px;
 }
 #mainCarouselOld .carousel-caption.general .carousel-indicators{
@@ -191,7 +215,7 @@ a{
 
 #mainCarouselOld .carousel-caption.general .carousel-indicators li {
     background-color: rgba(255, 255, 255, 0.25);
-    border-radius: 4px;
+    border-radius: @baseBorderRadius;
     height: 8px;
     width: 8px;
 }
@@ -228,7 +252,7 @@ a{
 	padding-right:10px;
 	line-height:20px;
 	text-decoration:underline;
-	border-radius:4px 0 0 4px;
+	border-radius:@baseBorderRadius 0 0 @baseBorderRadius;
 }
 /////////////////////////
 
@@ -264,7 +288,7 @@ hr {
 
 #express{
 	position:relative;
-	border-radius:4px 4px 0 0;
+	border-radius:@baseBorderRadius @baseBorderRadius 0 0;
 }
 #express h3{
 	margin-top: 2px;
@@ -280,7 +304,7 @@ hr {
     left: 0;
     top: 40px;
 	width:215px;
-	border-radius:0 4px 4px 0;
+	border-radius:0 @baseBorderRadius @baseBorderRadius 0;
 }
 #express-filter-box div{
 	height: 20px;
@@ -344,7 +368,7 @@ hr {
 }
 .media-item span.authored {
 	//background:#fff;
-	//border-radius:4px;
+	//border-radius:@baseBorderRadius;
 	//padding: 4px;
 }
 .media-item img{
@@ -363,7 +387,7 @@ hr {
 	padding-left:10px;
 	padding-right:10px;
 	text-transform:uppercase;
-	border-radius:4px 0 0 4px;
+	border-radius:@baseBorderRadius 0 0 @baseBorderRadius;
 }
 
 .media-item .links{
@@ -373,7 +397,7 @@ hr {
 	margin-top:10px;
 }
 .media-item .links div{
-	border-radius:4px;
+	border-radius:@baseBorderRadius;
 	background: @elementsBackgroundColor;
 	margin:0 0px 0 10px;
 	width:480px;
@@ -416,9 +440,9 @@ hr {
 // tablo //////////////////////////////////////////////////////
 #tablo{
 	width:745px;
-	background-color:rgba(0, 0, 0, 0.75);
-	//color:#fff;
-	border-radius: 4px;
+	background-color:@darkBackgroundColor;
+	color:#fff;
+	border-radius: @baseBorderRadius;
 	padding-left:10px;
 	margin-bottom:10px;
 }
@@ -449,7 +473,7 @@ hr {
 .navbar-open{
 	height:300px;
 	width:1010px;
-	background-color:rgba(0, 0, 0, 0.75);
+	background-color: rgba(0, 0, 0, 0.75);;
 	margin-left: auto;
     margin-right: auto;
 }
