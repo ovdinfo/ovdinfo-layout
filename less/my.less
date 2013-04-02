@@ -6,7 +6,7 @@ body {
 	/*background-image: url(../img/main-bgd.png);
 	background-size: 256px 256px;*/
 	background-attachment: fixed;
-    background-image: url(../img/back02.jpg);
+    background-image: url(../img/back07.jpg);
     background-repeat: no-repeat;
 }
 .container>.row{
@@ -19,12 +19,12 @@ a{
 
 // header//////////////////////////////////
 .header.top{
-	margin: 0px 0px 20px 0;
+	margin: 0px 0px 10px 0;
 	padding: 5px 0px 5px 10px;
 	background-color:@darkBackgroundColor;
 }
 .branding.span2 {
-    background-color: rgba(0, 0, 0, 0.3);
+    /*background-color: rgba(0, 0, 0, 0.3);*/
 	padding: 5px 10px 5px 10px;
 	width:460px;
 }
@@ -106,6 +106,10 @@ a{
 	width:460px;
 	padding:5px 10px 5px 10px;
 	bottom:0px;
+	background: none repeat scroll 0 0 rgba(255, 255, 255, 0.85);
+}
+#mainCarousel .carousel-caption p,#mainCarousel .carousel-caption h4{
+	color:#000;
 }
 #mainCarousel .carousel-caption h4{
 	margin:0 0 5px 0;
@@ -300,7 +304,7 @@ hr {
 	position:relative;
 	border-radius:@baseBorderRadius @baseBorderRadius 0 0;
 }
-#express h3{
+#express h4{
 	margin-top: 2px;
 	margin-bottom: 68px;
 	line-height:20px;
@@ -389,15 +393,17 @@ hr {
 }
 .media-item .media-type{
 	float: right;
-	background-color:#555555;
+	/*background-color:@elementsBackgroundColor;//#555555;*/
 	position: absolute;
 	right:0px;
 	top:10px;
 	color: #ffffff;
 	padding-left:10px;
 	padding-right:10px;
+	padding-top:2px;
 	text-transform:uppercase;
 	border-radius:@baseBorderRadius 0 0 @baseBorderRadius;
+	height:20px;
 }
 
 .media-item .links{
@@ -462,8 +468,10 @@ hr {
 }
 
 .navbar-inner {
-	background-image: linear-gradient(to bottom, #555555, #444444);
-	background-image: -webkit-linear-gradient(top, #555555, #444444);
+	/*background-image: linear-gradient(to bottom, #555555, #444444);
+	background-image: -webkit-linear-gradient(top, #555555, #444444);*/
+	background-color:@darkBackgroundColor;
+	background-image: none;
 }
 
 .navbar .nav li a {
