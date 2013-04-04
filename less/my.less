@@ -25,8 +25,8 @@ a{
 }
 .branding.span2 {
     /*background-color: rgba(0, 0, 0, 0.3);*/
-	padding: 5px 10px 5px 10px;
-	width:460px;
+    padding: 5px 0;
+    width: 480px;
 }
 
 .mainnav.span2 {
@@ -34,7 +34,7 @@ a{
 	margin-left:20px;
 }
 .header .mainnav img{
-	margin-left: 9px;
+	/*margin-left: 9px;*/
 }
 .header .mainnav {
 	/*padding-top:1px;*/
@@ -49,16 +49,16 @@ a{
 	margin: -3px 0px 0px 0px;
 	color: @activeTextColor;
 }
-.btn-action {
+.header .btn-action {
 	//.buttonBackground(@btnActionBackgroundHighlight, @btnActionBackground);
-	.buttonBackground(@btnActionBackground, @btnActionBackground);
+	.buttonBackground(@btnActionBackground, #AA4E22);
 	text-transform: uppercase;
 	/*top: 18px;*/
 	position: relative;
 	height:30px;
 	font-weight:bold;
 	width:480px;
-	margin-bottom:15px;
+	margin-bottom:10px;
 	padding-left:0px;
 	padding-right:0px;
 }
@@ -68,7 +68,7 @@ a{
 	text-alighn:center;
 }
 .header .btn-action div.btn1{
-	width: 229px;
+	width: 239px;
 	float:left;
 	border-right:solid 1px #fff;
 }
@@ -532,6 +532,10 @@ hr {
 	font-size:16px;
 	font-weight:bold;
 	text-decoration: none;
+}
+.navbar-fixed-bottom{
+	margin: 0 auto;
+	width:1010px;
 }
 .navbar-fixed-bottom .navbar-inner{
 	border-width: 0;
