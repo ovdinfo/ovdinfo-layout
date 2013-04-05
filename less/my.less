@@ -106,10 +106,10 @@ a{
 	width:480px;//460px;
 	padding:5px 10px 5px 10px;
 	bottom:0px;
-	background: none repeat scroll 0 0 rgba(255, 255, 255, 0.85);
+	background: @imageOverBackgroundColor;
 }
 #mainCarousel .carousel-caption p,#mainCarousel .carousel-caption h4{
-	color:#000;
+	color:@imageOverTextColor;
 }
 #mainCarousel .carousel-caption h4{
 	margin:0 0 5px 0;
@@ -364,28 +364,54 @@ hr {
 .simple-back{
 	padding:10px;
 	background: #fff;
-	-webkit-box-shadow: 0px 1px 1px rgba(0,0,0,.35);
-	-moz-box-shadow: 0px 1px 1px rgba(0,0,0,.35);
-	box-shadow: 0px 1px 1px rgba(0,0,0,.35);
+	-webkit-box-shadow: 0px 0px 5px rgba(0,0,0,.9);
+	-moz-box-shadow: 0px 0px 5px rgba(0,0,0,.9);
+	box-shadow: 0px 0px 5px rgba(0,0,0,.9);
 }
 
 
 // media //////////////////////////////////////////////////
 .media-item{
-	margin-bottom: 10px;//20px;
+	margin-bottom: 20px;//20px;
 	position: relative;
 }
-.media-item h4{
+.media-people .span1>div{
+	height:270px;
+	width:300px;
+	overflow:hidden;
+	top: -30px;
+	position:relative;
+}
+.media-people .span1>div img{
+	margin-top:30px;
+}
+.media-people .span1{
+	height:240px;
+	width:245px;
+	-webkit-box-shadow: 0px 0px 5px rgba(0,0,0,.9);
+	-moz-box-shadow: 0px 0px 5px rgba(0,0,0,.9);
+	box-shadow: 0px 0px 5px rgba(0,0,0,.9);
+}
+.media-people .people-caption{
+	position: absolute;
+	top: 200px;
+	width:225px;
+	height:220px;
+	padding:10px;
+	background: @imageOverBackgroundColor;
+	color:#000;
+}
+.media-article h4{
 	margin-bottom: 0px;
 	padding-bottom: 10px;
 	position: relative;
 }
-.media-item span.authored {
+.media-article span.authored {
 	//background:#fff;
 	//border-radius:@baseBorderRadius;
 	//padding: 4px;
 }
-.media-item img{
+.media-article img{
 	float: left;
 	margin-right:20px;
 	width:100px; 
@@ -406,49 +432,49 @@ hr {
 	height:20px;
 }
 
-.media-item .links{
+.media-article .links{
 	margin-top:10px;
 }
-.media-item .links.first{
+.media-article .links.first{
 	margin-top:10px;
 }
-.media-item .links div{
+.media-article .links div{
 	border-radius:@baseBorderRadius;
 	background: @elementsBackgroundColor;
 	margin:0 0px 0 10px;
 	width:480px;
 }
-.media-item .links div.dan{
+.media-article .links div.dan{
 	width:235px;
 }
-.media-item a{
+.media-article a{
 	text-decoration:none;
 }
-.media-item a:hover{
+.media-article a:hover{
 	text-decoration:none;
 }
-.media-item .addlinks{
+.media-article .addlinks{
     color: @passiveTextColorForBack;
 	font-family:@serifFontFamily;
 	font-weight:200;
 }
-.media-item .addlinks:hover{
+.media-article .addlinks:hover{
     color: @textColor;
 }
-.media-item .addlinks i{
+.media-article .addlinks i{
 	opacity:0.5;
 	margin: 1px 10px 0 10px;
 	float:none;
 }
-.media-item .addlinks i.icon-arrow-right{
+.media-article .addlinks i.icon-arrow-right{
 	margin-top: 2px;
 	float:right;
 	opacity:0.25;
 }
-.media-item .addlinks:hover i{
+.media-article .addlinks:hover i{
     opacity:1;
 }
-.media-item:hover .addlinks div, .media-item:hover .authored a, .media-item:hover .media-type{
+.media-article:hover .addlinks div, .media-article:hover .authored a{
 	text-decoration:underline;
 }
 
