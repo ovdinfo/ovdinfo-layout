@@ -39,9 +39,6 @@ a{
 .header .mainnav {
 	/*padding-top:1px;*/
 }
-.header .mainnav button{
-	margin-left:10px;
-}
 .header .select2-container{
 	margin-left:10px;
 }
@@ -57,7 +54,7 @@ a{
 	position: relative;
 	height:30px;
 	font-weight:bold;
-	width:230px;
+	width:242px;
 	margin-bottom:10px;
 	padding-left:0px;
 	padding-right:0px;
@@ -67,6 +64,7 @@ a{
 	float:left;
 	border-right:solid 1px #fff;
 	text-alighn:center;
+	margin-left:10px;
 }
 // end of header///////////////////////////
 // carousel new////////////////////////////
@@ -77,6 +75,15 @@ a{
 	border-radius:@baseBorderRadius;
 	/*background: @darkBackgroundColor;*/
 	margin-bottom:10px;
+}
+#carousel-hover{
+	background: @imageOverBackgroundColor;
+	width:500px;//480px;
+	height:280px;
+	display:none;
+}
+#mainCarousel .carousel-inner:hover #carousel-hover{
+	display:block;
 }
 #mainCarousel .carousel-inner{
 	position:absolute;
@@ -502,9 +509,9 @@ hr {
     padding: 10px 0px 10px 10px;
     text-decoration: none;
     text-shadow: 0 0px 0 #FFFFFF;
-	font-size:16px;
-	font-weight:bold;
-	width:180px;
+	/*font-size:16px;
+	font-weight:bold;*/
+	width:157px;
 	text-transform: uppercase;
 }
 .navbar .nav li a:hover{
@@ -521,7 +528,7 @@ hr {
 	margin-left: 10px;
 	margin-top: 10px;
 	float:left;
-	width:180px;
+	width:157px;
 }
 .navbar-open .service-block{
 	margin-left: 10px;
@@ -551,8 +558,8 @@ hr {
 }
 .navbar-open li a{
 	color: #FFFFFF;
-	font-size:16px;
-	font-weight:bold;
+	//font-size:16px;
+	//font-weight:bold;
 	text-decoration: none;
 }
 .navbar-fixed-bottom{
