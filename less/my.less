@@ -9,7 +9,7 @@ body {
     background-image: url(../img/back07.jpg);
     background-repeat: no-repeat;*/
 	
-	background: url(../img/back8.jpg) no-repeat center center fixed;
+	background: url(../img/back9.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -141,6 +141,9 @@ a{
 }
 #mainCarousel .btn-group .btn.active{
 	background:none;
+	box-shadow:none;
+	background: @imageOverBackgroundColor;
+	color:@imageOverTextColor;
 	border-width:0px;
     height: 40px;
     line-height: 40px;
@@ -316,10 +319,27 @@ hr {
 #express h4{
 	margin-top: 2px;
 	line-height:20px;
+	margin-bottom: 78px;
 }
 #counter{
-	font-style:italic;
-	margin-bottom: 78px;
+	/*font-style:italic;
+	font-weight:bold;*/
+	border-top: 1px solid #444444;
+	color:#fff;
+	height: 20px;
+    margin-top: 5px;
+    width: 990px;
+}
+#counter div{
+	width:225px;
+	margin-left:30px;
+	float:left;
+}
+#counter div:first-child{
+	margin-left:0px;
+}
+#counter div span{
+	color:#F04E23;
 }
 #express-filter-box {
 	background-color: @elementsBackgroundColor;
@@ -328,7 +348,7 @@ hr {
 	line-height:20px;
     position: absolute;
     left: 0;
-    top: 80px;
+    top: 45px;
 	width:215px;
 	border-radius:0 @baseBorderRadius @baseBorderRadius 0;
 }
@@ -384,34 +404,44 @@ hr {
 
 // media //////////////////////////////////////////////////
 .media-item{
-	margin-bottom: 20px;//20px;
+	margin-bottom: 10px;//20px;
 	position: relative;
 }
 .media-people .span1>div{
-	height:270px;
-	width:300px;
+	height:280px;
+	width:245px;
 	overflow:hidden;
-	top: -30px;
 	position:relative;
 }
-.media-people .span1>div img{
-	margin-top:30px;
+.media-people img{
+	position:relative;
+	top:30px;
+	height:250px;
+	width:245px;
 }
 .media-people .span1{
-	height:240px;
+	height:280px;
 	width:245px;
 	-webkit-box-shadow: 0px 0px 5px rgba(0,0,0,.9);
 	-moz-box-shadow: 0px 0px 5px rgba(0,0,0,.9);
 	box-shadow: 0px 0px 5px rgba(0,0,0,.9);
 }
-.media-people .people-caption{
+.media-people .people-header{
 	position: absolute;
-	top: 200px;
+	top: -30px;
+	width:225px;
+	height: 50px;
+    padding: 5px 10px;
+	background-color: #fff;
+}
+.media-people .people-teaser{
+	position: absolute;
+	top: 220px;
 	width:225px;
 	height:220px;
-	padding:10px;
+	padding:0 10px;
 	background: @imageOverBackgroundColor;
-	color:#000;
+	color:@imageOverTextColor;
 }
 .media-article h4{
 	margin-bottom: 0px;
@@ -506,6 +536,9 @@ hr {
 	text-decoration:none;
 	text-transform: uppercase;
 	border-right: solid 1px #fff;
+}
+#tablo a:hover{
+	text-decoration:underline;
 }
 #tablo a:last-child{
 	border-right: none;

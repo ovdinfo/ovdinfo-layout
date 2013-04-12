@@ -29,7 +29,7 @@
 						<button href="#detentionReport" role="button" class="btn btn-action" data-toggle="modal">Помочь проекту</button>
                     	<div class="row">
                         	<div class="span1">
-								<select id="e3" style="width:235px;">
+								<select id="e3" style="width:225px;">
 									<option value="0" data-phone="+7(985)369-96-21">Владивосток</option>
 									<option value="1" data-phone="+7(985)369-96-21">Москва</option>
 									<option value="2" data-phone="+7(985)369-96-21">Санкт-Петербург</option>
@@ -39,7 +39,7 @@
 							  </select>
                            </div>
                            <div class="span1">
-								<a href="/"><img src="img/vkontakte.png"></a>
+								<a href="/" style="margin-left:10px;"><img src="img/vkontakte.png"></a>
                                 <a href="/"><img src="img/facebook.png"></a>
                                 <a href="/"><img src="img/twitter.png"></a>
                                 <a href="/"><img src="img/rss.png" style="float:right;margin-right:10px;"></a>
@@ -50,6 +50,12 @@
                         	</div>
                     	</div>
 					</div>
+				</div>
+				<div id="counter">
+					<div>Задержано за месяц: <span>237 человек</span></div>
+					<div>В спецприемниках: <span>120 человек</span></div>
+					<div>В СИЗО: <span>44 человек</span></div>
+					<div>Сидят: <span>16 человек</span></div>
 				</div>
 			</div>
 		<div class="navbar-open navbar-fixed-bottom" id="bottom-menu-open">
@@ -130,7 +136,7 @@
         <div class="span1">
           <div id="express" class="simple-back">
           <h4>Экспресс-новости</h4>
-			<div id="counter">Задержано за месяц: 237 человек</div>
+			<!--<div id="counter">Задержано за месяц: 237 человек</div>-->
           <div id="express-filter-box">
           	  <!--<div>
                   <span class="caption">Регион</span>
@@ -511,11 +517,13 @@
                                     <div class="span1">
                                     	<div>
                                             <a href="/"><img src="assets/stas.jpg">
-                                                <div class="people-caption">07 апреля <span class="activeText">Истории задержанных</span>
+                                                <div class="people-header">07 апреля <span class="activeText">Истории задержанных</span>
                                                     <!--<span class="authored">23.04 - 16:18</span>
                                                     <div class="media-type" href="/"><i class="icon-my-zak"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="задержания"></i><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i></div>-->
                                                   <h4>Станислав Поздняков</h4>
-                                                  <p>рассказывает о своем деле и других своих делах. Замглавы бурятского ФСИН подозревается в краже пожертвований пострадавшим в Крымске<span class="activeText">...</span></p>
+                                                </div>
+                                                <div class="people-teaser">
+                                                  рассказывает о своем деле и других своих делах. Замглавы бурятского ФСИН подозревается в краже пожертвований пострадавшим в Крымске<span class="activeText">...</span>
                                                 </div>
                                             </a>
                                    		</div>
@@ -523,11 +531,13 @@
                                    <div class="span1">
                                     	<div>
                                             <a href="/"><img src="assets/babka.jpg">
-                                                <div class="people-caption">19 сентября <span class="activeText">Интервью</span>
+												<div class="people-header">19 сентября <span class="activeText">Интервью</span>
                                                     <!--<span class="authored">13.11 - 14:07</span>
                                                     <div class="media-type" href="/"><i class="icon-my-zak"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="задержания"></i><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i></div>-->
                                                   <h4>Элеонора Вячеславовна</h4>
-                                                  <p>26 января активисты правозащитных организаций провели День проверки отделений и посетили отделения полиции в 14 городах России<span class="activeText">...</span></p>
+												</div>
+												<div class="people-teaser">
+													26 января активисты правозащитных организаций провели День проверки отделений и посетили отделения полиции в 14 городах России<span class="activeText">...</span>
                                                 </div>
                                             </a>
                                    		</div>
@@ -875,11 +885,13 @@ $(document).ready(function() {
 			//TweenMax.to($(this).children('.media-type'), 0.1, {color:"#fff",backgroundColor:mtBackgroundColor,ease:"Power1.easeIn"});
 			TweenMax.to($(this).find('a.media-link, span.authored, span.authored a'), 0.1, {color:bodyColor,ease:"Power1.easeIn"});	
 	});
-	var peopleCaptionTop = $('.media-people .people-caption').css("top");
+	var peopleCaptionTop = $('.media-people .people-teaser').css("top");
 	$('.media-people .span1').hover(function() {
-			TweenMax.to($(this).find('.people-caption'), 0.25, {top:"30px",ease:"Power1.easeOut"});
+			TweenMax.to($(this).find('.people-header'), 0.25, {top:"0px",ease:"Power1.easeOut"});
+			TweenMax.to($(this).find('.people-teaser'), 0.25, {top:"60px",ease:"Power1.easeOut"});
 	},function(){
-			TweenMax.to($(this).find('.people-caption'), 0.25, {top:peopleCaptionTop,ease:"Power1.easeIn"});
+			TweenMax.to($(this).find('.people-header'), 0.25, {top:"-30px",ease:"Power1.easeOut"});
+			TweenMax.to($(this).find('.people-teaser'), 0.25, {top:peopleCaptionTop,ease:"Power1.easeIn"});
 	});
 	//$(this).animate({ backgroundColor: "#000" }, 400)
 		/*$(this).animate({ backgroundColor: "#000" }, 400);
