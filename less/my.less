@@ -315,8 +315,11 @@ hr {
 }
 #express h4{
 	margin-top: 2px;
-	margin-bottom: 68px;
 	line-height:20px;
+}
+#counter{
+	font-style:italic;
+	margin-bottom: 78px;
 }
 #express-filter-box {
 	background-color: @elementsBackgroundColor;
@@ -325,7 +328,7 @@ hr {
 	line-height:20px;
     position: absolute;
     left: 0;
-    top: 40px;
+    top: 80px;
 	width:215px;
 	border-radius:0 @baseBorderRadius @baseBorderRadius 0;
 }
@@ -490,12 +493,22 @@ hr {
 // end media //////////////////////////////////////////////////
 // tablo //////////////////////////////////////////////////////
 #tablo{
-	width:745px;
+	width:755px;
 	background-color:@darkBackgroundColor;
 	color:#fff;
 	border-radius: @baseBorderRadius;
-	padding-left:10px;
+	padding:5px 0px;
 	margin-bottom:10px;
+}
+#tablo a{
+	padding:0px 10px;
+	color:#fff;
+	text-decoration:none;
+	text-transform: uppercase;
+	border-right: solid 1px #fff;
+}
+#tablo a:last-child{
+	border-right: none;
 }
 // end tablo //////////////////////////////////////////////////
 .twi{
