@@ -864,12 +864,12 @@ $(document).ready(function() {
 	var mtBackgroundColor = $('.media-article .media-type').css("backgroundColor");
 	$('div.media-article').hover(function() {
 			TweenMax.to($(this), 0.25, {backgroundColor:ssBack,ease:"Power1.easeOut"});
-			$(this).children('.media-type').addClass('icon-white');
+			$(this).find('.media-type i').addClass('icon-white');
 			//TweenMax.to($(this).children('.media-type'), 0.25, {color:bodyColor,backgroundColor:elementsBackgroundColor,ease:"Power1.easeOut"});
 			TweenMax.to($(this).find('a.media-link, span.authored, span.authored a'), 0.25, {color:"#fff",ease:"Power1.easeOut"});
 	},function(){
 			TweenMax.to($(this), 0.1, {backgroundColor:"#fff",ease:"Power1.easeIn"});
-			$(this).children('.media-type').removeClass('icon-white');
+			$(this).find('.media-type i').removeClass('icon-white');
 			//TweenMax.to($(this).children('.media-type'), 0.1, {color:"#fff",backgroundColor:mtBackgroundColor,ease:"Power1.easeIn"});
 			TweenMax.to($(this).find('a.media-link, span.authored, span.authored a'), 0.1, {color:bodyColor,ease:"Power1.easeIn"});	
 	});
