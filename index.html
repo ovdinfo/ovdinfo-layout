@@ -509,7 +509,7 @@
                                     <div class="span1">
                                     	<div>
                                             <a href="/"><img src="assets/stas.jpg">
-                                                <div class="people-caption">07 апреля <span class="activeText">История задержанного</span>
+                                                <div class="people-caption">07 апреля <span class="activeText">Истории задержанных</span>
                                                     <!--<span class="authored">23.04 - 16:18</span>
                                                     <div class="media-type" href="/"><i class="icon-my-zak"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="задержания"></i><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i></div>-->
                                                   <h4>Станислав Поздняков</h4>
@@ -523,7 +523,7 @@
                                             <a href="/"><img src="assets/babka.jpg">
                                                 <div class="people-caption">19 сентября <span class="activeText">Интервью</span>
                                                     <!--<span class="authored">13.11 - 14:07</span>
-                                                    <div class="media-type" href="/"><i class="icon-my-zak"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="задержания"></i><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i></div>--Ю
+                                                    <div class="media-type" href="/"><i class="icon-my-zak"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="задержания"></i><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i></div>-->
                                                   <h4>Элеонора Вячеславовна</h4>
                                                   <p>26 января активисты правозащитных организаций провели День проверки отделений и посетили отделения полиции в 14 городах России<span class="activeText">...</span></p>
                                                 </div>
@@ -864,11 +864,13 @@ $(document).ready(function() {
 	var mtBackgroundColor = $('.media-article .media-type').css("backgroundColor");
 	$('div.media-article').hover(function() {
 			TweenMax.to($(this), 0.25, {backgroundColor:ssBack,ease:"Power1.easeOut"});
-			TweenMax.to($(this).children('.media-type'), 0.25, {color:bodyColor,backgroundColor:elementsBackgroundColor,ease:"Power1.easeOut"});
+			$(this).children('.media-type').addClass('icon-white');
+			//TweenMax.to($(this).children('.media-type'), 0.25, {color:bodyColor,backgroundColor:elementsBackgroundColor,ease:"Power1.easeOut"});
 			TweenMax.to($(this).find('a.media-link, span.authored, span.authored a'), 0.25, {color:"#fff",ease:"Power1.easeOut"});
 	},function(){
 			TweenMax.to($(this), 0.1, {backgroundColor:"#fff",ease:"Power1.easeIn"});
-			TweenMax.to($(this).children('.media-type'), 0.1, {color:"#fff",backgroundColor:mtBackgroundColor,ease:"Power1.easeIn"});
+			$(this).children('.media-type').removeClass('icon-white');
+			//TweenMax.to($(this).children('.media-type'), 0.1, {color:"#fff",backgroundColor:mtBackgroundColor,ease:"Power1.easeIn"});
 			TweenMax.to($(this).find('a.media-link, span.authored, span.authored a'), 0.1, {color:bodyColor,ease:"Power1.easeIn"});	
 	});
 	var peopleCaptionTop = $('.media-people .people-caption').css("top");
