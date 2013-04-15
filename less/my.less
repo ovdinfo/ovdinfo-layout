@@ -77,16 +77,23 @@ a{
 #mainCarousel{
 	position:relative;
 	height:280px;//300px;
-	overflow:hidden;
 	border-radius:@baseBorderRadius;
 	/*background: @darkBackgroundColor;*/
 	margin-bottom:10px;
 }
 #carousel-hover{
-	background: @imageOverBackgroundColor;
-	width:500px;//480px;
+	position:absolute;
+	top:0px;
+	left:0px;
+	background: url(../img/hover.png) no-repeat;
+	width:500px;
 	height:280px;
 	display:none;
+	pointer-events:none;
+}
+#hoverObject{
+	width:500px;
+	height:280px;
 }
 #mainCarousel #hoverObject:hover #carousel-hover{
 	display:block;
@@ -103,7 +110,7 @@ a{
 #mainCarousel .carousel-inner:hover{
 	left:0px;//9px;
 	top:0px;//9px;
-	border: 1px solid #f04e23;
+	/*border: 1px solid #f04e23;*/
 }
 #mainCarousel .item:hover{
 }
@@ -400,6 +407,11 @@ hr {
 	-moz-box-shadow: 0px 0px 5px rgba(0,0,0,.9);
 	box-shadow: 0px 0px 5px rgba(0,0,0,.9);
 }
+.shadowed{
+	-webkit-box-shadow: 0px 0px 5px rgba(0,0,0,.9);
+	-moz-box-shadow: 0px 0px 5px rgba(0,0,0,.9);
+	box-shadow: 0px 0px 5px rgba(0,0,0,.9);
+}
 
 
 // media //////////////////////////////////////////////////
@@ -436,16 +448,17 @@ hr {
 }
 .media-people .people-teaser{
 	position: absolute;
-	top: 220px;
+	top: 215px;
 	width:225px;
 	height:220px;
-	padding:0 10px;
+	padding:3px 10px;
 	background: @imageOverBackgroundColor;
 	color:@imageOverTextColor;
 }
 .media-article h4{
-	margin-bottom: 0px;
-	padding-bottom: 10px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	padding: 0px;
 	position: relative;
 }
 .media-article span.authored {
@@ -455,9 +468,9 @@ hr {
 }
 .media-article img{
 	float: left;
-	margin-right:20px;
-	width:100px; 
-	height:100px; 
+	margin-right:10px;
+	width:144px; 
+	height:96px; 
 }
 .media-item .media-type{
 	float: right;
@@ -469,7 +482,7 @@ hr {
 	padding-left:10px;
 	padding-right:10px;
 	padding-top:2px;
-	text-transform:uppercase;
+	//text-transform:uppercase;
 	border-radius:@baseBorderRadius 0 0 @baseBorderRadius;
 	height:20px;
 }
@@ -521,6 +534,33 @@ hr {
 }
 
 // end media //////////////////////////////////////////////////
+
+.partners{
+	margin-bottom:10px;
+}
+.partners h4{
+	margin-top:0px;
+	margin-bottom:20px;
+	font-style:italic;
+}
+.partners a{
+	display:block;
+	height:100px;
+	margin-bottom:20px;
+	text-decoration:none;
+}
+.partners a:last-child{
+	margin-bottom:0px;
+}
+.partners img{
+	margin-right:10px;
+	border: 1px solid #eee;
+	float:left;
+}
+.partners a div{
+	font-weight:bold;
+}
+
 // tablo //////////////////////////////////////////////////////
 #tablo{
 	width:755px;
