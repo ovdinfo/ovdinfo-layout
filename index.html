@@ -906,9 +906,10 @@ $(document).ready(function() {
 	var mtBackgroundColor = $('.media-article .media-type').css("backgroundColor");
 	$('div.media-article').hover(function() {
 			TweenMax.to($(this), 0.25, {backgroundColor:ssBack,ease:"Power1.easeOut"});
+			TweenMax.to($(this).find('.links div'), 0.25, {backgroundAlpha,0.3,ease:"Power1.easeOut"});
 			$(this).find('.media-type i').addClass('icon-white');
 			//TweenMax.to($(this).children('.media-type'), 0.25, {color:bodyColor,backgroundColor:elementsBackgroundColor,ease:"Power1.easeOut"});
-			TweenMax.to($(this).find('a.media-link, span.authored, span.authored a'), 0.25, {color:"#fff",ease:"Power1.easeOut"});
+			TweenMax.to($(this).find('a.media-link, span.authored, span.authored a, .addlinks'), 0.25, {color:"#fff",ease:"Power1.easeOut"});
 	},function(){
 			TweenMax.to($(this), 0.1, {backgroundColor:"#fff",ease:"Power1.easeIn"});
 			$(this).find('.media-type i').removeClass('icon-white');
