@@ -14,7 +14,8 @@ body {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;*/
-	background: url(../img/hexabump.png) repeat scroll 0 0 #222222;
+	background: url(../img/diagmonds.png) repeat scroll 0 0 #222222;
+	background-attachment:fixed;
 }
 .container>.row{
 	margin-bottom:50px;
@@ -588,7 +589,79 @@ hr {
 .twi{
 	margin-top:20px;
 }
-
+///////////////////////////
+.navbar1 .nav li>a {
+    color: #FFFFFF;
+    float: left;
+    padding: 10px 0px 10px 10px;
+    text-decoration: none;
+    text-shadow: 0 0px 0 #FFFFFF;
+	/*font-size:16px;
+	font-weight:bold;*/
+	width:235px;
+	text-transform: uppercase;
+	margin-right: 10px;
+}
+.navbar1 .nav li:last-child a {
+	margin-right: 0px;
+}
+.navbar1 .nav li:hover>a{
+	color: #000;
+	background-color:#fff;
+}
+.navbar-fixed-bottom{
+	margin: 0 auto;
+	width:1010px;
+}
+.navbar-fixed-bottom .navbar-inner{
+	border-width: 0;
+}
+.navbar-item-open.navbar-fixed-bottom{
+	display:none;
+	margin-bottom:40px;
+	background-color:#fff;
+}
+#bottom-menu li:hover .navbar-item-open{
+	display:block;
+}
+.navbar-item-open .navbar-block{
+	width:225px;
+	height:200px;
+	padding:10px;
+	position:relative;
+	float:left;
+	margin-right:10px;
+}
+.navbar-item-open .navbar-block img{
+	width:225px;
+	height:150px;
+}
+.navbar-item-open h4{
+	margin-top:0px;
+}
+.navbar-item-open h4 a{
+	text-decoration: none;
+}
+.navbar-item-open h4 a:hover{
+	text-decoration: underline;
+}
+.navbar-item-open .navbar-block-caption{
+	background-color: rgba(0, 0, 0, 0.75);
+	color:#fff;
+	position:absolute;
+	bottom:30px;
+	width:205px;
+	padding:0 10px;
+}
+.navbar-item-open .navbar-block-caption-0{
+	background-color: rgba(0, 0, 0, 0.75);
+	color:#fff;
+	position:absolute;
+	top:40px;
+	width:205px;
+	padding:0 10px;
+}
+///////////////////////////
 .navbar-inner {
 	/*background-image: linear-gradient(to bottom, #555555, #444444);
 	background-image: -webkit-linear-gradient(top, #555555, #444444);*/
@@ -613,7 +686,7 @@ hr {
 .navbar-open{
 	height:300px;
 	width:1010px;
-	background-color: rgba(0, 0, 0, 0.75);;
+	background-color: rgba(0, 0, 0, 0.75);
 	margin-left: auto;
     margin-right: auto;
 }
