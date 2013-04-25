@@ -151,7 +151,7 @@ a{
 #mainCarousel .btn-group .btn.active{
 	background:none;
 	box-shadow:none;
-	background: @imageOverBackgroundColor;
+	background: @darkBackgroundColor;
 	color:@imageOverTextColor;
 	border-width:0px;
     height: 40px;
@@ -607,7 +607,7 @@ hr {
 }
 .navbar1 .nav li:hover>a{
 	color: #000;
-	background-color:#fff;
+	background-color:@elementsBackgroundColor;
 }
 .navbar-fixed-bottom{
 	margin: 0 auto;
@@ -619,22 +619,28 @@ hr {
 .navbar-item-open.navbar-fixed-bottom{
 	display:none;
 	margin-bottom:40px;
-	background-color:#fff;
+	background-color:@elementsBackgroundColor;
+	-webkit-box-shadow: 0px 0px 5px rgba(0,0,0,.9);
+	-moz-box-shadow: 0px 0px 5px rgba(0,0,0,.9);
+	box-shadow: 0px 0px 5px rgba(0,0,0,.9);
 }
 #bottom-menu li:hover .navbar-item-open{
 	display:block;
 }
+.navbar-item-open .navbar-block:nth-child(4n){
+	margin-right:0px;
+}
 .navbar-item-open .navbar-block{
 	width:225px;
-	height:200px;
+	height:110px;
 	padding:10px;
 	position:relative;
 	float:left;
 	margin-right:10px;
 }
-.navbar-item-open .navbar-block img{
-	width:225px;
-	height:150px;
+.navbar-item-open .navbar-block img {
+    height: 50px;
+    width: 75px;
 }
 .navbar-item-open h4{
 	margin-top:0px;
@@ -646,12 +652,12 @@ hr {
 	text-decoration: underline;
 }
 .navbar-item-open .navbar-block-caption{
-	background-color: rgba(0, 0, 0, 0.75);
-	color:#fff;
-	position:absolute;
-	bottom:30px;
-	width:205px;
-	padding:0 10px;
+	left: 95px;
+    line-height: 18px;
+	padding: 0;
+    position: absolute;
+    top: 37px;
+    width: 140px;
 }
 .navbar-item-open .navbar-block-caption-0{
 	background-color: rgba(0, 0, 0, 0.75);
@@ -660,6 +666,13 @@ hr {
 	top:40px;
 	width:205px;
 	padding:0 10px;
+	display:none;
+}
+.navbar-item-open .activeText{
+	text-decoration: none;
+	position:absolute;
+	top:95px;
+	left:10px;
 }
 ///////////////////////////
 .navbar-inner {
