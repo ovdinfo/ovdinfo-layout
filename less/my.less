@@ -643,7 +643,7 @@ hr {
 	margin-top:10px;
 }
 ///////////////////////////
-.navbar1 .nav li>a {
+.navbar1 .nav li>span {
     color: #FFFFFF;
     float: left;
     padding: 10px 0px 10px 10px;
@@ -651,14 +651,15 @@ hr {
     text-shadow: 0 0px 0 #FFFFFF;
 	/*font-size:16px;
 	font-weight:bold;*/
-	width:235px;
+	width:200px;
 	text-transform: uppercase;
 	margin-right: 10px;
+	cursor:pointer
 }
-.navbar1 .nav li:last-child a {
+.navbar1 .nav li:last-child>span {
 	margin-right: 0px;
 }
-.navbar1 .nav li:hover>a{
+.navbar1 .nav li:hover>span{
 	color: #000;
 	background-color:@elementsBackgroundColor;
 }
@@ -770,6 +771,9 @@ a>.activeText{
 }
 a>.activeText:hover{
 	text-decoration: underline;
+}
+.nav{
+	margin:0px;
 }
 ///////////////////////////
 .navbar-inner {
