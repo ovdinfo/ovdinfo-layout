@@ -30,6 +30,10 @@ a{
 	margin: 0px 0px 10px 0;
 	padding: 5px 0px 5px 10px;
 	background-color:@darkBackgroundColor;
+	-webkit-box-shadow: 0px 0px 5px rgba(0,0,0,.9);
+	-moz-box-shadow: 0px 0px 5px rgba(0,0,0,.9);
+	box-shadow: 0px 0px 5px rgba(0,0,0,.9);
+	border-radius: 0 0 @baseBorderRadius @baseBorderRadius;
 }
 .branding.span2 {
     /*background-color: rgba(0, 0, 0, 0.3);*/
@@ -57,7 +61,7 @@ a{
 .header .btn-action {
 	/*.buttonBackground(@btnActionBackgroundHighlight, @btnActionBackground);
 	.buttonBackground(@btnActionBackground, #AA4E22);*/
-	.buttonBackground(#E04E22, #C04E22);
+	.buttonBackground(#E04E22, #C84E22);
 	text-transform: uppercase;
 	/*top: 18px;*/
 	position: relative;
@@ -67,6 +71,7 @@ a{
 	margin-bottom:10px;
 	padding-left:0px;
 	padding-right:0px;
+	border-radius:  0 @baseBorderRadius @baseBorderRadius 0;
 }
 .header .btn-first{
 	width: 239px;
@@ -74,6 +79,7 @@ a{
 	/*border-right:solid 1px #fff;*/
 	text-align:center;
 	margin-left:10px;
+	border-radius: @baseBorderRadius 0 0 @baseBorderRadius;
 }
 // end of header///////////////////////////
 // carousel new////////////////////////////
@@ -109,6 +115,7 @@ a{
 	height:280px;
 	font-weight:bold;
 	font-size:12px;
+	border-radius: @baseBorderRadius;
 }
 #mainCarousel .carousel-inner:hover{
 	left:0px;//9px;
@@ -137,6 +144,8 @@ a{
 	position:absolute;
 	left:510px;//500px;
 	top:0px;//10px;
+	border-radius: @baseBorderRadius;
+	overflow:hidden;
 }
 #mainCarousel .btn-group .btn {
     border-radius: 0 0 0 0;
@@ -342,7 +351,6 @@ hr {
 }
 #express .new{
 	position:relative;
-	border-radius:@baseBorderRadius @baseBorderRadius 0 0;
 	padding: 10px 10px 10px;
 }
 #express .new a{
@@ -436,6 +444,8 @@ hr {
 	-webkit-box-shadow: 0px 0px 5px rgba(0,0,0,.9);
 	-moz-box-shadow: 0px 0px 5px rgba(0,0,0,.9);
 	box-shadow: 0px 0px 5px rgba(0,0,0,.9);
+	border-radius: @baseBorderRadius;
+	overflow:hidden;
 }
 
 
@@ -443,12 +453,14 @@ hr {
 .media-item{
 	margin-bottom: 10px;//20px;
 	position: relative;
+	border-radius: @baseBorderRadius;
 }
 .media-people .span1>div{
 	height:280px;
 	width:245px;
 	overflow:hidden;
 	position:relative;
+	border-radius: @baseBorderRadius;
 }
 .media-people img{
 	position:relative;
@@ -854,5 +866,8 @@ input::-webkit-input-placeholder {
 }
 
 .main-video {
-	margin-bottom: 4px;
+	margin-bottom: 10px;
+	height:240px;
+	border-radius: @baseBorderRadius;
+	overflow:hidden;
 }
