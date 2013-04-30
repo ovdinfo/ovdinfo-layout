@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap 101</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet/less" href="less/bootstrap.less">
+    <script src="libs/less/less.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=PT+Mono|PT+Sans:400,400italic,700,700italic|PT+Sans+Caption:400,700|PT+Sans+Narrow:400,700|PT+Serif:400,400italic,700italic,700|PT+Serif+Caption:400,400italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css'>
+    <link href="libs/select/select2.css" rel="stylesheet"/>
+	</head>
+  <body>
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ru_RU/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+    <div class="container">
+			<div class="header top">
+				<div class="row">
+					<div class="branding span2">
+						<a href="/" class="brand"><img src="img/logo10.png" alt="ovdinfo" style="width:480px;height:64px;"></a>
+					</div>
+					<div class="mainnav span2">
+						<button href="#detentionReport" role="button" class="btn btn-action btn-first" data-toggle="modal">Сообщить о задержании</button>
+						<button href="#detentionReport" role="button" class="btn btn-action" data-toggle="modal">Помочь проекту</button>
+                    	<div class="row">
+                        	<div class="span1">
+								<select id="e3" style="width:225px;">
+									<option value="0" data-phone="+7(985)369-96-21">Владивосток</option>
+									<option value="1" data-phone="+7(985)369-96-21">Москва</option>
+									<option value="2" data-phone="+7(985)369-96-21">Санкт-Петербург</option>
+									<option value="3" data-phone="+7(985)369-96-21">Нижний Новгород</option>
+									<option value="4" data-phone="+7(985)369-96-21">Владикавказ</option>
+									<option value="5" data-phone="+7(985)369-96-21">Грозный</option>
+							  </select>
+                           </div>
+                           <div class="span1">
+								<a href="/" style="margin-left:10px;"><img src="img/vkontakte.png"></a>
+                                <a href="/"><img src="img/facebook.png"></a>
+                                <a href="/"><img src="img/twitter.png"></a>
+                                <a href="/"><img src="img/rss.png" style="float:right;margin-right:10px;"></a>
+							<!--<div class="span1"><div style="margin-left:10px;"><address><strong>+7(985)369-96-21</strong><br><strong>+7(925)997-22-16</strong></address><div style="margin-bottom: -11px;">Задержано за последний месяц: <br>237 человек</div></div>
+							</div>-->
+								<!--<div style="float:right;font-weight:bold;">Вход</div>-->	
+								<!--<button href="#detentionReport" role="button" class="btn btn-action" data-toggle="modal">Сообщить о задержании</button>-->
+                        	</div>
+                    	</div>
+					</div>
+				</div>
+				<div id="counter">
+					<div><a href="/">Задержано за месяц: <span>237 человек</span></a></div>
+					<div><a href="/">В спецприемниках: <span>120 человек</span></a></div>
+					<div><a href="/">В СИЗО: <span>44 человек</span></a></div>
+					<div><a href="/">Сидят: <span>16 человек</span></a></div>
+				</div>
+			</div>
+		<!--<div class="navbar-open navbar-fixed-bottom" id="bottom-menu-open">
+			<ul class="navbar-menu">
+				<li><a href="#">Досье политзаключенного</a></li>
+				<li><a href="#">Досье политэмигранта</a></li>
+				<li><a href="#">Доклады, отчеты</a></li>
+				<li><a href="#">Инфографика</a></li>
+				<li><a href="#">Видео-программы</a></li>
+			</ul>
+			<ul class="navbar-menu">
+				<li><a href="#" target="1">ОВД-files</a></li>
+				<li><a href="#" target="2">Карта ОВД</a></li>
+				<li><a href="#" target="1">Расскажи свою историю</a></li>
+				<li><a href="#" target="2">Сообщить о задержании</a></li>
+			</ul>
+			<ul class="navbar-menu">
+				<li><a href="#">Свобода собраний</a></li>
+				<li><a href="#">Тюрьма и около</a></li>
+				<li><a href="#">Полиция</a></li>
+				<li><a href="#">Суд</a></li>
+				<li><a href="#">Политпрессинг</a></li>
+			</ul>
+			<ul class="navbar-menu">
+				<li><a href="#">О проекте</a></li>
+				<li><a href="#">Пресса о нас</a></li>
+				<li><a href="#">Контакты</a></li>
+				<li><a href="#">Партнеры</a></li>
+				<li><a href="#">Помочь проекту</a></li>
+				<li><a href="#">Правила использования</a></li>
+			</ul>
+			<ul class="navbar-menu">
+						<div class="service-block">
+				<img src="img/files.jpg">
+				<div class="service-description"><small>ОВД-files - это платформа, которая благодаря Вашему участию помогает юристам и активистам искать фото- и видеодокументацию акций для последующей защиты задержанных в суде. С помощью ОВД-files Вы можете:
+1. Добавить видеоролики с Youtube
+2. Добавить фотоальбомы Flickr, Яндекс.Фотки и Picasa (Google+)
+3. Скачать  материалы в исходном качестве и использовать их в суде
+				</small></div>
+			</div>
+			<div class="service-block">
+				<img src="img/ovd.jpg">
+				<div class="service-description"><small>На карте ОВД отмечены все отделы внутренних дел вашего города, теперь вы легко сможете попросить полицейского облезти вас в ближайший к вашему делу отдел.</small>
+				</div>
+			</div>
+			</ul>
+        </div>
+        <div class="navbar navbar-fixed-bottom" id="bottom-menu">
+          <div class="navbar-inner">
+            <div class="container">
+              <ul class="nav">
+                <li><a href="#">Спецпроекты</a></li>
+                <li><a href="#">Сервисы</a></li>
+                <li><a href="#">Темы</a></li>
+                <li><a href="#">О проекте</a></li>
+              </ul>
+							<ul class="nav pull-right">
+								<input type="search" placeholder="Search">
+							</ul>
+            </div>
+          </div>
+        </div>--><!-- /.navbar -->
+		<!--<div class="navbar-item-open navbar-fixed-bottom">
+			<div>
+				<div>
+					<a href="/"><img src="assets/stas.jpg">
+						<div class="people-header">07 апреля <span class="activeText">Истории задержанных</span>
+							<h4>Станислав </h4>
+						</div>
+						<div class="people-teaser">
+						рассказывает о своем деле и других своих делах. Замглавы бурятского ФСИН подозревается в краже пожертвований пострадавшим в Крымске<span class="activeText">...</span>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>-->
+		<div id="sticky-anchor"></div>
+		<div class="navbar1" id="bottom-menu">
+          <div class="navbar-inner">
+            <div class="container">
+              <ul class="nav">
+                <li><span href="#">Спецпроекты</span>
+					<div class="navbar-item-open navbar-fixed-bottom">
+						<div class="navbar-block">
+							<h4><a href="/">Досье политзаключенного</a></h4>
+							<a href="/">
+								<img src="assets/ss/1.jpg">
+								<!--<div class="navbar-block-caption-0">Последнее</div>-->
+								<div class="navbar-block-caption">Список задержанных 15 декабря</div>
+							</a>
+							<a href="/"><span class="activeText">Все материалы раздела</span></a>
+						</div>
+						<div class="navbar-block">
+							<h4><a href="/">Досье политэмигранта</a></h4>
+							<a href="/">
+								<img src="assets/ss/2.jpg">
+								<!--<div class="navbar-block-caption-0">Последнее</div>-->
+								<div class="navbar-block-caption">Болотное дело. Один день – одно имя: Олег Архипенков</div>
+							</a>
+							<a href="/"><span class="activeText">Все материалы раздела</span></a>
+						</div>
+						<div class="navbar-block">
+							<h4><a href="/">Доклады, отчеты</a></h4>
+							<a href="/">
+								<img src="assets/ss/3.jpg">
+								<!--<div class="navbar-block-caption-0">Последнее</div>-->
+								<div class="navbar-block-caption">Для усиления абсурдности</div>
+							</a>
+							<a href="/"><span class="activeText">Все материалы раздела</span></a>
+						</div>
+						<div class="navbar-block">
+							<h4><a href="/">Инфографика</a></h4>
+							<a href="/">
+								<img src="assets/ss/0.jpg">
+								<!--<div class="navbar-block-caption-0">Последнее</div>-->
+								<div class="navbar-block-caption">Квартальный отчет: январь - март 2013 года</div>
+							</a>
+							<a href="/"><span class="activeText">Все материалы раздела</span></a>
+						</div>
+						<div class="navbar-block">
+							<h4><a href="/">Видео-программы</a></h4>
+							<a href="/">
+								<img src="assets/ss/0.jpg">
+								<!--<div class="navbar-block-caption-0">Последнее</div>-->
+								<div class="navbar-block-caption">"Декада проверки отделений": хроника</div>
+							</a>
+							<a href="/"><span class="activeText">Все материалы раздела</span></a>
+						</div>
+						<div class="navbar-block">
+							<h4><a href="/">Досье политзаключенного</a></h4>
+							<a href="/">
+								<img src="assets/ss/3.jpg">
+								<!--<div class="navbar-block-caption-0">Последнее</div>-->
+								<div class="navbar-block-caption">На нижегородского активиста завели уголовное дело </div>
+							</a>
+							<a href="/"><span class="activeText">Все материалы раздела</span></a>
+						</div>
+					</div>
+				</li>
+                <li><span>Сервисы</span>
+					<div class="navbar-item-open navbar-fixed-bottom">
+						<div class="navbar-block-services">
+							<a href="/">
+								<img src="img/ovd.jpg" />
+								<h4>Карта ОВД</h4>
+								<div class="navbar-block-caption">На нашей карте самые свежие ОВД - налетай!</div>
+							</a>
+						</div>
+						<div class="navbar-block-services">
+							<a href="/">
+								<img src="img/files.jpg" />
+								<h4>ОВД-files</h4>
+								<div class="navbar-block-caption">На нашей карте самые свежие ОВД - налетай!</div>
+							</a>
+						</div>
+						<div class="navbar-block-services">
+							<a href="/">
+								<img src="img/ovd.jpg" />
+								<h4>Расскажи свою историю</h4>
+								<div class="navbar-block-caption">На нашей карте самые свежие ОВД - налетай!</div>
+							</a>
+						</div>
+						<div class="navbar-block-services">
+							<a href="/">
+								<img src="img/files.jpg" />
+								<h4>Сообщить о задержании</h4>
+								<div class="navbar-block-caption">На нашей карте самые свежие ОВД - налетай!</div>
+							</a>
+						</div>
+					</div>
+				</li>
+                <li><span>Темы</span>
+					<div class="navbar-item-open navbar-fixed-bottom">
+						<div class="navbar-block">
+							<h4><a href="/">Свобода собраний</a></h4>
+							<a href="/">
+								<img src="assets/ss/1.jpg">
+								<!--<div class="navbar-block-caption-0">Последнее</div>-->
+								<div class="navbar-block-caption">Список задержанных 15 декабря</div>
+							</a>
+							<a href="/"><span class="activeText">Все материалы раздела</span></a>
+						</div>
+						<div class="navbar-block">
+							<h4><a href="/">Тюрьма и около</a></h4>
+							<a href="/">
+								<img src="assets/ss/2.jpg">
+								<!--<div class="navbar-block-caption-0">Последнее</div>-->
+								<div class="navbar-block-caption">Болотное дело. Один день – одно имя: Олег Архипенков</div>
+							</a>
+							<a href="/"><span class="activeText">Все материалы раздела</span></a>
+						</div>
+						<div class="navbar-block">
+							<h4><a href="/">Полиция</a></h4>
+							<a href="/">
+								<img src="assets/ss/3.jpg">
+								<!--<div class="navbar-block-caption-0">Последнее</div>-->
+								<div class="navbar-block-caption">Для усиления абсурдности</div>
+							</a>
+							<a href="/"><span class="activeText">Все материалы раздела</span></a>
+						</div>
+						<div class="navbar-block">
+							<h4><a href="/">Суд</a></h4>
+							<a href="/">
+								<img src="assets/ss/0.jpg">
+								<!--<div class="navbar-block-caption-0">Последнее</div>-->
+								<div class="navbar-block-caption">Квартальный отчет: январь - март 2013 года</div>
+							</a>
+							<a href="/"><span class="activeText">Все материалы раздела</span></a>
+						</div>
+						<div class="navbar-block">
+							<h4><a href="/">Политпрессинг</a></h4>
+							<a href="/">
+								<img src="assets/ss/0.jpg">
+								<!--<div class="navbar-block-caption-0">Последнее</div>-->
+								<div class="navbar-block-caption">"Декада проверки отделений": хроника</div>
+							</a>
+							<a href="/"><span class="activeText">Все материалы раздела</span></a>
+						</div>
+						<div class="navbar-block">
+							<h4><a href="/">Досье политзаключенного</a></h4>
+							<a href="/">
+								<img src="assets/ss/3.jpg">
+								<!--<div class="navbar-block-caption-0">Последнее</div>-->
+								<div class="navbar-block-caption">На нижегородского активиста завели уголовное дело </div>
+							</a>
+							<a href="/"><span class="activeText">Все материалы раздела</span></a>
+						</div>
+						<div class="navbar-block">
+							<h4><a href="/">Доклады, отчеты</a></h4>
+							<a href="/">
+								<img src="assets/ss/3.jpg">
+								<!--<div class="navbar-block-caption-0">Последнее</div>-->
+								<div class="navbar-block-caption">Для усиления абсурдности</div>
+							</a>
+							<a href="/"><span class="activeText">Все материалы раздела</span></a>
+						</div>
+						<div class="navbar-block">
+							<h4><a href="/">Инфографика</a></h4>
+							<a href="/">
+								<img src="assets/ss/0.jpg">
+								<!--<div class="navbar-block-caption-0">Последнее</div>-->
+								<div class="navbar-block-caption">Квартальный отчет: январь - март 2013 года</div>
+							</a>
+							<a href="/"><span class="activeText">Все материалы раздела</span></a>
+						</div>
+					</div>
+				</li>
+                <li><span>О проекте</span>
+					<div class="navbar-item-open navbar-fixed-bottom">
+						<div class="navbar-block">
+							<h4><a href="/">Контакты</a></h4>
+							<a href="/">
+								<img src="assets/ss/3.jpg">
+								<!--<div class="navbar-block-caption-0">Последнее</div>-->
+								<div class="navbar-block-caption">Для усиления абсурдности</div>
+							</a>
+							<a href="/"><span class="activeText">Все материалы раздела</span></a>
+						</div>
+						<div class="navbar-block">
+							<h4><a href="/">Партнеры</a></h4>
+							<a href="/">
+								<img src="assets/ss/1.jpg">
+								<!--<div class="navbar-block-caption-0">Последнее</div>-->
+								<div class="navbar-block-caption">Список задержанных 15 декабря</div>
+							</a>
+							<a href="/"><span class="activeText">Все материалы раздела</span></a>
+						</div>
+						<div class="navbar-block">
+							<h4><a href="/">Помочь проекту</a></h4>
+							<a href="/">
+								<img src="assets/ss/0.jpg">
+								<!--<div class="navbar-block-caption-0">Последнее</div>-->
+								<div class="navbar-block-caption">Квартальный отчет: январь - март 2013 года</div>
+							</a>
+							<a href="/"><span class="activeText">Все материалы раздела</span></a>
+						</div>
+						<div class="navbar-block">
+							<h4><a href="/">Правила использования</a></h4>
+							<a href="/">
+								<img src="assets/ss/0.jpg">
+								<!--<div class="navbar-block-caption-0">Последнее</div>-->
+								<div class="navbar-block-caption">Квартальный отчет: январь - март 2013 года</div>
+							</a>
+							<a href="/"><span class="activeText">Все материалы раздела</span></a>
+						</div>
+					</div>
+				</li>
+              </ul>
+							<ul class="nav pull-right">
+								<input type="search" placeholder="Search">
+							</ul>
+            </div>
+          </div>
+        </div>
+      <!--<hr>-->
+
+      <div class="row" style="position:absolute;top:175px;">
+        <div class="span1">
+          <div id="express" class="simple-back">
+          <h4>Экспресс-новости</h4>
+			<!--<div id="counter">Задержано за месяц: 237 человек</div>-->
+          <div id="express-filter-box">
+          	  <!--<div>
+                  <span class="caption">Регион</span>
+                  <select id="e2" style="width:150px;">
+                        <option value="0" data-foo="bar2">Владивосток</option>
+                        <option value="1" data-foo="bar2">Москва</option>
+                        <option value="2" data-foo="bar2">Санкт-Петербург</option>
+                        <option value="3" data-foo="bar2">Нижний Новгород</option>
+                        <option value="4" data-foo="bar2">Владикавказ</option>
+                        <option value="5" data-foo="bar2">Грозный</option>
+                   </select>
+               </div>-->
+               <div>
+                   <span class="caption">Тематика</span>
+                   <select id="e1" style="width:150px;"> 
+                        <option value="0" data-foo="bar">Задержания</option>
+                        <option value="1" data-foo="bar">Политзаключенные</option>
+                        <option value="2" data-foo="bar">Политэммигранты</option>
+                        <option value="3" data-foo="bar">ЭкоУзник</option>
+                   </select>
+               </div>
+          </div>
+          <h5>Сегодня</h5>
+          <div class="new">
+              <h6>22:30 <a href="/"><span class="activeText">Москва</span></a><i class="icon-plane"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политэммигранты"></i><i class="icon-my-zak"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="задержания"></i>
+              </h6>
+              <a href="/"><div>У метро Войковская задержан активист раздовавший листовки<span class="activeText">...</span></div></a>
+          </div>
+          <div class="new">
+              <h6>22:30 <a href="/"><span class="activeText">Москва</span></a><i class="icon-plane"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политэммигранты"></i><i class="icon-my-zak"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="задержания"></i>
+              </h6>
+              <a href="/"><div>У метро Войковская задержан активист раздовавший листовки<span class="activeText">...</span></div></a>
+          </div>
+          <div class="new">
+              <h6>11:19 <a href="/"><span class="activeText">Санкт-Петербург</span></a><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i>
+              </h6>
+              <a href="/"><div>Опубликован полный текст решения Конституционного суда по закону о митингах<span class="activeText">...</span></div></a>
+          </div>
+          <div class="new">
+              <h6>17:23 <a href="/"><span class="activeText">Владивосток</span></a><i class="icon-my-zak"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="задержания"></i><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i>
+              </h6>
+              <a href="/"><div>Замглавы бурятского ФСИН подозревается в краже пожертвований пострадавшим в Крымске<span class="activeText">...</span></div></a>
+          </div>
+          <div class="new">
+              <h6>14:23 <a href="/"><span class="activeText">Владивосток</span></a><i class="icon-plane"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политэммигранты"></i>
+              </h6>
+              <a href="/"><div>Ирина Карацуба и Елену Волкова отпущены из ОВД Хамовники<span class="activeText">...</span></div></a>
+          </div>
+          <div class="new">
+              <h6>02:49 <a href="/"><span class="activeText">Владивосток</span></a><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i><i class="icon-plane"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политэммигранты"></i>
+              </h6>
+              <a href="/"><div>У Храма Христа спасителя задержаны ученые в балаклавах<span class="activeText">...</span></div></a>
+          </div>
+          <hr />
+          <h5>Вчера</h5>
+          <div class="new">
+              <h6>22:30 <a href="/"><span class="activeText">Москва</span></a><i class="icon-plane"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политэммигранты"></i><i class="icon-my-zak"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="задержания"></i>
+              </h6>
+              <a href="/"><div>У метро Войковская задержан активист раздовавший листовки<span class="activeText">...</span></div></a>
+          </div>
+          <div class="new">
+              <h6>11:19 <a href="/"><span class="activeText">Санкт-Петербург</span></a><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i>
+              </h6>
+              <a href="/"><div>Опубликован полный текст решения Конституционного суда по закону о митингах<span class="activeText">...</span></div></a>
+          </div>
+          <div class="new">
+              <h6>17:23 <a href="/"><span class="activeText">Владивосток</span></a><i class="icon-my-zak"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="задержания"></i><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i>
+              </h6>
+              <a href="/"><div>Замглавы бурятского ФСИН подозревается в краже пожертвований пострадавшим в Крымске<span class="activeText">...</span></div></a>
+          </div>
+          <div class="new">
+              <h6>14:23 <a href="/"><span class="activeText">Владивосток</span></a><i class="icon-plane"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политэммигранты"></i>
+              </h6>
+              <a href="/"><div>Ирина Карацуба и Елену Волкова отпущены из ОВД Хамовники<span class="activeText">...</span></div></a>
+          </div>
+          <div class="new">
+              <h6>02:49 <a href="/"><span class="activeText">Владивосток</span></a><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i><i class="icon-plane"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политэммигранты"></i>
+              </h6>
+              <a href="/"><div>У Храма Христа спасителя задержаны ученые в балаклавах<span class="activeText">...</span></div></a>
+          </div>
+          <hr />
+          <h5>12.03.13</h5>
+          <div class="new">
+              <h6>22:30 <a href="/"><span class="activeText">Москва</span></a><i class="icon-plane"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политэммигранты"></i><i class="icon-my-zak"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="задержания"></i>
+              </h6>
+              <a href="/"><div>У метро Войковская задержан активист раздовавший листовки<span class="activeText">...</span></div></a>
+          </div>
+          <div class="new">
+              <h6>11:19 <a href="/"><span class="activeText">Санкт-Петербург</span></a><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i>
+              </h6>
+              <a href="/"><div>Опубликован полный текст решения Конституционного суда по закону о митингах<span class="activeText">...</span></div></a>
+          </div>
+          <div class="new">
+              <h6>17:23 <a href="/"><span class="activeText">Владивосток</span></a><i class="icon-my-zak"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="задержания"></i><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i>
+              </h6>
+              <a href="/"><div>Замглавы бурятского ФСИН подозревается в краже пожертвований пострадавшим в Крымске<span class="activeText">...</span></div></a>
+          </div>
+          <div class="new">
+              <h6>14:23 <a href="/"><span class="activeText">Владивосток</span></a><i class="icon-plane"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политэммигранты"></i>
+              </h6>
+              <a href="/"><div>Ирина Карацуба и Елену Волкова отпущены из ОВД Хамовники<span class="activeText">...</span></div></a>
+          </div>
+          <div class="new">
+              <h6>02:49 <a href="/"><span class="activeText">Владивосток</span></a><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i><i class="icon-plane"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политэммигранты"></i>
+              </h6>
+              <a href="/"><div>У Храма Христа спасителя задержаны ученые в балаклавах<span class="activeText">...</span></div></a>
+          </div>
+          <hr />
+          <h5>11.03.13</h5>
+          <div class="new">
+              <h6>22:30 <a href="/"><span class="activeText">Москва</span></a><i class="icon-plane"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политэммигранты"></i><i class="icon-my-zak"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="задержания"></i>
+              </h6>
+              <a href="/"><div>У метро Войковская задержан активист раздовавший листовки<span class="activeText">...</span></div></a>
+          </div>
+          <div class="new">
+              <h6>11:19 <a href="/"><span class="activeText">Санкт-Петербург</span></a><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i>
+              </h6>
+              <a href="/"><div>Опубликован полный текст решения Конституционного суда по закону о митингах<span class="activeText">...</span></div></a>
+          </div>
+          <div class="new">
+              <h6>17:23 <a href="/"><span class="activeText">Владивосток</span></a><i class="icon-my-zak"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="задержания"></i><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i>
+              </h6>
+              <a href="/"><div>Замглавы бурятского ФСИН подозревается в краже пожертвований пострадавшим в Крымске<span class="activeText">...</span></div></a>
+          </div>
+          <div class="new">
+              <h6>14:23 <a href="/"><span class="activeText">Владивосток</span></a><i class="icon-plane"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политэммигранты"></i>
+              </h6>
+              <a href="/"><div>Ирина Карацуба и Елену Волкова отпущены из ОВД Хамовники<span class="activeText">...</span></div></a>
+          </div>
+          <div class="new">
+              <h6>02:49 <a href="/"><span class="activeText">Владивосток</span></a><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i><i class="icon-plane"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политэммигранты"></i>
+              </h6>
+              <a href="/"><div>У Храма Христа спасителя задержаны ученые в балаклавах<span class="activeText">...</span></div></a>
+          </div>
+          <hr />
+          <h5>10.03.13</h5>
+          <div class="new">
+              <h6>22:30 <a href="/"><span class="activeText">Москва</span></a><i class="icon-plane"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политэммигранты"></i><i class="icon-my-zak"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="задержания"></i>
+              </h6>
+              <a href="/"><div>У метро Войковская задержан активист раздовавший листовки<span class="activeText">...</span></div></a>
+          </div>
+          <div class="new">
+              <h6>11:19 <a href="/"><span class="activeText">Санкт-Петербург</span></a><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i>
+              </h6>
+              <a href="/"><div>Опубликован полный текст решения Конституционного суда по закону о митингах<span class="activeText">...</span></div></a>
+          </div>
+          <div class="new">
+              <h6>17:23 <a href="/"><span class="activeText">Владивосток</span></a><i class="icon-my-zak"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="задержания"></i><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i>
+              </h6>
+              <a href="/"><div>Замглавы бурятского ФСИН подозревается в краже пожертвований пострадавшим в Крымске<span class="activeText">...</span></div></a>
+          </div>
+          <div class="new">
+              <h6>14:23 <a href="/"><span class="activeText">Владивосток</span></a><i class="icon-plane"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политэммигранты"></i>
+              </h6>
+              <a href="/"><div>Ирина Карацуба и Елену Волкова отпущены из ОВД Хамовники<span class="activeText">...</span></div></a>
+          </div>
+          <div class="new">
+              <h6>02:49 <a href="/"><span class="activeText">Владивосток</span></a><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i><i class="icon-plane"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политэммигранты"></i>
+              </h6>
+              <a href="/"><div>У Храма Христа спасителя задержаны ученые в балаклавах<span class="activeText">...</span></div></a>
+          </div>
+          <hr />
+          <h5>09.03.13</h5>
+          <div class="new">
+              <h6>22:30 <a href="/"><span class="activeText">Москва</span></a><i class="icon-plane"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политэммигранты"></i><i class="icon-my-zak"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="задержания"></i>
+              </h6>
+              <a href="/"><div>У метро Войковская задержан активист раздовавший листовки<span class="activeText">...</span></div></a>
+          </div>
+          <div class="new">
+              <h6>11:19 <a href="/"><span class="activeText">Санкт-Петербург</span></a><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i>
+              </h6>
+              <a href="/"><div>Опубликован полный текст решения Конституционного суда по закону о митингах<span class="activeText">...</span></div></a>
+          </div>
+          <div class="new">
+              <h6>17:23 <a href="/"><span class="activeText">Владивосток</span></a><i class="icon-my-zak"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="задержания"></i><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i>
+              </h6>
+              <a href="/"><div>Замглавы бурятского ФСИН подозревается в краже пожертвований пострадавшим в Крымске<span class="activeText">...</span></div></a>
+          </div>
+          <div class="new">
+              <h6>14:23 <a href="/"><span class="activeText">Владивосток</span></a><i class="icon-plane"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политэммигранты"></i>
+              </h6>
+              <a href="/"><div>Ирина Карацуба и Елену Волкова отпущены из ОВД Хамовники<span class="activeText">...</span></div></a>
+          </div>
+          <div class="new">
+              <h6>02:49 <a href="/"><span class="activeText">Владивосток</span></a><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i><i class="icon-plane"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политэммигранты"></i>
+              </h6>
+              <a href="/"><div>У Храма Христа спасителя задержаны ученые в балаклавах<span class="activeText">...</span></div></a>
+          </div>
+		  <a class="other" href="/">Читать другие экспрес-новости</a>
+        </div>
+         <div id="#twi" class="twi"><a class="twitter-timeline"  href="https://twitter.com/OvdInfo"  data-widget-id="246373233081843712">Твиты пользователя @OvdInfo</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></div>
+
+
+        </div>
+        <div class="span3">
+            <div id="mainCarousel" class="carousel slide">
+                <!-- Carousel items -->
+            <div id="hoverObject" class="">
+                <div class="carousel-inner">
+                    <a class="active item" href="/">
+                    	<img alt="" src="assets/ss/0.jpg">
+                        <div class="carousel-caption">
+                          <h4>Экоактивистов начали сажать</h4>
+                          <p>Экоактивистка Татьяна Павлова приговорена к 5 суткам ареста за защиту Селятинского леса. Ранее суд уже приговорил Павлову к штрафу<span class="activeText">...</span></p>
+                        </div>
+                    </a>
+                    <a class="item" href="/">
+                      <img alt="" src="assets/ss/1.jpg">
+                    	 	<div class="carousel-caption">
+                          <h4>ОВД-files: доказательства невиновности</h4>
+                          <p>На Триумфальной площади 31 августа в ходе традиционной акции "Стратегия-31" начались задержания. На данный момент задержано<span class="activeText">...</span></p>
+                    		</div>
+                    </a>
+                    <a class="item" href="/">
+                    	<img alt="" src="assets/ss/2.jpg">
+                        <div class="carousel-caption">
+                          <h4>Потемкинская деревня на проверку</h4>
+                          <p>26 января активисты правозащитных организаций провели День проверки отделений и посетили отделения полиции в 14 городах России<span class="activeText">...</span></p>
+                        </div>
+                    </a>
+                    <a class="item" href="/">
+                    	<img alt="" src="assets/ss/3.jpg">
+                        <div class="carousel-caption">
+                          <h4>Триумфальная площадь, 31 июля: список задержанных</h4>
+                          <p>В Москве задержано 69 человек в ходе несогласованной с мэрией города акции "Марш свободы". Мы публикуем список задержанных людей<span class="activeText">...</span></p>
+                        </div>
+                    </a>
+                    <a class="item" href="/">
+                    	<img alt="" src="assets/ss/0.jpg">
+                        <div class="carousel-caption">
+                          <h4>Экоактивистов начали сажать</h4>
+                          <p>Экоактивистка Татьяна Павлова приговорена к 5 суткам ареста за защиту Селятинского леса. Ранее суд уже приговорил Павлову к штрафу<span class="activeText">...</span></p>
+                        </div>
+                    </a>
+                    <a class="item" href="/">
+                      <img alt="" src="assets/ss/1.jpg">
+                    	 	<div class="carousel-caption">
+                          <h4>ОВД-files: доказательства невиновности</h4>
+                          <p>На Триумфальной площади 31 августа в ходе традиционной акции "Стратегия-31" начались задержания. На данный момент задержано<span class="activeText">...</span></p>
+                    		</div>
+                    </a>
+                    <a class="item" href="/">
+                    	<img alt="" src="assets/ss/2.jpg">
+                        <div class="carousel-caption">
+                          <h4>Потемкинская деревня на проверку</h4>
+                          <p>26 января активисты правозащитных организаций провели День проверки отделений и посетили отделения полиции в 14 городах России<span class="activeText">...</span></p>
+                        </div>
+                    </a>
+                    <a class="item" href="/">
+                    	<img alt="" src="assets/ss/3.jpg">
+                        <div class="carousel-caption">
+                          <h4>Триумфальная площадь, 31 июля: список задержанных</h4>
+                          <p>В Москве задержано 69 человек в ходе несогласованной с мэрией города акции "Марш свободы". Мы публикуем список задержанных людей<span class="activeText">...</span></p>
+                        </div>
+                    </a>
+                    <a class="item" href="/">
+                    	<img alt="" src="assets/ss/0.jpg">
+                        <div class="carousel-caption">
+                          <h4>Экоактивистов начали сажать</h4>
+                          <p>Экоактивистка Татьяна Павлова приговорена к 5 суткам ареста за защиту Селятинского леса. Ранее суд уже приговорил Павлову к штрафу<span class="activeText">...</span></p>
+                        </div>
+                    </a>
+                    <a class="item" href="/">
+                      <img alt="" src="assets/ss/1.jpg">
+                    	 	<div class="carousel-caption">
+                          <h4>ОВД-files: доказательства невиновности</h4>
+                          <p>На Триумфальной площади 31 августа в ходе традиционной акции "Стратегия-31" начались задержания. На данный момент задержано<span class="activeText">...</span></p>
+                    		</div>
+                    </a>
+                    <a class="item" href="/">
+                    	<img alt="" src="assets/ss/2.jpg">
+                        <div class="carousel-caption">
+                          <h4>Потемкинская деревня на проверку</h4>
+                          <p>26 января активисты правозащитных организаций провели День проверки отделений и посетили отделения полиции в 14 городах России<span class="activeText">...</span></p>
+                        </div>
+                    </a>
+                    <a class="item" href="/">
+                    	<img alt="" src="assets/ss/3.jpg">
+                        <div class="carousel-caption">
+                          <h4>Триумфальная площадь, 31 июля: список задержанных</h4>
+                          <p>В Москве задержано 69 человек в ходе несогласованной с мэрией города акции "Марш свободы". Мы публикуем список задержанных людей<span class="activeText">...</span></p>
+                        </div>
+                    </a>
+                </div>
+                	<div id="carousel-hover"></div>
+                </div>
+                <!-- Carousel nav -->
+                			
+                          <div class="btn-group btn-group-vertical">
+               				 <div class="btn active">
+                             	<a href="/">Новости</a>
+								<ul class="carousel-indicators">
+                                        <li data-target="#mainCarousel" data-slide-to="0" class="active"><i class="icon-camera icon-white"></i></li>
+                                        <li data-target="#mainCarousel" data-slide-to="1"><i class="icon-camera icon-white"></i></li>
+                                        <li data-target="#mainCarousel" data-slide-to="2"><i class="icon-camera icon-white"></i></li>
+                                </ul>
+                             </div>
+                             <div class="btn">
+                             	<a href="/">Статьи</a>
+								<ul class="carousel-indicators">
+                                        <li data-target="#mainCarousel" data-slide-to="3"><i class="icon-camera"></i></li>
+                                </ul>
+                             </div>
+                             <div class="btn">
+                             	<a href="/">Мнения</a>
+								<ul class="carousel-indicators">
+                                        <li data-target="#mainCarousel" data-slide-to="4"><i class="icon-camera"></i></li>
+                                        <li data-target="#mainCarousel" data-slide-to="5"><i class="icon-camera"></i></li>
+                                </ul>
+                             </div>
+                             <div class="btn">
+                             	<a href="/">Дайджесты</a>
+								<ul class="carousel-indicators">
+                                        <li data-target="#mainCarousel" data-slide-to="6"><i class="icon-camera"></i></li>
+                                        <li data-target="#mainCarousel" data-slide-to="7"><i class="icon-camera"></i></li>
+                                </ul>
+                             </div>
+                             <div class="btn">
+                             	<a href="/">ОВД-files</a>
+								<ul class="carousel-indicators">
+                                        <li data-target="#mainCarousel" data-slide-to="8"><i class="icon-camera"></i></li>
+                                </ul>
+                             </div>
+                             <div class="btn">
+                             	<a href="/">Политзаключенные</a>
+								<ul class="carousel-indicators">
+                                        <li data-target="#mainCarousel" data-slide-to="9"><i class="icon-camera"></i></li>
+                                        <li data-target="#mainCarousel" data-slide-to="10"><i class="icon-camera"></i></li>
+                                </ul>
+                             </div>
+                             <div class="btn">
+                             	<a href="/">Истории задержанных</a>
+								<ul class="carousel-indicators">
+                                        <li data-target="#mainCarousel" data-slide-to="11"><i class="icon-camera"></i></li>
+                                </ul>
+                             </div>
+                          </div>
+								<!--<div class="carousel-caption general">
+                                     <ul class="carousel-indicators">
+                                        <li data-target="#mainCarousel" data-slide-to="0" class="active"></li>
+                                        <li data-target="#mainCarousel" data-slide-to="1"></li>
+                                        <li data-target="#mainCarousel" data-slide-to="2"></li>
+                                    </ul>
+								</div>-->
+            </div>
+            
+            <!--<div id="mainCarousel" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="active item">
+                    	<img alt="" src="assets/ss/0.jpg" class="img-rounded">
+                        <div class="carousel-caption">
+                          <h4>Экоактивистов начали сажать</h4>
+                          <p><small>Экоактивистка Татьяна Павлова приговорена к 5 суткам ареста за защиту Селятинского леса. Ранее суд уже приговорил Павлову к штрафу в 50 тысяч рублей за акцию по защите леса, которая прошла 30 января. Евгения Чирикова рассказала ОВД-Инфо подробности инцидента<span class="activeText">...</span></small></p>
+                          <span class="media-type activeText">Статьи</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                      <img alt="" src="assets/ss/1.jpg" class="img-rounded">
+                    	 	<div class="carousel-caption">
+                          <h4>ОВД-files: доказательства невиновности</h4>
+                          <p><small>На Триумфальной площади 31 августа в ходе традиционной акции "Стратегия-31" начались задержания. На данный момент задержано 36 человек<span class="activeText">...</span></small></p>
+                          <span class="media-type activeText">Мнения</span>
+                    		</div>
+                    </div>
+                    <div class="item">
+                    	<img alt="" src="assets/ss/2.jpg" class="img-rounded">
+                        <div class="carousel-caption">
+                          <h4>Потемкинская деревня на проверку</h4>
+                          <p><small>26 января активисты правозащитных организаций провели День проверки отделений и посетили отделения полиции в 14 городах России. Участники остались довольны и акцией, и полицией, но у московских активистов сложилось впечатление, что полиция была готова к их визиту: в ОВД не обнаружилось ни значимых нарушений, ни задержанных<span class="activeText">...</span></small></p>
+                          <span class="media-type activeText">ОВД-files</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                    	<img alt="" src="assets/ss/3.jpg" class="img-rounded">
+                        <div class="carousel-caption">
+                          <h4>Триумфальная площадь, 31 июля: список задержанных</h4>
+                          <p><small>В Москве задержано 69 человек в ходе несогласованной с мэрией города акции "Марш свободы". Мы публикуем список задержанных людей<span class="activeText">...</span></small></p>
+                          <span class="media-type activeText">Истории  задержанных</span>
+                        </div>
+                    </div>
+                </div>
+								<div class="btn-group carouselButtons carousel-indicators">
+ 									<button class="btn active" data-target="#mainCarousel" data-slide-to="0">Статьи</button>
+ 								 	<button class="btn" data-target="#mainCarousel" data-slide-to="1">Новости</button>
+ 					 				<button class="btn" data-target="#mainCarousel" data-slide-to="2">Истории задержанных</button>
+									<button class="btn" data-target="#mainCarousel" data-slide-to="3">Мнения</button>
+ 								 	<button class="btn" data-target="#mainCarousel" data-slide-to="1">Контекст</button>
+ 					 				<button class="btn" data-target="#mainCarousel" data-slide-to="3">ОВД-сервис</button>
+								</div>
+								<div class="carousel-caption general">
+									<ul class="carousel-indicators">
+    								<li data-target="#mainCarousel" data-slide-to="0" class="active"></li>
+    								<li data-target="#mainCarousel" data-slide-to="1"></li>
+    								<li data-target="#mainCarousel" data-slide-to="2"></li>
+  								</ul>
+								</div>
+            </div>-->
+			<div id="tablo" class="activeText"><a href="#">Болотное дело</a><a href="#">Реформа полиции</a><a href="#">Судебные приставы</a><a href="#">Дело Позднякова</a><div><a href="#">Все сюжеты</a></div></div>
+            <div class="row">
+                    <div class="span2">
+                      <!--<div class="simple-back">-->
+                          <div class="media-item media-article simple-back">
+                                <span class="authored">20.02 - 20:13 | <a href="">Даиси Синделар</a></span>
+                                <a class="media-type" href="/"><i title="" date-toggle="tooltip" data-placement="top" rel="tooltip" class="icon-plane" data-original-title="политэммигранты"></i><i title="" date-toggle="tooltip" data-placement="top" rel="tooltip" class="icon-my-zak" data-original-title="задержания"></i></a>
+                                <a class="media-link" href="/">
+                                	<img alt="" src="assets/ss/0.jpg">
+                                    <h4>Что такое политический заключенный?</h4>
+                                    <div>Единого стандарта для определения термина "политический заключенный" не существует и международные организации и государства не всегда приходят к согласию. Корреспондент RFE/RL Даиси Синделар (Daisy Sindelar) рассказывает о попытках выработать единое определение<span class="activeText">...</span></div>
+                                </a>
+								<div class="row links first">
+									<a class="addlinks" href="#">
+                                    	<div class="span1 dan">                                    	
+                                    		<i class="icon-plus"></i> версия Amnesty International
+                                        </div>
+                                    </a>
+                                    <a class="addlinks" href="#">
+										<div class="span1 dan" style="margin-right:0px;">
+                                        	<i class="icon-plus"></i> версия Human Rights Watch
+                                        </div>
+                                    </a>
+								</div>
+								<div class="row links">
+                                   	<a class="addlinks" href="#">
+                                		<div class="span1 dan">
+                                        	<i class="icon-list-alt"></i> досье полтизаключенных
+                                        </div>
+                                    </a>
+                                   	<a class="addlinks" href="#">
+										<div class="span1 dan" style="margin-right:0px;">
+                                        	<i class="icon-gift"></i> чем им можно помочь
+                                        </div>
+                                    </a>
+								</div>
+                          </div>
+                          <!--<hr />-->
+                          <div class="media-item media-article simple-back">
+                                <span class="authored">17.04 - 16:28</span>
+                                <a class="media-type" href="/"><i class="icon-my-zak"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="задержания"></i><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i></a>
+                                <a class="media-link" href="/">
+                                	<img alt="" src="assets/ss/1.jpg">
+                                	<h4>Потемкинская деревня на проверку</h4>
+                                	<div>26 января активисты правозащитных организаций провели День проверки отделений и посетили отделения полиции в 14 городах России. Участники остались довольны и акцией, и полицией, но у московских активистов сложилось впечатление, что полиция была готова к их визиту: в ОВД не обнаружилось ни значимых нарушений, ни задержанных<span class="activeText">...</span></div>
+                                </a>
+                                <div class="row links first">
+                                   	<a class="addlinks" href="#">
+                                		<div class="span2">
+                                        	<i class="icon-list-alt"></i> досье полтизаключенных
+                                        	<i class="icon-arrow-right"></i>
+                                        </div>
+                                    </a>
+								</div>
+                                <div class="row links first">
+                                   	<a class="addlinks" href="#">
+										<div class="span2" style="margin-right:0px;">
+                                        	<i class="icon-gift"></i> чем им можно помочь
+                                        	<i class="icon-arrow-right"></i>
+                                        </div>
+                                    </a>
+								</div>
+                          </div>
+                          <!--<hr />-->
+                          <div class="media-item media-people">
+                                <div class="row">
+                                    <div class="span1">
+                                    	<div>
+                                            <a href="/"><img src="assets/stas.jpg">
+                                                <div class="people-header">07 апреля <span class="activeText">Истории задержанных</span>
+                                                    <!--<span class="authored">23.04 - 16:18</span>
+                                                    <div class="media-type" href="/"><i class="icon-my-zak"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="задержания"></i><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i></div>-->
+                                                  <h4>Станислав Поздняков</h4>
+                                                </div>
+                                                <div class="people-teaser">
+                                                  рассказывает о своем деле и других своих делах. Замглавы бурятского ФСИН подозревается в краже пожертвований пострадавшим в Крымске<span class="activeText">...</span>
+                                                </div>
+                                            </a>
+                                   		</div>
+                                   </div>
+                                   <div class="span1">
+                                    	<div>
+                                            <a href="/"><img src="assets/babka.jpg">
+												<div class="people-header">19 сентября <span class="activeText">Интервью</span>
+                                                    <!--<span class="authored">13.11 - 14:07</span>
+                                                    <div class="media-type" href="/"><i class="icon-my-zak"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="задержания"></i><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i></div>-->
+                                                  <h4>Элеонора Вячеславовна</h4>
+												</div>
+												<div class="people-teaser">
+													26 января активисты правозащитных организаций провели День проверки отделений и посетили отделения полиции в 14 городах России<span class="activeText">...</span>
+                                                </div>
+                                            </a>
+                                   		</div>
+                                   </div>
+                                </div>
+                          </div>
+                          <div class="media-item media-article simple-back">
+                          	<h5><a href="/"><span class="activeText">Дайджест СМИ</span></a></h5>
+                                <!--<span class="authored">10-16 апреля 2013 года</span>-->
+                                <a class="media-type" href="/"><i class="icon-my-zak"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="задержания"></i><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i></a>
+                                <a class="media-link" href="/">
+                                	<!--<img alt="" src="assets/ss/3.jpg">-->
+                                	<h4>Тюрьма и около | 10-16 апреля 2013 года</h4>
+                                	<div>«Болотное дело»: продолжение акции «Один день – одно имя», группа риска, госпитализация фигуранта, отказ в приобщении доказательства невиновности, начало суда над Константином Лебедевым<span class="activeText">...</span></div>
+                                </a>
+                          </div>
+                          <!--<hr />-->
+                          <div class="media-item media-article simple-back">
+                                <span class="authored">21.05 - 20:13 | <a href="">Юлия Башинова</a></span>
+                                <a class="media-type" href="/"><i class="icon-my-zak"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="задержания"></i><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i></a>
+                                <a class="media-link" href="/">
+                                	<img alt="" src="assets/ss/2.jpg">
+                                	<h4>Список задержанных 15 декабря</h4>
+                                	<div>ОВД-Инфо запускает новый сервис ОВД-files, который позволит юристам и активистам быстро находить фото- и видеоматериалы для доказательства собственной невиновности в судах. Новый сервис позволит существенно укрепить и облегчить правовую защиту задержанных<span class="activeText">...</span></div>
+                                </a>
+                          </div>
+                          <!--<hr />-->
+                          <div class="media-item media-article simple-back">
+                          	<h5><a href="/"><span class="activeText">Дайджест СМИ</span></a></h5>
+                                <!--<span class="authored">10-16 апреля 2013 года</span>-->
+                                <a class="media-type" href="/"><i class="icon-my-zak"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="задержания"></i><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i></a>
+                                <a class="media-link" href="/">
+                                	<!--<img alt="" src="assets/ss/3.jpg">-->
+                                	<h4>Суд придет | 11-17 февраля 2013 года</h4>
+                                	<div>Критерии оценки ответственности судей за проступки, а также совещание о неисполнении решений судов и прочих аспектах неудовлетворительной работы Федеральной службы судебных приставов - читайте об этом в еженедельном судебном дайджесте ОВД-Инфо<span class="activeText">...</span></div>
+                                </a>
+                          </div>
+                          <!--<hr />-->
+                          <div class="media-item media-article simple-back">
+                                <span class="authored">21.05 - 20:13 | <a href="">Юлия Башинова</a></span>
+                                <a class="media-type" href="/"><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i></a>
+                                <a class="media-link" href="/">
+                                	<img alt="" src="assets/ss/2.jpg">
+                                	<h4>Список задержанных 15 декабря</h4>
+                                	<div>ОВД-Инфо запускает новый сервис ОВД-files, который позволит юристам и активистам быстро находить фото- и видеоматериалы для доказательства собственной невиновности в судах. Новый сервис позволит существенно укрепить и облегчить правовую защиту задержанных<span class="activeText">...</span></div>
+                                </a>
+                          </div>
+						  <div class="media-item media-people">
+                                <div class="row">
+                                    <div class="span1">
+                                    	<div>
+                                            <a href="/"><img src="assets/pu.jpg">
+                                                <div class="people-header">07 апреля <span class="activeText">Истории задержанных</span>
+                                                    <!--<span class="authored">23.04 - 16:18</span>
+                                                    <div class="media-type" href="/"><i class="icon-my-zak"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="задержания"></i><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i></div>-->
+                                                  <h4>Станислав Поздняков</h4>
+                                                </div>
+                                                <div class="people-teaser">
+                                                  рассказывает о своем деле и других своих делах. Замглавы бурятского ФСИН подозревается в краже пожертвований пострадавшим в Крымске<span class="activeText">...</span>
+                                                </div>
+                                            </a>
+                                   		</div>
+                                   </div>
+                                   <div class="span1">
+                                    	<div>
+                                            <a href="/"><img src="assets/pavlova.jpg">
+												<div class="people-header">19 сентября <span class="activeText">Интервью</span>
+                                                    <!--<span class="authored">13.11 - 14:07</span>
+                                                    <div class="media-type" href="/"><i class="icon-my-zak"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="задержания"></i><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i></div>-->
+                                                  <h4>Элеонора Вячеславовна</h4>
+												</div>
+												<div class="people-teaser">
+													26 января активисты правозащитных организаций провели День проверки отделений и посетили отделения полиции в 14 городах России<span class="activeText">...</span>
+                                                </div>
+                                            </a>
+                                   		</div>
+                                   </div>
+                                </div>
+                          </div>
+                          <!--<hr />-->
+                          <div class="media-item media-article simple-back">
+                                <span class="authored">19.11 - 20:13 | <a href="">Даиси Синделар</a></span>
+                                <a class="media-type" href="/"><i class="icon-my-zak"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="задержания"></i><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i></a>
+                                <a class="media-link" href="/">
+                                	<img alt="" src="assets/ss/3.jpg">
+                                	<h4>ОВД-files: доказательства невиновности</h4>
+                                	<div>На Триумфальной площади 31 августа в ходе традиционной акции "Стратегия-31" начались задержания. На данный момент задержано 36 человек<span class="activeText">...</span></div>
+                                </a>
+                          </div>
+                          <!--<hr />-->
+                          <div class="media-item media-article simple-back">
+                                <span class="authored">23.42 - 20:13 | <a href="">Даиси Синделар</a></span>
+                                <a class="media-type" href="/"><i class="icon-my-zak"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="задержания"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i></a>
+                                <a class="media-link" href="/">
+                                	<img alt="" src="assets/ss/0.jpg">
+                                	<h4>Триумфальная площадь, 31 июля: список задержанных</h4>
+                                	<div>В Москве задержано 69 человек в ходе несогласованной с мэрией города акции "Марш свободы". Мы публикуем список задержанных людей<span class="activeText">...</span></div>
+                                </a>
+                          </div>
+                          <!--<hr />-->
+                          <div class="media-item media-article simple-back">
+                                <span class="authored">17.04 - 16:28</span>
+                                <a class="media-type" href="/"><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i></a>
+                                <a class="media-link" href="/">
+                                	<img alt="" src="assets/ss/1.jpg">
+                                	<h4>Потемкинская деревня на проверку</h4>
+                                	<div>26 января активисты правозащитных организаций провели День проверки отделений и посетили отделения полиции в 14 городах России. Участники остались довольны и акцией, и полицией, но у московских активистов сложилось впечатление, что полиция была готова к их визиту: в ОВД не обнаружилось ни значимых нарушений, ни задержанных<span class="activeText">...</span></div>
+                                </a>
+                          </div>
+                          <!--<hr />-->
+                          <div class="media-item media-article simple-back">
+                                <span class="authored">21.05 - 20:13 | <a href="">Юлия Башинова</a></span>
+                                <a class="media-type" href="/"><i class="icon-my-zak"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="задержания"></i><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i></a>
+                                <a class="media-link" href="/">
+                                	<img alt="" src="assets/ss/2.jpg">
+                                    <h4>Список задержанных 15 декабря</h4>
+                                    <div>ОВД-Инфо запускает новый сервис ОВД-files, который позволит юристам и активистам быстро находить фото- и видеоматериалы для доказательства собственной невиновности в судах. Новый сервис позволит существенно укрепить и облегчить правовую защиту задержанных<span class="activeText">...</span></div>
+                                </a>
+                          </div>
+                          <!--<hr />-->
+                          <div class="media-item media-article simple-back">
+                                <span class="authored">19.11 - 20:13 | <a href="">Даиси Синделар</a></span>
+                                <a class="media-type" href="/"><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i></a>
+                                <a class="media-link" href="/">
+                                	<img alt="" src="assets/ss/3.jpg">
+                                	<h4>ОВД-files: доказательства невиновности</h4>
+                                	<div>На Триумфальной площади 31 августа в ходе традиционной акции "Стратегия-31" начались задержания. На данный момент задержано 36 человек<span class="activeText">...</span></div>
+                                </a>
+                          </div>
+                          <!--<hr />-->
+                          <div class="media-item media-article simple-back">
+                                <span class="authored">23.42 - 20:13 | <a href="">Даиси Синделар</a></span>
+                                <a class="media-type" href="/"><i class="icon-my-zak"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="задержания"></i><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i></a>
+                                <a class="media-link" href="/">
+                                	<img alt="" src="assets/ss/0.jpg">
+                               		<h4>Триумфальная площадь, 31 июля: список задержанных</h4>
+                                	<div>В Москве задержано 69 человек в ходе несогласованной с мэрией города акции "Марш свободы". Мы публикуем список задержанных людей<span class="activeText">...</span></div>
+                                </a>
+                          </div>
+                           <div class="media-item media-article simple-back">
+                                <span class="authored">19.11 - 20:13 | <a href="">Даиси Синделар</a></span>
+                                <a class="media-type" href="/"><i class="icon-my-zak"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="задержания"></i><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i></a>
+                                <a class="media-link" href="/">
+                                	<img alt="" src="assets/ss/3.jpg">
+                                	<h4>ОВД-files: доказательства невиновности</h4>
+                                	<div>На Триумфальной площади 31 августа в ходе традиционной акции "Стратегия-31" начались задержания. На данный момент задержано 36 человек<span class="activeText">...</span></div>
+                                </a>
+                          </div>
+                          <!--<hr />-->
+                          <div class="media-item media-article simple-back">
+                                <span class="authored">23.42 - 20:13 | <a href="">Даиси Синделар</a></span>
+                                <a class="media-type" href="/"><i class="icon-my-zak"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="задержания"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i></a>
+                                <a class="media-link" href="/">
+                                	<img alt="" src="assets/ss/0.jpg">
+                                	<h4>Триумфальная площадь, 31 июля: список задержанных</h4>
+                                	<div>В Москве задержано 69 человек в ходе несогласованной с мэрией города акции "Марш свободы". Мы публикуем список задержанных людей<span class="activeText">...</span></div>
+                                </a>
+                          </div>
+                          <!--<hr />-->
+                          <div class="media-item media-article simple-back">
+                                <span class="authored">17.04 - 16:28</span>
+                                <a class="media-type" href="/"><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i></a>
+                                <a class="media-link" href="/">
+                                	<img alt="" src="assets/ss/1.jpg">
+                                	<h4>Потемкинская деревня на проверку</h4>
+                                	<div>26 января активисты правозащитных организаций провели День проверки отделений и посетили отделения полиции в 14 городах России. Участники остались довольны и акцией, и полицией, но у московских активистов сложилось впечатление, что полиция была готова к их визиту: в ОВД не обнаружилось ни значимых нарушений, ни задержанных<span class="activeText">...</span></div>
+                                </a>
+                          </div>
+                          <!--<hr />-->
+                          <div class="media-item media-article simple-back">
+                                <span class="authored">21.05 - 20:13 | <a href="">Юлия Башинова</a></span>
+                                <a class="media-type" href="/"><i class="icon-my-zak"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="задержания"></i><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i></a>
+                                <a class="media-link" href="/">
+                                	<img alt="" src="assets/ss/2.jpg">
+                                    <h4>Список задержанных 15 декабря</h4>
+                                    <div>ОВД-Инфо запускает новый сервис ОВД-files, который позволит юристам и активистам быстро находить фото- и видеоматериалы для доказательства собственной невиновности в судах. Новый сервис позволит существенно укрепить и облегчить правовую защиту задержанных<span class="activeText">...</span></div>
+                                </a>
+                          </div>
+                          <!--<hr />-->
+                          <div class="media-item media-article simple-back">
+                                <span class="authored">19.11 - 20:13 | <a href="">Даиси Синделар</a></span>
+                                <a class="media-type" href="/"><i class="icon-my-diez"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="политзаключенные"></i><i class="icon-leaf"  rel="tooltip" data-placement="top" date-toggle="tooltip" title="экоузник"></i></a>
+                                <a class="media-link" href="/">
+                                	<img alt="" src="assets/ss/3.jpg">
+                                	<h4>ОВД-files: доказательства невиновности</h4>
+                                	<div>На Триумфальной площади 31 августа в ходе традиционной акции "Стратегия-31" начались задержания. На данный момент задержано 36 человек<span class="activeText">...</span></div>
+                                </a>
+                          </div>
+                       <!--</div>-->
+                    </div>
+                    <div class="span1">
+                    	<!--<img src="assets/bantor.jpg" class="shadowed" style="margin-bottom:10px;"/>-->
+                    	<div class="main-video shadowed"><iframe width="245" height="240" src="http://www.youtube.com/embed/fIHh4UsRc9Q" frameborder="0" allowfullscreen></iframe></div>
+                      <div id="smi_teaser_1085" class="shadowed" style="background-color:#fff;margin-bottom:10px;padding-top:10px;">
+                      <h4 style="margin-left:10px; margin-top:0px; font-style:italic;">Прочая ебала</h4><table class="smi_table_1085"><tbody><tr class="smi_tr_1085_0"><td valign="top" align="left" style="padding:10px !important;background:#ffffff !important;border:0px #ffffff solid !important;" class="smi_td_1085">              <div style="float:left !important" class="smi_div_img_1085">              <a target="_blank" href="http://top.24smi.org/top/40185-kak-vivesti-iz-tupika-otnoshen/i/661/1205/1085/" class="smi_a_img_1085">              <img alt="Специались: зря Россия не хочет союза с США" title="Специались: зря Россия не хочет союза с США" src="http://img.24smi.net/t/100/02/3dbbb-kak-vivesti-iz-tupika-otnoshen.jpeg" class="smi_img_1085" style="width:100px !important;height:100px !important;border:0px #ffffff solid !important; margin-right:7px !important;">              </a></div>              <a target="_blank" href="http://top.24smi.org/top/40185-kak-vivesti-iz-tupika-otnoshen/i/661/1205/1085/" class="smi_title_1085" style="font-size: 12px !important;font-family:  Tahoma !important;color:#464646 ;text-decoration:none;font-weight:bold ;font-style: normal ">Специались: зря Россия не хочет союза с США</a>              <p class="smi_cat_1085" style="margin: 0 0 0 0 !important;font-size: 11px !important;font-family:  Tahoma !important;color:#707070 ;">Политика</p>              </td></tr><tr class="smi_tr_1085_1"><td valign="top" align="left" style="padding:10px !important;background:#ffffff !important;border:0px #ffffff solid !important;" class="smi_td_1085">              <div style="float:left !important" class="smi_div_img_1085">              <a target="_blank" href="http://top.24smi.org/top/38087-zrailu-bolshe-nechego-boiatsia/i/661/1205/1085/" class="smi_a_img_1085">              <img alt="Израилю больше нечего бояться, они изобрели купол" title="Израилю больше нечего бояться, они изобрели купол" src="http://img.24smi.net/t/100/12/e1f87-zrailu-bolshe-nechego-boiatsia.jpeg" class="smi_img_1085" style="width:100px !important;height:100px !important;border:0px #ffffff solid !important; margin-right:7px !important;">              </a></div>              <a target="_blank" href="http://top.24smi.org/top/38087-zrailu-bolshe-nechego-boiatsia/i/661/1205/1085/" class="smi_title_1085" style="font-size: 12px !important;font-family:  Tahoma !important;color:#464646 ;text-decoration:none;font-weight:bold ;font-style: normal ">Израилю больше нечего бояться, они изобрели купол</a>              <p class="smi_cat_1085" style="margin: 0 0 0 0 !important;font-size: 11px !important;font-family:  Tahoma !important;color:#707070 ;">Наука</p>              </td></tr><tr class="smi_tr_1085_2"><td valign="top" align="left" style="padding:10px !important;background:#ffffff !important;border:0px #ffffff solid !important;" class="smi_td_1085">              <div style="float:left !important" class="smi_div_img_1085">              <a target="_blank" href="http://top.24smi.org/top/40077-poiavilos-video-zapechatlevshe/i/661/1205/1085/" class="smi_a_img_1085">              <img alt="Появилось видео, запечатлевшее автоподставу" title="Появилось видео, запечатлевшее автоподставу" src="http://img.24smi.net/t/100/02/b8e96-poiavilos-video-zapechatlevshe.jpeg" class="smi_img_1085" style="width:100px !important;height:100px !important;border:0px #ffffff solid !important; margin-right:7px !important;">              </a></div>              <a target="_blank" href="http://top.24smi.org/top/40077-poiavilos-video-zapechatlevshe/i/661/1205/1085/" class="smi_title_1085" style="font-size: 12px !important;font-family:  Tahoma !important;color:#464646 ;text-decoration:none;font-weight:bold ;font-style: normal ">Появилось видео, запечатлевшее автоподставу</a>              <p class="smi_cat_1085" style="margin: 0 0 0 0 !important;font-size: 11px !important;font-family:  Tahoma !important;color:#707070 ;">Автомобили</p>              </td></tr><tr class="smi_tr_1085_3"><td valign="top" align="left" style="padding:10px !important;background:#ffffff !important;border:0px #ffffff solid !important;" class="smi_td_1085">              <div style="float:left !important" class="smi_div_img_1085">              <a target="_blank" href="http://top.24smi.org/top/38083-nerealnoe-quotrealnoquot-quotr/i/661/1205/1085/" class="smi_a_img_1085">              <img alt="Нереальное &quot;Реально&quot;: &quot;Реал&quot; хочет купить Месси" title="Нереальное &quot;Реально&quot;: &quot;Реал&quot; хочет купить Месси" src="http://img.24smi.net/t/100/12/df751-nerealnoe-quotrealnoquot-quotr.jpeg" class="smi_img_1085" style="width:100px !important;height:100px !important;border:0px #ffffff solid !important; margin-right:7px !important;">              </a></div>              <a target="_blank" href="http://top.24smi.org/top/38083-nerealnoe-quotrealnoquot-quotr/i/661/1205/1085/" class="smi_title_1085" style="font-size: 12px !important;font-family:  Tahoma !important;color:#464646 ;text-decoration:none;font-weight:bold ;font-style: normal ">Нереальное "Реально": "Реал" хочет купить Месси</a>              <p class="smi_cat_1085" style="margin: 0 0 0 0 !important;font-size: 11px !important;font-family:  Tahoma !important;color:#707070 ;">Спорт</p>              </td></tr></tbody></table><div class="smi_partner_1085" style="padding:0 0 10px 10px;"><a target="_blank" href="http://partner.24smi.org/">24СМИ</a><a target="_blank" href="http://partner.24smi.org/" class="smi_partner_link_1085">Обмен новостями</a></div></div>
+                      
+                      
+					  
+					<div class="partners simple-back shadowed">
+						<h4>Новости партнеров</h4>
+						<a href="/">
+							<img alt="" src="img/rosuznik.png"/>
+							<div>Даты ближайших судебных заседаний по "Болотному делу"</div>
+						</a>
+						<a href="/">
+							<img alt="" src="img/agora.png"/>
+							<div>Директоров челябинских гимназий задержали с поличным</div>
+						</a>
+						<a href="/">
+							<img alt="" src="img/memo.png"/>
+							<div>Дагестан: зачистка в селе Гимры не завершена</div>
+						</a>
+						<a href="/">
+							<img alt="" src="img/public_verdict.png"/>
+							<div>Замглавы ГАИ Москвы уволят из-за скандала с продажей прав</div>
+						</a>
+						<a href="/">
+							<img alt="" src="img/rosuznik.png"/>
+							<div>Стань свидетелем по "Болотному делу"!</div>
+						</a>
+					</div>
+					  
+					  
+                      <div id="smi_teaser_1112" class="shadowed" style="background-color:#fff;margin-bottom:10px;"><table class="smi_table_1112"><tbody><tr class="smi_tr_1112_0"><td valign="top" align="left" style="padding:10px !important;background:#ffffff !important;border:0px #ffffff solid !important;" class="smi_td_1112">                      <a target="_blank" href="http://top.24smi.org/top/43078-pismo-berezovskogo-putinu-ne-x/i/661/1205/1112/" class="smi_title_1112" style="display:inline !important;list-style: none inside !important; font-size: 12px !important;font-family:  Tahoma !important;color:#363636 ;text-decoration:none ;font-weight:bold ;font-style: normal">Письмо Березовского Путину не хотят показывать</a>                      <p class="smi_cat_1112" style="margin: 6px 0 0 0 !important;font-size: 11px !important;font-family:  Tahoma !important;color:#959595 ;">Политика</p>                      </td></tr><tr class="smi_tr_1112_1"><td valign="top" align="left" style="padding:10px !important;background:#ffffff !important;border:0px #ffffff solid !important;" class="smi_td_1112">                      <a target="_blank" href="http://top.24smi.org/top/43076-policiia-oglasila-itogi-rassle/i/661/1205/1112/" class="smi_title_1112" style="display:inline !important;list-style: none inside !important; font-size: 12px !important;font-family:  Tahoma !important;color:#363636 ;text-decoration:none ;font-weight:bold ;font-style: normal">Полиция огласила итоги расследования о смерти Березовского</a>                      <p class="smi_cat_1112" style="margin: 6px 0 0 0 !important;font-size: 11px !important;font-family:  Tahoma !important;color:#959595 ;">Политика</p>                      </td></tr><tr class="smi_tr_1112_2"><td valign="top" align="left" style="padding:10px !important;background:#ffffff !important;border:0px #ffffff solid !important;" class="smi_td_1112">                      <a target="_blank" href="http://top.24smi.org/top/42615-ruslan-provodnikov-stal-narodn/i/661/1205/1112/" class="smi_title_1112" style="display:inline !important;list-style: none inside !important; font-size: 12px !important;font-family:  Tahoma !important;color:#363636 ;text-decoration:none ;font-weight:bold ;font-style: normal">Руслан Проводников стал народным чемпионом, проиграв бой</a>                      <p class="smi_cat_1112" style="margin: 6px 0 0 0 !important;font-size: 11px !important;font-family:  Tahoma !important;color:#959595 ;">Спорт</p>                      </td></tr><tr class="smi_tr_1112_3"><td valign="top" align="left" style="padding:10px !important;background:#ffffff !important;border:0px #ffffff solid !important;" class="smi_td_1112">                      <a target="_blank" href="http://top.24smi.org/top/42855-yundai-anta-e-stal-deshevle-no/i/661/1205/1112/" class="smi_title_1112" style="display:inline !important;list-style: none inside !important; font-size: 12px !important;font-family:  Tahoma !important;color:#363636 ;text-decoration:none ;font-weight:bold ;font-style: normal">Hyundai Santa Fe стал дешевле, но дороже</a>                      <p class="smi_cat_1112" style="margin: 6px 0 0 0 !important;font-size: 11px !important;font-family:  Tahoma !important;color:#959595 ;">Автомобили</p>                      </td></tr><tr class="smi_tr_1112_4"><td valign="top" align="left" style="padding:10px !important;background:#ffffff !important;border:0px #ffffff solid !important;" class="smi_td_1112">                      <a target="_blank" href="http://top.24smi.org/top/41974-v-rossii-videoregistratori-obi/i/661/1205/1112/" class="smi_title_1112" style="display:inline !important;list-style: none inside !important; font-size: 12px !important;font-family:  Tahoma !important;color:#363636 ;text-decoration:none ;font-weight:bold ;font-style: normal">Видеорегистраторы придется купить каждому</a>                      <p class="smi_cat_1112" style="margin: 6px 0 0 0 !important;font-size: 11px !important;font-family:  Tahoma !important;color:#959595 ;">Автомобили</p>                      </td></tr></tbody></table><div class="smi_partner_1112" style="padding:0 0 10px 10px;"><a target="_blank" href="http://partner.24smi.org/">24СМИ</a><a target="_blank" href="http://partner.24smi.org/" class="smi_partner_link_1112">Обмен новостями</a></div></div>
+                      
+                      
+                      
+                      <div class="fb-like-box shadowed" style="background-color:#333333; margin-bottom:10px;" data-href="http://www.facebook.com/ovdinfo" data-width="245" data-height="315" data-show-faces="true" data-colorscheme="dark" data-stream="false" data-border-color="#333333" data-header="false"></div>
+                      
+                      
+                      
+                      <div id="smi_teaser_1085" class="shadowed" style="background-color:#fff;margin-bottom:10px;"><table class="smi_table_1085"><tbody><tr class="smi_tr_1085_0"><td valign="top" align="left" style="padding:10px !important;background:#ffffff !important;border:0px #ffffff solid !important;" class="smi_td_1085">              <div style="float:left !important" class="smi_div_img_1085">              <a target="_blank" href="http://top.24smi.org/top/40185-kak-vivesti-iz-tupika-otnoshen/i/661/1205/1085/" class="smi_a_img_1085">              <img alt="Специались: зря Россия не хочет союза с США" title="Специались: зря Россия не хочет союза с США" src="http://img.24smi.net/t/100/02/3dbbb-kak-vivesti-iz-tupika-otnoshen.jpeg" class="smi_img_1085" style="width:100px !important;height:100px !important;border:0px #ffffff solid !important; margin-right:7px !important;">              </a></div>              <a target="_blank" href="http://top.24smi.org/top/40185-kak-vivesti-iz-tupika-otnoshen/i/661/1205/1085/" class="smi_title_1085" style="font-size: 12px !important;font-family:  Tahoma !important;color:#464646 ;text-decoration:none;font-weight:bold ;font-style: normal ">Специались: зря Россия не хочет союза с США</a>              <p class="smi_cat_1085" style="margin: 0 0 0 0 !important;font-size: 11px !important;font-family:  Tahoma !important;color:#707070 ;">Политика</p>              </td></tr><tr class="smi_tr_1085_1"><td valign="top" align="left" style="padding:10px !important;background:#ffffff !important;border:0px #ffffff solid !important;" class="smi_td_1085">              <div style="float:left !important" class="smi_div_img_1085">              <a target="_blank" href="http://top.24smi.org/top/38087-zrailu-bolshe-nechego-boiatsia/i/661/1205/1085/" class="smi_a_img_1085">              <img alt="Израилю больше нечего бояться, они изобрели купол" title="Израилю больше нечего бояться, они изобрели купол" src="http://img.24smi.net/t/100/12/e1f87-zrailu-bolshe-nechego-boiatsia.jpeg" class="smi_img_1085" style="width:100px !important;height:100px !important;border:0px #ffffff solid !important; margin-right:7px !important;">              </a></div>              <a target="_blank" href="http://top.24smi.org/top/38087-zrailu-bolshe-nechego-boiatsia/i/661/1205/1085/" class="smi_title_1085" style="font-size: 12px !important;font-family:  Tahoma !important;color:#464646 ;text-decoration:none;font-weight:bold ;font-style: normal ">Израилю больше нечего бояться, они изобрели купол</a>              <p class="smi_cat_1085" style="margin: 0 0 0 0 !important;font-size: 11px !important;font-family:  Tahoma !important;color:#707070 ;">Наука</p>              </td></tr><tr class="smi_tr_1085_2"><td valign="top" align="left" style="padding:10px !important;background:#ffffff !important;border:0px #ffffff solid !important;" class="smi_td_1085">              <div style="float:left !important" class="smi_div_img_1085">              <a target="_blank" href="http://top.24smi.org/top/40077-poiavilos-video-zapechatlevshe/i/661/1205/1085/" class="smi_a_img_1085">              <img alt="Появилось видео, запечатлевшее автоподставу" title="Появилось видео, запечатлевшее автоподставу" src="http://img.24smi.net/t/100/02/b8e96-poiavilos-video-zapechatlevshe.jpeg" class="smi_img_1085" style="width:100px !important;height:100px !important;border:0px #ffffff solid !important; margin-right:7px !important;">              </a></div>              <a target="_blank" href="http://top.24smi.org/top/40077-poiavilos-video-zapechatlevshe/i/661/1205/1085/" class="smi_title_1085" style="font-size: 12px !important;font-family:  Tahoma !important;color:#464646 ;text-decoration:none;font-weight:bold ;font-style: normal ">Появилось видео, запечатлевшее автоподставу</a>              <p class="smi_cat_1085" style="margin: 0 0 0 0 !important;font-size: 11px !important;font-family:  Tahoma !important;color:#707070 ;">Автомобили</p>              </td></tr><tr class="smi_tr_1085_3"><td valign="top" align="left" style="padding:10px !important;background:#ffffff !important;border:0px #ffffff solid !important;" class="smi_td_1085">              <div style="float:left !important" class="smi_div_img_1085">              <a target="_blank" href="http://top.24smi.org/top/38083-nerealnoe-quotrealnoquot-quotr/i/661/1205/1085/" class="smi_a_img_1085">              <img alt="Нереальное &quot;Реально&quot;: &quot;Реал&quot; хочет купить Месси" title="Нереальное &quot;Реально&quot;: &quot;Реал&quot; хочет купить Месси" src="http://img.24smi.net/t/100/12/df751-nerealnoe-quotrealnoquot-quotr.jpeg" class="smi_img_1085" style="width:100px !important;height:100px !important;border:0px #ffffff solid !important; margin-right:7px !important;">              </a></div>              <a target="_blank" href="http://top.24smi.org/top/38083-nerealnoe-quotrealnoquot-quotr/i/661/1205/1085/" class="smi_title_1085" style="font-size: 12px !important;font-family:  Tahoma !important;color:#464646 ;text-decoration:none;font-weight:bold ;font-style: normal ">Нереальное "Реально": "Реал" хочет купить Месси</a>              <p class="smi_cat_1085" style="margin: 0 0 0 0 !important;font-size: 11px !important;font-family:  Tahoma !important;color:#707070 ;">Спорт</p>              </td></tr></tbody></table><div class="smi_partner_1085" style="padding:0 0 10px 10px;"><a target="_blank" href="http://partner.24smi.org/">24СМИ</a><a target="_blank" href="http://partner.24smi.org/" class="smi_partner_link_1085">Обмен новостями</a></div></div>
+                      
+                       <div id="smi_teaser_1112" class="shadowed" style="background-color:#fff;margin-bottom:10px;"><table class="smi_table_1112"><tbody><tr class="smi_tr_1112_0"><td valign="top" align="left" style="padding:10px !important;background:#ffffff !important;border:0px #ffffff solid !important;" class="smi_td_1112">                      <a target="_blank" href="http://top.24smi.org/top/43078-pismo-berezovskogo-putinu-ne-x/i/661/1205/1112/" class="smi_title_1112" style="display:inline !important;list-style: none inside !important; font-size: 12px !important;font-family:  Tahoma !important;color:#363636 ;text-decoration:none ;font-weight:bold ;font-style: normal">Письмо Березовского Путину не хотят показывать</a>                      <p class="smi_cat_1112" style="margin: 6px 0 0 0 !important;font-size: 11px !important;font-family:  Tahoma !important;color:#959595 ;">Политика</p>                      </td></tr><tr class="smi_tr_1112_1"><td valign="top" align="left" style="padding:10px !important;background:#ffffff !important;border:0px #ffffff solid !important;" class="smi_td_1112">                      <a target="_blank" href="http://top.24smi.org/top/43076-policiia-oglasila-itogi-rassle/i/661/1205/1112/" class="smi_title_1112" style="display:inline !important;list-style: none inside !important; font-size: 12px !important;font-family:  Tahoma !important;color:#363636 ;text-decoration:none ;font-weight:bold ;font-style: normal">Полиция огласила итоги расследования о смерти Березовского</a>                      <p class="smi_cat_1112" style="margin: 6px 0 0 0 !important;font-size: 11px !important;font-family:  Tahoma !important;color:#959595 ;">Политика</p>                      </td></tr><tr class="smi_tr_1112_2"><td valign="top" align="left" style="padding:10px !important;background:#ffffff !important;border:0px #ffffff solid !important;" class="smi_td_1112">                      <a target="_blank" href="http://top.24smi.org/top/42615-ruslan-provodnikov-stal-narodn/i/661/1205/1112/" class="smi_title_1112" style="display:inline !important;list-style: none inside !important; font-size: 12px !important;font-family:  Tahoma !important;color:#363636 ;text-decoration:none ;font-weight:bold ;font-style: normal">Руслан Проводников стал народным чемпионом, проиграв бой</a>                      <p class="smi_cat_1112" style="margin: 6px 0 0 0 !important;font-size: 11px !important;font-family:  Tahoma !important;color:#959595 ;">Спорт</p>                      </td></tr><tr class="smi_tr_1112_3"><td valign="top" align="left" style="padding:10px !important;background:#ffffff !important;border:0px #ffffff solid !important;" class="smi_td_1112">                      <a target="_blank" href="http://top.24smi.org/top/42855-yundai-anta-e-stal-deshevle-no/i/661/1205/1112/" class="smi_title_1112" style="display:inline !important;list-style: none inside !important; font-size: 12px !important;font-family:  Tahoma !important;color:#363636 ;text-decoration:none ;font-weight:bold ;font-style: normal">Hyundai Santa Fe стал дешевле, но дороже</a>                      <p class="smi_cat_1112" style="margin: 6px 0 0 0 !important;font-size: 11px !important;font-family:  Tahoma !important;color:#959595 ;">Автомобили</p>                      </td></tr><tr class="smi_tr_1112_4"><td valign="top" align="left" style="padding:10px !important;background:#ffffff !important;border:0px #ffffff solid !important;" class="smi_td_1112">                      <a target="_blank" href="http://top.24smi.org/top/41974-v-rossii-videoregistratori-obi/i/661/1205/1112/" class="smi_title_1112" style="display:inline !important;list-style: none inside !important; font-size: 12px !important;font-family:  Tahoma !important;color:#363636 ;text-decoration:none ;font-weight:bold ;font-style: normal">Видеорегистраторы придется купить каждому</a>                      <p class="smi_cat_1112" style="margin: 6px 0 0 0 !important;font-size: 11px !important;font-family:  Tahoma !important;color:#959595 ;">Автомобили</p>                      </td></tr></tbody></table><div class="smi_partner_1112" style="padding:0 0 10px 10px;"><a target="_blank" href="http://partner.24smi.org/">24СМИ</a><a target="_blank" href="http://partner.24smi.org/" class="smi_partner_link_1112">Обмен новостями</a></div></div>
+                       
+                       
+                       
+                       
+                     
+                       
+                       
+                    </div>
+            </div> 
+        </div>      
+      </div>
+
+
+      <div class="footer">
+        <p>© Company 2013</p>
+      </div>
+
+    </div>
+		<!-- Modal -->
+		<div id="detentionReport" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="Report od Detention" aria-hidden="true">
+  		<div class="modal-header">
+    		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    		<h3 id="myModalLabel">Сообщить о задержании</h3>
+  		</div>
+  		<div class="modal-body">
+    		<p>Сообщая о том, что Вы или Ваши близкие задержаны, пишите свою фамилию, место задержания, место содержания и время и место планируемого суда. По возможности, оставьте Ваши контакты. Только публичность может помочь юристам, правозащитникам и журналистам позаботиться о вашем безболезненном выходе на свободу.</p>
+				<form class="form-horizontal">
+    			<fieldset>
+     				<div class="control-group">
+          		<label class="control-label" for="input01">Имя</label>
+          		<div class="controls">
+            		<input type="text" placeholder="Имя задержанного" class="input-xlarge">
+          		</div>
+        		</div>
+
+    				<div class="control-group">
+							<label class="control-label" for="input01">Фамилия</label>
+          		<div class="controls">
+            		<input type="text" placeholder="Фамилия задержанного" class="input-xlarge">
+          		</div>
+        		</div>
+
+    				<div class="control-group">
+							<label class="control-label" for="input01">Отчество</label>
+          		<div class="controls">
+            		<input type="text" placeholder="Отчество задержанного" class="input-xlarge">
+          		</div>
+        		</div>
+
+    				<div class="control-group">
+							<label class="control-label">ОВД</label>
+          		<div class="controls">
+            		<select class="input-xlarge">
+      						<option>-</option>
+      						<option>Тверское</option>
+      						<option>Китай-город</option>
+      						<option>Мещанское</option>
+      						<option>Красносельское</option></select>
+          		</div>
+        		</div>
+
+    				<div class="control-group">
+							<label class="control-label">Телефон</label>
+          		<div class="controls">
+            		<div class="input-prepend">
+              		<span class="add-on"><i class="icon-user"></i></span>
+              		<input class="span1" placeholder="Телефон задержанного" id="prependedInput" type="text">
+            		</div>
+          		</div>
+       		 	</div>
+
+   					<div class="control-group">
+	          	<label class="control-label">Дополнительная информация</label>
+          		<div class="controls">
+            		<div class="textarea">
+                  <textarea type="" class=""></textarea>
+            		</div>
+          		</div>
+        		</div>
+
+    				<div class="control-group">
+							<label class="control-label">E-mail</label>
+          		<div class="controls">
+            		<div class="input-prepend">
+              		<span class="add-on">@</span>
+              		<input class="span1" placeholder="Ваш e-mail" id="prependedInput" type="text">
+            		</div>
+          		</div>
+        		</div>
+
+   				 	<div class="control-group">
+          		<label class="control-label" for="input01">Сообщил</label>
+          		<div class="controls">
+            		<input type="text" placeholder="Иванов И. И." class="input-xlarge">
+          		</div>
+        		</div>
+
+    			</fieldset>
+  			</form>
+  		</div>
+  		<div class="modal-footer">
+    		<button class="btn" data-dismiss="modal" aria-hidden="true">Закрыть</button>
+    		<button class="btn btn-success" data-dismiss="modal">Сообщить о задержании</button>
+  		</div>
+		</div>
+
+		<script src="http://code.jquery.com/jquery.js"></script>
+		<script src="libs/jquery.color.min.js"></script>
+		<script src="libs/jquery.hoverIntent.minified.js"></script>
+		<script src="libs/select/select2.js"></script>
+    <script src="libs/TweenMax.min.js"></script>
+    <script src="libs/bootstrap/js/bootstrap.js"></script>
+		<script>
+$(document).ready(function() {
+    $("#e1").select2({
+		formatResult: format,
+		formatSelection: format,
+		escapeMarkup: function(m) { return m; }
+    });
+	//$("#e2").select2();
+	$("#e3").select2({
+		formatResult: phones,
+		formatSelection: phones,
+		escapeMarkup: function(m) { return m; }
+    });
+	$('#e3').change(function() {
+//<<<<<<< HEAD
+		$("#s2id_e3 span").append("<span style='float:right'>+7(985)3699621</span>");
+//=======
+		//alert($("#s2id_e3 span").append("+7(985)369-96-21"));
+//>>>>>>> phones
+	});
+	$("[rel=tooltip]").tooltip();
+	$('#mainCarousel').carousel();
+	$('#bottom-menu-open .service-block').css('display','none');
+	var overMenuFunc = function() {
+		$('#bottom-menu-open').css('display','block');
+	}
+	var outMenuFunc = function() {
+		$('#bottom-menu-open').css('display','none');
+	}
+	var overItemFunc = function(event) {
+		var id = $(event.target).attr('target');
+		if(id){
+			$('#bottom-menu-open .service-block:nth-of-type('+id+')').css('display','block');
+		}
+	}
+	var outItemFunc = function(event) {
+		var id = $(event.target).attr('target');
+		if(id){
+			$('#bottom-menu-open .service-block:nth-of-type('+id+')').css('display','none');
+		}
+	}
+	outMenuFunc();
+	$('#bottom-menu .container').mouseover(overMenuFunc);
+	$('#bottom-menu .container').mouseout(outMenuFunc);
+	$('#bottom-menu-open').mouseover(overMenuFunc);
+	$('#bottom-menu-open').mouseout(outMenuFunc);
+	$('#bottom-menu-open').click(outMenuFunc);
+	$('#bottom-menu-open ul li a').mouseover(overItemFunc);
+	$('#bottom-menu-open ul li a').mouseout(outItemFunc);
+	
+	$(window).scroll(sticky_relocate);
+	sticky_relocate();
+});
+
+	function sticky_relocate() {
+	  var window_top = $(window).scrollTop();
+	  var div_top = $('#sticky-anchor').offset().top;
+	  if (window_top > div_top) {
+		$('#bottom-menu').addClass('stick');
+	  } else {
+		$('#bottom-menu').removeClass('stick');
+	  }
+	}
+
+	function format(state) {
+    	//if (!state.id) return state.text; // optgroup
+		var str="";
+		switch(state.id){
+			case "0": str = "<i class='icon-my-zak'></i>";break;
+			case "1": str = "<i class='icon-my-diez'></i>";break;
+			case "2": str = "<i class='icon-plane'></i>";break;
+			case "3": str = "<i class='icon-leaf'></i>";break;
+			default: str = "<i class='icon-my-zak'></i>";break;
+		}
+    	return state.text+str;
+    }
+    function phones(state) {
+    	return state.text + '<i class="phone">' + state.element[0].dataset.phone + '</i>';
+	};
+	var ssBack = $('#tablo').css("backgroundColor");
+	var bodyColor = $('body').css("color");
+	var elementsBackgroundColor = $('.media-article .links div').css("backgroundColor");
+	var mtBackgroundColor = $('.media-article .media-type').css("backgroundColor");
+	var linksColor = $('.media-article .addlinks').css("color");
+	$('div.media-article').hover(function() {
+			TweenMax.to($(this), 0.25, {backgroundColor:ssBack,ease:"Power1.easeOut"});
+			TweenMax.to($(this).find('.links div'), 0.25, {backgroundColor:'rgba(238, 238, 238,0.1)',ease:"Power1.easeOut"});
+			$(this).find('i').addClass('icon-white');
+			//TweenMax.to($(this).children('.media-type'), 0.25, {color:bodyColor,backgroundColor:elementsBackgroundColor,ease:"Power1.easeOut"});
+			TweenMax.to($(this).find('a.media-link, span.authored, span.authored a'), 0.25, {color:"#fff",ease:"Power1.easeOut"});
+			TweenMax.to($(this).find('.addlinks'), 0.25, {color:"#fff",ease:"Power1.easeOut"});
+	},function(){
+			TweenMax.to($(this), 0.1, {backgroundColor:"#fff",ease:"Power1.easeIn"});
+			TweenMax.to($(this).find('.links div'), 0.1, {backgroundColor:'rgba(238, 238, 238,1)',ease:"Power1.easeOut"});
+			$(this).find('i').removeClass('icon-white');
+			//TweenMax.to($(this).children('.media-type'), 0.1, {color:"#fff",backgroundColor:mtBackgroundColor,ease:"Power1.easeIn"});
+			TweenMax.to($(this).find('a.media-link, span.authored, span.authored a'), 0.1, {color:bodyColor,ease:"Power1.easeIn"});	
+			TweenMax.to($(this).find('.addlinks'), 0.1, {color:linksColor,ease:"Power1.easeOut"});
+	});
+	$('#express .new').hover(function() {
+			TweenMax.to($(this), 0.25, {backgroundColor:ssBack,ease:"Power1.easeOut"});
+			$(this).find('i').addClass('icon-white');
+			TweenMax.to($(this), 0.25, {color:"#fff",ease:"Power1.easeOut"});
+			TweenMax.to($(this).find('div'), 0.25, {color:"#fff",ease:"Power1.easeOut"});
+	},function(){
+			TweenMax.to($(this), 0.1, {backgroundColor:"#fff",ease:"Power1.easeIn"});
+			$(this).find('i').removeClass('icon-white');
+			TweenMax.to($(this), 0.1, {color:bodyColor,ease:"Power1.easeIn"});
+			TweenMax.to($(this).find('div'), 0.1, {color:bodyColor,ease:"Power1.easeIn"});
+	});
+	$('#bottom-menu li').hover(function() {
+			TweenMax.to($(this).find('.navbar-item-open'), 0.5, {opacity:1,ease:"Power1.easeOut"});
+	},function(){
+			TweenMax.to($(this).find('.navbar-item-open'), 1, {opacity:0,ease:"Power1.easeOut"});
+	});
+	var peopleCaptionTop = $('.media-people .people-teaser').css("top");
+	$('.media-people .span1').hover(function() {
+			TweenMax.to($(this).find('.people-header'), 0.25, {top:"0px",ease:"Power1.easeOut"});
+			TweenMax.to($(this).find('.people-teaser'), 0.25, {top:"60px",ease:"Power1.easeOut"});
+	},function(){
+			TweenMax.to($(this).find('.people-header'), 0.25, {top:"-30px",ease:"Power1.easeOut"});
+			TweenMax.to($(this).find('.people-teaser'), 0.25, {top:peopleCaptionTop,ease:"Power1.easeIn"});
+	});
+	//$(this).animate({ backgroundColor: "#000" }, 400)
+		/*$(this).animate({ backgroundColor: "#000" }, 400);
+		$(this).children('a.article').animate({ color: "#fff" }, 400);
+},function(){
+		$(this).animate({ backgroundColor: "#fff" }, 400);
+		$(this).children('a.article').animate({ color: "#000" }, 400);
+});*/
+
+	
+</script>
+  </body>
+</html>

@@ -667,7 +667,7 @@ hr {
 	margin: 0 auto;
 	width:1010px;
 }
-.navbar-fixed-bottom .navbar-inner{
+#bottom-menu .navbar-inner{
 	border-width: 0;
 }
 .navbar-item-open.navbar-fixed-bottom{
@@ -682,6 +682,13 @@ hr {
 	-webkit-box-shadow: 0px 0px 5px rgba(0,0,0,.9);
 	-moz-box-shadow: 0px 0px 5px rgba(0,0,0,.9);
 	box-shadow: 0px 0px 5px rgba(0,0,0,.9);
+	margin: 0 auto;
+	width:1010px;
+}
+#bottom-menu.stick {
+  position: fixed;
+  top: 0;
+  z-index: 10000;
 }
 #bottom-menu li:hover .navbar-item-open{
 	display:block;
@@ -841,13 +848,6 @@ a>.activeText:hover{
 	font-size:15px;
 	font-weight:bold;
 	text-decoration: none;
-}
-.navbar-fixed-bottom{
-	margin: 0 auto;
-	width:1010px;
-}
-.navbar-fixed-bottom .navbar-inner{
-	border-width: 0;
 }
 
 input[type=search] {
