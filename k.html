@@ -9,7 +9,7 @@
     <link href='http://fonts.googleapis.com/css?family=PT+Mono|PT+Sans:400,400italic,700,700italic|PT+Sans+Caption:400,700|PT+Sans+Narrow:400,700|PT+Serif:400,400italic,700italic,700|PT+Serif+Caption:400,400italic&subset=latin,cyrillic-ext,cyrillic,latin-ext' rel='stylesheet' type='text/css'>
     <link href="libs/select/select2.css" rel="stylesheet"/>
 	</head>
-  <body>
+  <body class="new">
   <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -138,7 +138,7 @@
 				<div class="container">
 				  <ul class="nav">
 					<li><span href="#">Спецпроекты</span>
-						<div class="navbar-item-open navbar-fixed-bottom">
+						<div class="navbar-item-open">
 							<div class="navbar-block">
 								<h4><a href="/">Досье политзаключенного</a></h4>
 								<a href="/">
@@ -196,7 +196,7 @@
 						</div>
 					</li>
 					<li><span>Сервисы</span>
-						<div class="navbar-item-open navbar-fixed-bottom">
+						<div class="navbar-item-open">
 							<div class="navbar-block-services">
 								<a href="/">
 									<img src="img/ovd.jpg" />
@@ -228,7 +228,7 @@
 						</div>
 					</li>
 					<li><span>Темы</span>
-						<div class="navbar-item-open navbar-fixed-bottom">
+						<div class="navbar-item-open">
 							<div class="navbar-block">
 								<h4><a href="/">Свобода собраний</a></h4>
 								<a href="/">
@@ -304,7 +304,7 @@
 						</div>
 					</li>
 					<li><span>О проекте</span>
-						<div class="navbar-item-open navbar-fixed-bottom">
+						<div class="navbar-item-open">
 							<div class="navbar-block">
 								<h4><a href="/">Контакты</a></h4>
 								<a href="/">
@@ -1276,6 +1276,7 @@ $(document).ready(function() {
 	var elementsBackgroundColor = $('.media-article .links div').css("backgroundColor");
 	var mtBackgroundColor = $('.media-article .media-type').css("backgroundColor");
 	var linksColor = $('.media-article .addlinks').css("color");
+	var expressBackgroundColor = $('#express').css("backgroundColor");
 	$('div.media-article').hover(function() {
 			TweenMax.to($(this), 0.25, {backgroundColor:ssBack,ease:"Power1.easeOut"});
 			TweenMax.to($(this).find('.links div'), 0.25, {backgroundColor:'rgba(238, 238, 238,0.1)',ease:"Power1.easeOut"});
@@ -1297,7 +1298,7 @@ $(document).ready(function() {
 			TweenMax.to($(this), 0.25, {color:"#fff",ease:"Power1.easeOut"});
 			TweenMax.to($(this).find('div'), 0.25, {color:"#fff",ease:"Power1.easeOut"});
 	},function(){
-			TweenMax.to($(this), 0.1, {backgroundColor:"#fff",ease:"Power1.easeIn"});
+			TweenMax.to($(this), 0.1, {backgroundColor:expressBackgroundColor,ease:"Power1.easeIn"});
 			$(this).find('i').removeClass('icon-white');
 			TweenMax.to($(this), 0.1, {color:bodyColor,ease:"Power1.easeIn"});
 			TweenMax.to($(this).find('div'), 0.1, {color:bodyColor,ease:"Power1.easeIn"});

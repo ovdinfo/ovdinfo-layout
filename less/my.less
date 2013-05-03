@@ -159,6 +159,9 @@ a{
 	background-image: linear-gradient(to bottom, @elementsBackgroundColor, @elementsBackgroundColor);
 	cursor:default;
 }
+.new #mainCarousel .btn-group .btn {
+	background-image: linear-gradient(to bottom, #ddd, #ddd);
+}
 #mainCarousel .btn-group .btn.active{
 	background:none;
 	box-shadow:none;
@@ -337,6 +340,13 @@ hr {
 	border-radius:@baseBorderRadius @baseBorderRadius 0 0;
 	padding: 10px 0;
 }
+#express hr {
+	border-color: #555555;
+	margin: 14px 10px;
+}
+.new #express{
+	background-color:#ddd;
+}
 #express h4{
 	margin-top: 2px;
 	margin-left: 10px;
@@ -399,6 +409,9 @@ hr {
     top: 45px;
 	width:215px;
 	border-radius:0 @baseBorderRadius @baseBorderRadius 0;
+}
+.new #express-filter-box{
+	background-color:#fff;
 }
 #express-filter-box div{
 	height: 20px;
@@ -656,6 +669,9 @@ hr {
 	margin-right: 10px;
 	cursor:pointer
 }
+.new .navbar-block a{
+	color:#fff;
+}
 .navbar1 .nav li:last-child>span {
 	margin-right: 0px;
 }
@@ -663,12 +679,28 @@ hr {
 	color: #000;
 	background-color:@elementsBackgroundColor;
 }
+.new .navbar-item-open{
+	position:absolute;
+	z-index:500;
+	margin: 40px auto;
+	margin-top:40px;
+	width:1010px;
+	display:none;
+	background-color:@darkBackgroundColor;
+	-webkit-box-shadow: 0px 5px 5px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow: 0px 5px 5px rgba(50, 50, 50, 0.75);
+	box-shadow: 0px 5px 5px rgba(50, 50, 50, 0.75);
+}
 .navbar-fixed-bottom{
 	margin: 0 auto;
 	width:1010px;
 }
 #bottom-menu .navbar-inner{
 	border-width: 0;
+	padding-left:0px;
+}
+#sticky-anchor #bottom-menu .navbar-inner{
+	border-radius:0px;
 }
 .navbar-item-open.navbar-fixed-bottom{
 	display:none;
@@ -788,6 +820,20 @@ a>.activeText:hover{
 	background-image: -webkit-linear-gradient(top, #555555, #444444);*/
 	background-color:@darkBackgroundColor;
 	background-image: none;
+}
+.new .navbar-inner {
+	background-color:#fff;
+}
+.new .navbar1 .nav li > span  {
+	color: @textColor;
+	margin-right:0px;
+}
+.new .navbar1 .nav li:hover>span{
+	color: #fff;
+	background-color:@darkBackgroundColor;
+}
+.new .navbar .nav li a:hover{
+	color: #fff;
 }
 
 .navbar .nav li a {
