@@ -58,80 +58,6 @@
 					<div><a href="/">Сидят: <span>16 человек</span></a></div>
 				</div>
 			</div>
-		<!--<div class="navbar-open navbar-fixed-bottom" id="bottom-menu-open">
-			<ul class="navbar-menu">
-				<li><a href="#">Досье политзаключенного</a></li>
-				<li><a href="#">Досье политэмигранта</a></li>
-				<li><a href="#">Доклады, отчеты</a></li>
-				<li><a href="#">Инфографика</a></li>
-				<li><a href="#">Видео-программы</a></li>
-			</ul>
-			<ul class="navbar-menu">
-				<li><a href="#" target="1">ОВД-files</a></li>
-				<li><a href="#" target="2">Карта ОВД</a></li>
-				<li><a href="#" target="1">Расскажи свою историю</a></li>
-				<li><a href="#" target="2">Сообщить о задержании</a></li>
-			</ul>
-			<ul class="navbar-menu">
-				<li><a href="#">Свобода собраний</a></li>
-				<li><a href="#">Тюрьма и около</a></li>
-				<li><a href="#">Полиция</a></li>
-				<li><a href="#">Суд</a></li>
-				<li><a href="#">Политпрессинг</a></li>
-			</ul>
-			<ul class="navbar-menu">
-				<li><a href="#">О проекте</a></li>
-				<li><a href="#">Пресса о нас</a></li>
-				<li><a href="#">Контакты</a></li>
-				<li><a href="#">Партнеры</a></li>
-				<li><a href="#">Помочь проекту</a></li>
-				<li><a href="#">Правила использования</a></li>
-			</ul>
-			<ul class="navbar-menu">
-						<div class="service-block">
-				<img src="img/files.jpg">
-				<div class="service-description"><small>ОВД-files - это платформа, которая благодаря Вашему участию помогает юристам и активистам искать фото- и видеодокументацию акций для последующей защиты задержанных в суде. С помощью ОВД-files Вы можете:
-1. Добавить видеоролики с Youtube
-2. Добавить фотоальбомы Flickr, Яндекс.Фотки и Picasa (Google+)
-3. Скачать  материалы в исходном качестве и использовать их в суде
-				</small></div>
-			</div>
-			<div class="service-block">
-				<img src="img/ovd.jpg">
-				<div class="service-description"><small>На карте ОВД отмечены все отделы внутренних дел вашего города, теперь вы легко сможете попросить полицейского облезти вас в ближайший к вашему делу отдел.</small>
-				</div>
-			</div>
-			</ul>
-        </div>
-        <div class="navbar navbar-fixed-bottom" id="bottom-menu">
-          <div class="navbar-inner">
-            <div class="container">
-              <ul class="nav">
-                <li><a href="#">Спецпроекты</a></li>
-                <li><a href="#">Сервисы</a></li>
-                <li><a href="#">Темы</a></li>
-                <li><a href="#">О проекте</a></li>
-              </ul>
-							<ul class="nav pull-right">
-								<input type="search" placeholder="Search">
-							</ul>
-            </div>
-          </div>
-        </div>--><!-- /.navbar -->
-		<!--<div class="navbar-item-open navbar-fixed-bottom">
-			<div>
-				<div>
-					<a href="/"><img src="assets/stas.jpg">
-						<div class="people-header">07 апреля <span class="activeText">Истории задержанных</span>
-							<h4>Станислав </h4>
-						</div>
-						<div class="people-teaser">
-						рассказывает о своем деле и других своих делах. Замглавы бурятского ФСИН подозревается в краже пожертвований пострадавшим в Крымске<span class="activeText">...</span>
-						</div>
-					</a>
-				</div>
-			</div>
-		</div>-->
 		<div id="sticky-anchor" style="height:40px;margin-bottom:10px;">
 			<div class="navbar1" id="bottom-menu">
 			  <div class="navbar-inner">
@@ -1188,7 +1114,7 @@
   		</div>
 		</div>
 
-		<script src="http://code.jquery.com/jquery.js"></script>
+		<script src="libs/jquery-1.9.1.min.js"></script>
 		<script src="libs/jquery.color.min.js"></script>
 		<script src="libs/jquery.hoverIntent.minified.js"></script>
 		<script src="libs/select/select2.js"></script>
@@ -1216,33 +1142,6 @@ $(document).ready(function() {
 	});
 	$("[rel=tooltip]").tooltip();
 	$('#mainCarousel').carousel();
-	$('#bottom-menu-open .service-block').css('display','none');
-	var overMenuFunc = function() {
-		$('#bottom-menu-open').css('display','block');
-	}
-	var outMenuFunc = function() {
-		$('#bottom-menu-open').css('display','none');
-	}
-	var overItemFunc = function(event) {
-		var id = $(event.target).attr('target');
-		if(id){
-			$('#bottom-menu-open .service-block:nth-of-type('+id+')').css('display','block');
-		}
-	}
-	var outItemFunc = function(event) {
-		var id = $(event.target).attr('target');
-		if(id){
-			$('#bottom-menu-open .service-block:nth-of-type('+id+')').css('display','none');
-		}
-	}
-	outMenuFunc();
-	$('#bottom-menu .container').mouseover(overMenuFunc);
-	$('#bottom-menu .container').mouseout(outMenuFunc);
-	$('#bottom-menu-open').mouseover(overMenuFunc);
-	$('#bottom-menu-open').mouseout(outMenuFunc);
-	$('#bottom-menu-open').click(outMenuFunc);
-	$('#bottom-menu-open ul li a').mouseover(overItemFunc);
-	$('#bottom-menu-open ul li a').mouseout(outItemFunc);
 	
 	$(window).scroll(sticky_relocate);
 	sticky_relocate();
